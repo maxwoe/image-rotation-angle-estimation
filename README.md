@@ -1,22 +1,16 @@
-Usage Examples:
+# Image Rotation Angle Estimation
 
-  1. Resume Full Training (preserves LR scheduler state - may have low LR):
-  python train.py --approach unit_vector --resume-ckpt path/to/checkpoint.ckpt
+Deep learning models for predicting image rotation angles using PyTorch Lightning. Supports multiple approaches including unit vector prediction, direct angle regression, classification, and specialized methods like CGD and PSC.
 
-  2. Load Pretrained Weights Only (fresh optimizer/scheduler with your specified LR):
-  python train.py --approach unit_vector --pretrained-ckpt path/to/checkpoint.ckpt --learning-rate 0.01
+## Quick Start
 
-  Key Differences:
+```bash
+# Train with unit vector approach (recommended)
+python train.py --approach unit_vector
 
-  | Option            | Model Weights | Optimizer State | LR Scheduler | Epoch Counter  | Use Case                          |
-  |-------------------|---------------|-----------------|--------------|----------------|-----------------------------------|
-  | --resume-ckpt     | ✅ Restored    | ✅ Restored      | ✅ Restored   | ✅ Continues    | Continue interrupted training     |
-  | --pretrained-ckpt | ✅ Loaded      | 🆕 Fresh        | 🆕 Fresh     | 🆕 Starts at 0 | Fine-tune with different settings |
+# Train with direct angle prediction
+python train.py --approach direct_angle
 
-  The --pretrained-ckpt option is perfect when you want to:
-  - Use trained weights as a starting point
-  - Apply different learning rates or optimizers
-  - Start fresh training dynamics
-  - Avoid the "low LR" problem you encountered
-
-  This gives you the best of both worlds - pretrained model knowledge with fresh training dynamics!
+# Run interactive demo
+python app.py
+```
