@@ -1,0 +1,22 @@
+{
+  "approach": "maji_dioad",
+  "model_name": "vit-ang-loss",
+  "model_short": "vit-ang-loss",
+  "loss_type": "angular_loss",
+  "learning_rate": 0,
+  "epochs": 0,
+  "training_time": 0,
+  "test_mae": 8.36979633746288,
+  "success": true,
+  "test_coco_mae_deg": 8.36979633746288,
+  "test_coco_rmse_deg": 30.535970055785306,
+  "test_coco_median_deg": 1.2745467502139292,
+  "test_coco_p90_deg": 4.194813945513644,
+  "test_coco_p95_deg": 84.58856427394771,
+  "test_coco_acc_2deg": 0.6951456310679611,
+  "test_coco_acc_5deg": 0.916504854368932,
+  "test_coco_acc_10deg": 0.9349514563106797,
+  "test_coco_auc_2deg": 0.37947073286879107,
+  "test_coco_auc_5deg": 0.665356618754677,
+  "test_coco_auc_10deg": 0.7977973118749818
+}

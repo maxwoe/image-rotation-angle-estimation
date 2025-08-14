@@ -1,0 +1,42 @@
+================================================================================
+DEEP-OAD MODEL EVALUATION
+================================================================================
+Test Directory: data/datasets/test_coco
+Model Path: weights/model-vit-ang-loss.h5
+Rotation Range: 360.0°
+
+Loading test dataset...
+Loaded 1030 test images
+
+================================================================================
+TEST RESULTS
+================================================================================
+=== TEST_RESULTS_START ===
+test_coco_mae_deg=8.370
+test_coco_rmse_deg=30.536
+test_coco_median_deg=1.275
+test_coco_p90_deg=4.195
+test_coco_p95_deg=84.589
+test_coco_acc_2deg=0.695
+test_coco_acc_5deg=0.917
+test_coco_acc_10deg=0.935
+test_coco_auc_2deg=0.379
+test_coco_auc_5deg=0.665
+test_coco_auc_10deg=0.798
+=== TEST_RESULTS_END ===
+
+================================================================================
+PERFORMANCE SUMMARY
+================================================================================
+Mean Absolute Error: 8.37°
+Root Mean Square Error: 30.54°
+Median Error: 1.27°
+95th Percentile Error: 84.59°
+
+Accuracy within 2°: 69.5%
+Accuracy within 5°: 91.7%
+Accuracy within 10°: 93.5%
+
+Performance Assessment:
+Overall Performance: ACCEPTABLE (MAE: 8.37°)
+================================================================================
