@@ -23,19 +23,50 @@ from datetime import datetime
 from typing import Dict, List, Tuple
 from architectures import get_enabled_architectures, get_default_learning_rate, get_scaled_learning_rate
 
-# Default loss types for each approach
+# Default loss types for each approach and approach-loss combinations
 DEFAULT_APPROACH_LOSSES = {
+    # Base approaches with default loss types
     "direct_angle": "mse", 
-    "classification": "cross_entropy",
     "unit_vector": "mse",
     "psc": "mse",
-    "cgd": "kl_divergence",
+    "cgd": "kl_divergence",    
+    # Classification approach variants
+    "classification": "cross_entropy",           # Default classification
+    "classification_csl": "csl",                # Circular Smooth Label variant
+    "classification_dcl": "dcl",                # Dense Coded Labels variant
+    "multibin": "multibin",
 }
+
+def parse_base_approach(approach: str) -> str:
+    """Extract base approach from approach-loss combination.
+    
+    Examples:
+        classification_csl -> classification
+        classification_dcl -> classification  
+        cgd -> cgd
+    """
+    # Known base approaches
+    base_approaches = ["classification", "unit_vector", "direct_angle", "psc", "cgd", "multibin"]
+    
+    # Check if it's already a base approach
+    if approach in base_approaches:
+        return approach
+        
+    # Check for approach_variant pattern
+    for base in base_approaches:
+        if approach.startswith(f"{base}_"):
+            return base
+    
+    # Fallback - return as-is
+    return approach
 
 def run_experiment(approach: str, model_name: str, epochs: int, batch_size: int, timestamp: str, mixed_precision: bool = False) -> Dict:
     """Run single training+testing experiment using train.py."""
     loss_type = DEFAULT_APPROACH_LOSSES[approach]
     learning_rate = get_scaled_learning_rate(model_name, batch_size)
+    
+    # Parse approach-loss combinations (e.g., "classification_csl" -> "classification")
+    base_approach = parse_base_approach(approach)
     
     print(f"  Running {approach} + {model_name.split('.')[0]} (LR: {learning_rate:.0e})")
     
@@ -48,7 +79,7 @@ def run_experiment(approach: str, model_name: str, epochs: int, batch_size: int,
         # Use train.py with --run-test for automatic training + testing
         cmd = [
             "python", "train.py",
-            "--approach", approach,
+            "--approach", base_approach,
             "--loss-type", loss_type,
             "--max-epochs", str(epochs),
             "--learning-rate", str(learning_rate),
@@ -346,7 +377,7 @@ def main():
     parser = argparse.ArgumentParser(description="Unified comparison of approaches and models")
     parser.add_argument("--approaches", nargs='+', 
                        choices=list(DEFAULT_APPROACH_LOSSES.keys()),
-                       help="Approaches to test (default: all)")
+                       help="Approaches to test. Supports approach-loss combinations like 'classification_csl'. (default: all)")
     parser.add_argument("--models", nargs='+', 
                        help="Models to test (default: all from architectures.py)")
     parser.add_argument("--epochs", type=int, default=100, 

@@ -36,6 +36,7 @@ from model_direct_angle import DirectAngleDetection
 from model_classification import ClassificationAngleDetection
 from model_cgd import CGDAngleDetection
 from model_psc import PSCAngleDetection
+from model_multibin import MultiBinAngleDetection
 
 torch.set_float32_matmul_precision('high')
 
@@ -51,9 +52,11 @@ def get_model_class(approach):
         return CGDAngleDetection
     elif approach == "psc":
         return PSCAngleDetection
+    elif approach == "multibin":
+        return MultiBinAngleDetection
     else:
         raise ValueError(
-            f"Unknown approach: {approach}. Use 'unit_vector', 'direct_angle', 'classification', 'cgd', 'psc'")
+            f"Unknown approach: {approach}. Use 'unit_vector', 'direct_angle', 'classification', 'cgd', 'psc', 'multibin'")
 
 
 def find_learning_rate(model, trainer, args):
@@ -480,8 +483,8 @@ def main():
 
     # Model approach selection
     parser.add_argument("--approach", type=str, default="unit_vector",
-                        choices=["unit_vector", "direct_angle", "classification", "cgd", "psc"],
-                        help="Model approach: unit_vector (2 outputs), direct_angle (1 output), classification (N classes), cgd (probability distribution), psc (phase shift coder)")
+                        choices=["unit_vector", "direct_angle", "classification", "cgd", "psc", "multibin"],
+                        help="Model approach: unit_vector (2 outputs), direct_angle (1 output), classification (N classes), cgd (probability distribution), psc (phase shift coder), multibin (multiple heads)")
 
     # Model architecture
     parser.add_argument("--model-name", type=str, default="vit_small_patch16_224",
