@@ -33,21 +33,21 @@ from metrics import compute_validation_metrics, compute_test_metrics
 
 class MultiBinAngleDetection(pl.LightningModule):
     """
-    MultiBin angle detection model with multiple classification heads
-    and confidence estimation.
+    MultiBin angle detection model with multiple overlapping classification heads
+    and confidence estimation. Based on Lee et al. 2022 and Mousavian et al. 2017.
     
-    Uses hierarchical bin structure:
-    - Head 1: 4 bins (90° each) - coarse orientation
-    - Head 2: 8 bins (45° each) - medium resolution  
-    - Head 3: 24 bins (15° each) - fine resolution
-    - Head 4: 72 bins (5° each) - very fine resolution
+    Uses hierarchical overlapping bin structure (all covering full 360°):
+    - Head 1: 36 bins (10° resolution) - coarse orientation
+    - Head 2: 72 bins (5° resolution) - medium resolution  
+    - Head 3: 144 bins (2.5° resolution) - fine resolution
     
-    Each head also outputs a confidence score for prediction combination.
+    Each head outputs predictions for the full 360° range with different granularities
+    and confidence scores for hierarchical prediction combination.
     """
 
     def __init__(self, batch_size, train_dir, model_name="vit_tiny_patch16_224", learning_rate=0.001,
                  validation_split=0.1, random_seed=42, image_size=224,
-                 bin_counts=[4, 8, 24, 72], confidence_weight=0.1, test_dir=None, test_rotation_range=360.0, test_random_seed=42):
+                 bin_counts=[36, 72, 144], confidence_weight=0.1, overlap_margin=0.5, test_dir=None, test_rotation_range=360.0, test_random_seed=42):
         super().__init__()
         self.save_hyperparameters()
         
@@ -56,16 +56,18 @@ class MultiBinAngleDetection(pl.LightningModule):
         self.test_rotation_range = test_rotation_range
         self.test_random_seed = test_random_seed
 
-        # MultiBin setup
+        # MultiBin setup - all heads cover full 360° range with different resolutions
         self.bin_counts = bin_counts  # Number of bins for each head
         self.num_heads = len(bin_counts)
         self.confidence_weight = confidence_weight  # Weight for confidence loss
+        self.overlap_margin = overlap_margin  # Overlap margin for soft bin assignment
         
-        # Calculate bin sizes for each head
+        # Calculate bin sizes for each head - all cover 360° with different resolutions
         self.bin_sizes = [360.0 / count for count in bin_counts]
         
-        logger.info(f"MultiBin: {self.num_heads} heads with bins {bin_counts}")
-        logger.info(f"Bin sizes: {[f'{size:.1f}°' for size in self.bin_sizes]}")
+        logger.info(f"MultiBin: {self.num_heads} heads with overlapping bins {bin_counts}")
+        logger.info(f"Bin resolutions: {[f'{size:.1f}°' for size in self.bin_sizes]}")
+        logger.info(f"Overlap margin: {overlap_margin}°")
 
         # Feature extractor (backbone without classifier)
         self.backbone = timm.create_model(model_name, pretrained=True, num_classes=0, global_pool='avg')
@@ -155,47 +157,113 @@ class MultiBinAngleDetection(pl.LightningModule):
             class_indices.append(class_idx)
         
         return class_indices
+    
+    def angle_to_soft_labels(self, angle, head_idx):
+        """Convert angle to soft labels with overlapping bins for specified head
+        
+        Creates soft assignment to neighboring bins within overlap margin for smoother training.
+        """
+        batch_size = angle.shape[0]
+        bin_count = self.bin_counts[head_idx]
+        bin_size = self.bin_sizes[head_idx]
+        device = angle.device
+        
+        # Normalize angle to [0, 360)
+        angle = angle % 360
+        
+        # Create soft labels
+        soft_labels = torch.zeros(batch_size, bin_count, device=device)
+        
+        for b in range(batch_size):
+            angle_val = angle[b].item()
+            
+            # Primary bin
+            primary_bin = int(angle_val / bin_size) % bin_count
+            
+            # Calculate distance from bin center
+            bin_center = (primary_bin + 0.5) * bin_size
+            distance_from_center = abs(angle_val - bin_center)
+            
+            # Handle circular distance
+            distance_from_center = min(distance_from_center, 360 - distance_from_center)
+            
+            # Assign weight to primary bin
+            primary_weight = max(0.0, 1.0 - distance_from_center / (bin_size * self.overlap_margin))
+            soft_labels[b, primary_bin] = primary_weight
+            
+            # Assign weights to neighboring bins within overlap margin
+            if self.overlap_margin > 0:
+                for offset in [-1, 1]:
+                    neighbor_bin = (primary_bin + offset) % bin_count
+                    neighbor_center = (neighbor_bin + 0.5) * bin_size
+                    
+                    # Handle circular distance to neighbor
+                    neighbor_distance = abs(angle_val - neighbor_center)
+                    neighbor_distance = min(neighbor_distance, 360 - neighbor_distance)
+                    
+                    if neighbor_distance <= bin_size * self.overlap_margin:
+                        neighbor_weight = max(0.0, 1.0 - neighbor_distance / (bin_size * self.overlap_margin))
+                        soft_labels[b, neighbor_bin] = neighbor_weight
+            
+            # Normalize to ensure probabilities sum to 1
+            total_weight = torch.sum(soft_labels[b])
+            if total_weight > 0:
+                soft_labels[b] = soft_labels[b] / total_weight
+            else:
+                # Fallback to hard assignment
+                soft_labels[b, primary_bin] = 1.0
+        
+        return soft_labels
 
     def class_to_angle_multiple(self, class_indices, confidences=None):
-        """Convert class indices from multiple heads to angle using confidence weighting"""
+        """Convert class indices from multiple heads to angle using hierarchical coarse-to-fine combination"""
         batch_size = class_indices[0].shape[0]
         angles = torch.zeros(batch_size, device=class_indices[0].device)
         
         for b in range(batch_size):
-            # Get predictions from all heads for this sample
-            head_angles = []
-            head_confidences = []
+            # Hierarchical coarse-to-fine refinement
+            # Start with coarsest head (head 0), refine with finer heads
             
-            for i, (class_idx, bin_size) in enumerate(zip(class_indices, self.bin_sizes)):
-                # Convert class to angle (center of bin)
-                angle = (class_idx[b].float() + 0.5) * bin_size
-                head_angles.append(angle)
+            # Step 1: Get coarsest prediction (head 0)
+            coarse_class = class_indices[0][b].float()
+            coarse_bin_size = self.bin_sizes[0]
+            current_angle = (coarse_class + 0.5) * coarse_bin_size
+            current_confidence = confidences[0][b] if confidences is not None else 1.0
+            
+            # Step 2: Refine with each successive head
+            for i in range(1, self.num_heads):
+                fine_class = class_indices[i][b].float()
+                fine_bin_size = self.bin_sizes[i]
+                fine_angle = (fine_class + 0.5) * fine_bin_size
+                fine_confidence = confidences[i][b] if confidences is not None else 1.0
                 
-                # Get confidence for this head
-                if confidences is not None:
-                    head_confidences.append(confidences[i][b])
-                else:
-                    head_confidences.append(1.0 / self.num_heads)  # Equal weighting
+                # Check if fine prediction is within reasonable range of current prediction
+                angular_diff = torch.abs(fine_angle - current_angle)
+                angular_diff = torch.minimum(angular_diff, 360 - angular_diff)
+                
+                # Use fine prediction if it's close and has reasonable confidence
+                window_size = 2 * coarse_bin_size  # Local window for refinement
+                if angular_diff <= window_size:
+                    # Weighted combination within local window
+                    total_confidence = current_confidence + fine_confidence
+                    weight_current = current_confidence / total_confidence
+                    weight_fine = fine_confidence / total_confidence
+                    
+                    # Circular averaging using unit vectors
+                    current_rad = current_angle * torch.pi / 180.0
+                    fine_rad = fine_angle * torch.pi / 180.0
+                    
+                    avg_cos = weight_current * torch.cos(current_rad) + weight_fine * torch.cos(fine_rad)
+                    avg_sin = weight_current * torch.sin(current_rad) + weight_fine * torch.sin(fine_rad)
+                    
+                    current_angle = torch.atan2(avg_sin, avg_cos) * 180.0 / torch.pi
+                    current_angle = current_angle % 360.0
+                    current_confidence = total_confidence / 2  # Average confidence
+                
+                # Update coarse bin size for next iteration
+                coarse_bin_size = fine_bin_size
             
-            # Convert to tensors
-            head_angles = torch.stack(head_angles)
-            head_confidences = torch.stack(head_confidences)
-            
-            # Normalize confidences
-            head_confidences = head_confidences / (torch.sum(head_confidences) + 1e-8)
-            
-            # Weighted average using unit vectors (circular averaging)
-            head_angles_rad = head_angles * torch.pi / 180.0
-            cos_components = torch.cos(head_angles_rad)
-            sin_components = torch.sin(head_angles_rad)
-            
-            # Weighted average of unit vectors
-            avg_cos = torch.sum(head_confidences * cos_components)
-            avg_sin = torch.sum(head_confidences * sin_components)
-            
-            # Convert back to angle
-            final_angle = torch.atan2(avg_sin, avg_cos) * 180.0 / torch.pi
-            angles[b] = final_angle % 360.0
+            angles[b] = current_angle
         
         return angles
 
@@ -235,9 +303,6 @@ class MultiBinAngleDetection(pl.LightningModule):
     def training_step(self, batch, batch_idx):
         x, y = batch
         
-        # Convert angles to class labels for each head
-        y_classes = self.angle_to_class_multiple(y)
-        
         # Forward pass
         head_logits, head_confidences = self(x)
         
@@ -247,17 +312,31 @@ class MultiBinAngleDetection(pl.LightningModule):
         total_confidence_loss = 0
         
         for i in range(self.num_heads):
-            # Classification loss
-            cls_loss = self.classification_loss(head_logits[i], y_classes[i])
+            # Use soft labels with overlapping bins for smoother training
+            soft_labels = self.angle_to_soft_labels(y, i)
+            
+            # Convert logits to probabilities
+            pred_probs = F.softmax(head_logits[i], dim=1)
+            
+            # Use KL divergence loss for soft targets (more appropriate than cross-entropy)
+            # KL(soft_labels || pred_probs) = sum(soft_labels * log(soft_labels / pred_probs))
+            # For numerical stability, use log_softmax
+            log_pred_probs = F.log_softmax(head_logits[i], dim=1)
+            cls_loss = F.kl_div(log_pred_probs, soft_labels, reduction='batchmean')
             total_classification_loss += cls_loss
             
-            # Confidence target: higher confidence for more accurate predictions
+            # Entropy-based confidence target: higher confidence for sharper predictions
             with torch.no_grad():
-                pred_classes = torch.argmax(head_logits[i], dim=1)
-                # Simple confidence target: 1.0 if correct, lower if wrong
-                confidence_targets = (pred_classes == y_classes[i]).float()
-                # Add some noise to avoid overconfident predictions
-                confidence_targets = 0.8 * confidence_targets + 0.1
+                # Calculate prediction entropy (uncertainty measure)
+                pred_probs = F.softmax(head_logits[i], dim=1)
+                entropy = -torch.sum(pred_probs * torch.log(pred_probs + 1e-8), dim=1)
+                
+                # Normalize entropy to [0, 1] range (0 = confident, 1 = uncertain)
+                max_entropy = torch.log(torch.tensor(self.bin_counts[i], dtype=torch.float, device=entropy.device))
+                normalized_entropy = entropy / max_entropy
+                
+                # Confidence target: 1 - normalized_entropy (higher for sharper predictions)
+                confidence_targets = 1.0 - normalized_entropy
             
             # Confidence loss
             conf_loss = self.confidence_loss(head_confidences[i].squeeze(1), confidence_targets)
@@ -291,9 +370,6 @@ class MultiBinAngleDetection(pl.LightningModule):
     def validation_step(self, batch, batch_idx):
         x, y = batch
         
-        # Convert angles to class labels for each head
-        y_classes = self.angle_to_class_multiple(y)
-        
         # Forward pass
         head_logits, head_confidences = self(x)
         
@@ -303,15 +379,26 @@ class MultiBinAngleDetection(pl.LightningModule):
         total_confidence_loss = 0
         
         for i in range(self.num_heads):
-            # Classification loss
-            cls_loss = self.classification_loss(head_logits[i], y_classes[i])
+            # Use soft labels with overlapping bins (same as training)
+            soft_labels = self.angle_to_soft_labels(y, i)
+            
+            # Use KL divergence loss for soft targets
+            log_pred_probs = F.log_softmax(head_logits[i], dim=1)
+            cls_loss = F.kl_div(log_pred_probs, soft_labels, reduction='batchmean')
             total_classification_loss += cls_loss
             
-            # Confidence loss (same logic as training)
+            # Entropy-based confidence loss (same logic as training)
             with torch.no_grad():
-                pred_classes = torch.argmax(head_logits[i], dim=1)
-                confidence_targets = (pred_classes == y_classes[i]).float()
-                confidence_targets = 0.8 * confidence_targets + 0.1
+                # Calculate prediction entropy (uncertainty measure)
+                pred_probs = F.softmax(head_logits[i], dim=1)
+                entropy = -torch.sum(pred_probs * torch.log(pred_probs + 1e-8), dim=1)
+                
+                # Normalize entropy to [0, 1] range
+                max_entropy = torch.log(torch.tensor(self.bin_counts[i], dtype=torch.float, device=entropy.device))
+                normalized_entropy = entropy / max_entropy
+                
+                # Confidence target: 1 - normalized_entropy
+                confidence_targets = 1.0 - normalized_entropy
             
             conf_loss = self.confidence_loss(head_confidences[i].squeeze(1), confidence_targets)
             total_confidence_loss += conf_loss
@@ -343,16 +430,15 @@ class MultiBinAngleDetection(pl.LightningModule):
     def test_step(self, batch, batch_idx):
         x, y = batch
         
-        # Convert angles to class labels for each head
-        y_classes = self.angle_to_class_multiple(y)
-        
         # Forward pass
         head_logits, head_confidences = self(x)
         
-        # Calculate losses
+        # Calculate losses using soft labels (consistent with training/validation)
         total_loss = 0
         for i in range(self.num_heads):
-            cls_loss = self.classification_loss(head_logits[i], y_classes[i])
+            soft_labels = self.angle_to_soft_labels(y, i)
+            log_pred_probs = F.log_softmax(head_logits[i], dim=1)
+            cls_loss = F.kl_div(log_pred_probs, soft_labels, reduction='batchmean')
             total_loss += cls_loss
         
         # Calculate final predicted angles
