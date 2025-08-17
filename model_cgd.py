@@ -418,8 +418,7 @@ class CGDAngleDetection(pl.LightningModule):
         if is_overfitting:
             return {"optimizer": optimizer}
         else:
-            scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(
-                optimizer, mode='min', factor=0.5, patience=5, min_lr=1e-5)
+            scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(optimizer, mode='min', factor=0.5, patience=3, min_lr=1e-5)
             return {
                 "optimizer": optimizer,
                 "lr_scheduler": {"scheduler": scheduler, "monitor": "val_mae_deg", "frequency": 1}

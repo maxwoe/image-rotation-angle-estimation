@@ -46,7 +46,7 @@ class PSCAngleDetection(pl.LightningModule):
     
     def __init__(self, batch_size, train_dir, model_name="vit_tiny_patch16_224", learning_rate=0.001,
                  validation_split=0.1, random_seed=42, image_size=224,
-                 loss_type="mse", num_phases=3, omega=1.0, use_custom_head=True, test_dir=None, test_rotation_range=360.0, test_random_seed=42):
+                 loss_type="mae", num_phases=3, omega=1.0, use_custom_head=True, test_dir=None, test_rotation_range=360.0, test_random_seed=42):
         super().__init__()
         self.save_hyperparameters()
         
@@ -149,7 +149,7 @@ class PSCAngleDetection(pl.LightningModule):
         # Single frequency PSC
         codes = []
         for n in range(self.num_phases):
-            phase_shift = 2 * n * torch.pi / self.num_phases
+            phase_shift = 2 * torch.pi * n / self.num_phases
             codes.append(torch.cos(self.omega * angle_rad + phase_shift))
         
         return torch.stack(codes, dim=1)
@@ -299,7 +299,7 @@ class PSCAngleDetection(pl.LightningModule):
             return {"optimizer": optimizer}
         else:
             scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(
-                optimizer, mode='min', factor=0.5, patience=5, min_lr=1e-5)
+                optimizer, mode='min', factor=0.5, patience=3, min_lr=1e-5)
             return {
                 "optimizer": optimizer,
                 "lr_scheduler": {"scheduler": scheduler, "monitor": "val_loss", "frequency": 1}

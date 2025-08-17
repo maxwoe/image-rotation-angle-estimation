@@ -47,7 +47,7 @@ class MultiBinAngleDetection(pl.LightningModule):
 
     def __init__(self, batch_size, train_dir, model_name="vit_tiny_patch16_224", learning_rate=0.001,
                  validation_split=0.1, random_seed=42, image_size=224,
-                 bin_counts=[36, 72, 144], confidence_weight=0.1, overlap_margin=0.5, test_dir=None, test_rotation_range=360.0, test_random_seed=42):
+                 bin_counts=[36, 72, 144], confidence_weight=0.3, overlap_margin=0.5, test_dir=None, test_rotation_range=360.0, test_random_seed=42):
         super().__init__()
         self.save_hyperparameters()
         
@@ -145,8 +145,10 @@ class MultiBinAngleDetection(pl.LightningModule):
 
     def angle_to_class_multiple(self, angle):
         """Convert continuous angle to class indices for all heads"""
-        # Normalize angle to [0, 360)
-        angle = angle % 360
+        # Normalize angle to [0, 360) range with proper handling of edge cases
+        angle = angle % 360.0
+        # Ensure we handle the case where angle might be exactly 360 due to floating point precision
+        angle = torch.where(angle >= 360.0, angle - 360.0, angle)
         
         class_indices = []
         for i, (bin_count, bin_size) in enumerate(zip(self.bin_counts, self.bin_sizes)):
@@ -168,8 +170,10 @@ class MultiBinAngleDetection(pl.LightningModule):
         bin_size = self.bin_sizes[head_idx]
         device = angle.device
         
-        # Normalize angle to [0, 360)
-        angle = angle % 360
+        # Normalize angle to [0, 360) range with proper handling of edge cases
+        angle = angle % 360.0
+        # Ensure we handle the case where angle might be exactly 360 due to floating point precision
+        angle = torch.where(angle >= 360.0, angle - 360.0, angle)
         
         # Create soft labels
         soft_labels = torch.zeros(batch_size, bin_count, device=device)
@@ -180,11 +184,13 @@ class MultiBinAngleDetection(pl.LightningModule):
             # Primary bin
             primary_bin = int(angle_val / bin_size) % bin_count
             
-            # Calculate distance from bin center
+            # Calculate distance from bin center with proper circular handling
             bin_center = (primary_bin + 0.5) * bin_size
+            # Ensure bin center is in [0, 360) range
+            bin_center = bin_center % 360
             distance_from_center = abs(angle_val - bin_center)
             
-            # Handle circular distance
+            # Handle circular distance (shortest path around circle)
             distance_from_center = min(distance_from_center, 360 - distance_from_center)
             
             # Assign weight to primary bin
@@ -195,9 +201,13 @@ class MultiBinAngleDetection(pl.LightningModule):
             if self.overlap_margin > 0:
                 for offset in [-1, 1]:
                     neighbor_bin = (primary_bin + offset) % bin_count
-                    neighbor_center = (neighbor_bin + 0.5) * bin_size
                     
-                    # Handle circular distance to neighbor
+                    # Calculate neighbor center with proper circular handling
+                    neighbor_center = (neighbor_bin + 0.5) * bin_size
+                    # Ensure center is in [0, 360) range
+                    neighbor_center = neighbor_center % 360
+                    
+                    # Handle circular distance to neighbor  
                     neighbor_distance = abs(angle_val - neighbor_center)
                     neighbor_distance = min(neighbor_distance, 360 - neighbor_distance)
                     
@@ -242,7 +252,8 @@ class MultiBinAngleDetection(pl.LightningModule):
                 angular_diff = torch.minimum(angular_diff, 360 - angular_diff)
                 
                 # Use fine prediction if it's close and has reasonable confidence
-                window_size = 2 * coarse_bin_size  # Local window for refinement
+                # Larger window for more permissive hierarchical refinement
+                window_size = 4 * coarse_bin_size  # More generous window for refinement
                 if angular_diff <= window_size:
                     # Weighted combination within local window
                     total_confidence = current_confidence + fine_confidence
@@ -466,7 +477,7 @@ class MultiBinAngleDetection(pl.LightningModule):
             return {"optimizer": optimizer}
         else:
             scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(
-                optimizer, mode='min', factor=0.5, patience=5, min_lr=1e-5)
+                optimizer, mode='min', factor=0.5, patience=3, min_lr=1e-5)
             return {
                 "optimizer": optimizer,
                 "lr_scheduler": {"scheduler": scheduler, "monitor": "val_loss", "frequency": 1}

@@ -23,50 +23,33 @@ from datetime import datetime
 from typing import Dict, List, Tuple
 from architectures import get_enabled_architectures, get_default_learning_rate, get_scaled_learning_rate
 
-# Default loss types for each approach and approach-loss combinations
-DEFAULT_APPROACH_LOSSES = {
-    # Base approaches with default loss types
-    "direct_angle": "mse", 
-    "unit_vector": "mse",
-    "psc": "mse",
-    "cgd": "kl_divergence",    
-    # Classification approach variants
-    "classification": "cross_entropy",           # Default classification
-    "classification_csl": "csl",                # Circular Smooth Label variant
-    "classification_dcl": "dcl",                # Dense Coded Labels variant
-    "multibin": "multibin",
-}
+# Base approaches supported by the training system
+BASE_APPROACHES = ["direct_angle", "unit_vector", "psc", "cgd", "classification", ] # "multibin"
 
-def parse_base_approach(approach: str) -> str:
-    """Extract base approach from approach-loss combination.
+def parse_approach_and_loss(approach_str: str) -> tuple[str, str | None]:
+    """Parse approach string into base approach and loss type.
     
     Examples:
-        classification_csl -> classification
-        classification_dcl -> classification  
-        cgd -> cgd
+        direct_angle_mae -> ("direct_angle", "mae")
+        classification_csl -> ("classification", "csl")  
+        cgd -> ("cgd", None)
     """
-    # Known base approaches
-    base_approaches = ["classification", "unit_vector", "direct_angle", "psc", "cgd", "multibin"]
+    if "_" in approach_str:
+        base, loss = approach_str.rsplit("_", 1)
+        if base in BASE_APPROACHES:
+            return base, loss
     
-    # Check if it's already a base approach
-    if approach in base_approaches:
-        return approach
-        
-    # Check for approach_variant pattern
-    for base in base_approaches:
-        if approach.startswith(f"{base}_"):
-            return base
+    # If no underscore or base not recognized, treat as base approach
+    if approach_str in BASE_APPROACHES:
+        return approach_str, None
     
-    # Fallback - return as-is
-    return approach
+    raise ValueError(f"Unknown approach '{approach_str}'. Valid base approaches: {BASE_APPROACHES}")
 
 def run_experiment(approach: str, model_name: str, epochs: int, batch_size: int, timestamp: str, mixed_precision: bool = False) -> Dict:
     """Run single training+testing experiment using train.py."""
-    loss_type = DEFAULT_APPROACH_LOSSES[approach]
+    # Parse approach string into base approach and loss type
+    base_approach, loss_type = parse_approach_and_loss(approach)
     learning_rate = get_scaled_learning_rate(model_name, batch_size)
-    
-    # Parse approach-loss combinations (e.g., "classification_csl" -> "classification")
-    base_approach = parse_base_approach(approach)
     
     print(f"  Running {approach} + {model_name.split('.')[0]} (LR: {learning_rate:.0e})")
     
@@ -80,7 +63,6 @@ def run_experiment(approach: str, model_name: str, epochs: int, batch_size: int,
         cmd = [
             "python", "train.py",
             "--approach", base_approach,
-            "--loss-type", loss_type,
             "--max-epochs", str(epochs),
             "--learning-rate", str(learning_rate),
             "--batch-size", str(batch_size),
@@ -90,6 +72,10 @@ def run_experiment(approach: str, model_name: str, epochs: int, batch_size: int,
             "--run-test",
             "--test-dirs", "data/datasets/test_drdc",
         ]
+        
+        # Add loss type if specified
+        if loss_type is not None:
+            cmd.extend(["--loss-type", loss_type])
         
         # Add mixed precision flag if enabled
         if mixed_precision:
@@ -374,13 +360,15 @@ def main():
     # Generate timestamp for unique filenames
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     
+    # Create comparison directory for output files
+    os.makedirs("comparison", exist_ok=True)
+    
     parser = argparse.ArgumentParser(description="Unified comparison of approaches and models")
     parser.add_argument("--approaches", nargs='+', 
-                       choices=list(DEFAULT_APPROACH_LOSSES.keys()),
-                       help="Approaches to test. Supports approach-loss combinations like 'classification_csl'. (default: all)")
+                       help="Approaches to test. Use base approaches like 'direct_angle' or combinations like 'direct_angle_mae'. (default: all base approaches)")
     parser.add_argument("--models", nargs='+', 
                        help="Models to test (default: all from architectures.py)")
-    parser.add_argument("--epochs", type=int, default=100, 
+    parser.add_argument("--epochs", type=int, default=1000, 
                        help="Epochs per experiment")
     parser.add_argument("--batch-size", type=int, default=16, 
                        help="Batch size for training")
@@ -392,7 +380,7 @@ def main():
     args = parser.parse_args()
     
     # Determine approaches and models to test
-    approaches = args.approaches or list(DEFAULT_APPROACH_LOSSES.keys())
+    approaches = args.approaches or BASE_APPROACHES
     models = args.models or get_enabled_architectures()
     
     total_experiments = len(approaches) * len(models)
@@ -429,7 +417,7 @@ def main():
             time.sleep(1)  # Brief pause
     
     # Save detailed results
-    with open(args.output, 'w') as f:
+    with open(f"comparison/{args.output}", 'w') as f:
         json.dump(results, f, indent=2)
     
     # Print beautiful overview and save to file
@@ -438,7 +426,7 @@ def main():
     print("="*100)
     
     # Create overview file
-    overview_filename = f"{timestamp}_comparison_overview.txt"
+    overview_filename = f"comparison/{timestamp}_comparison_overview.txt"
     with open(overview_filename, 'w') as overview_file:
         # Write header to file
         overview_file.write("="*100 + "\n")
@@ -452,7 +440,7 @@ def main():
         print_recommendations(results, overview_file)
         print_summary_statistics(results, overview_file)
     
-    print(f"\nDetailed results saved to: {args.output}")
+    print(f"\nDetailed results saved to: comparison/{args.output}")
     print(f"Overview saved to: {overview_filename}")
 
 if __name__ == "__main__":

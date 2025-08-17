@@ -15,9 +15,9 @@ EfficientNet V2 (5e-5):
 - Fine-tuning consensus: 5e-5 to 1e-4 range widely recommended
 
 Vision Transformers (1e-4):
-- Original ViT paper used SGD with 0.06 for large-scale training
+- Original ViT paper used SGD
 - For AdamW fine-tuning, 1e-4 prevents convergence issues seen with higher rates
-- Reduced from 3e-4 based on fine-tuning best practices
+- 2e-5 to 3e-4 range
 
 ConvNeXt V2 (2e-4 to 6.25e-4):
 - Original paper: "AdamW optimizer with learning rate sweep {1e-4, 2e-4, 3e-4}"
@@ -60,15 +60,15 @@ If using different optimizers, rates may need adjustment.
 
 ARCHITECTURES = {
     # Vision Transformers (1e-4 for AdamW fine-tuning, original paper used SGD with 0.06)
-    # "vit_tiny_patch16_224.augreg_in21k_ft_in1k": {
-    #     "name": "vit_tiny_patch16_224.augreg_in21k_ft_in1k",
-    #     "input_size": 224,
-    #     "type": "vision_transformer",
-    #     "default_lr": 0.0001,
-    #     "default_batch_size": 512
-    # },
-    "vit_small_patch16_224.augreg_in21k_ft_in1k": {
-        "name": "vit_small_patch16_224.augreg_in21k_ft_in1k",
+    "vit_tiny_patch16_224.augreg_in21k_ft_in1k": {
+        "name": "vit_tiny_patch16_224.augreg_in21k_ft_in1k",
+        "input_size": 224,
+        "type": "vision_transformer",
+        "default_lr": 0.0001,
+        "default_batch_size": 512
+    },
+    "vit_base_patch16_224.augreg_in21k_ft_in1k": {
+        "name": "vit_base_patch16_224.augreg_in21k_ft_in1k",
         "input_size": 224,
         "type": "vision_transformer",
         "default_lr": 0.0001,
@@ -127,13 +127,13 @@ ARCHITECTURES = {
     #     "default_lr": 0.0002,
     #     "default_batch_size": 1024
     # },
-    "convnextv2_nano.fcmae_ft_in1k": {
-        "name": "convnextv2_nano.fcmae_ft_in1k",
-        "input_size": 224,
-        "type": "convnext",
-        "default_lr": 0.0002,
-        "default_batch_size": 1024
-    },
+    # "convnextv2_nano.fcmae_ft_in1k": {
+    #     "name": "convnextv2_nano.fcmae_ft_in1k",
+    #     "input_size": 224,
+    #     "type": "convnext",
+    #     "default_lr": 0.0002,
+    #     "default_batch_size": 1024
+    # },
     # "convnextv2_base.fcmae_ft_in1k": {
     #     "name": "convnextv2_base.fcmae_ft_in1k",
     #     "input_size": 224,
@@ -171,13 +171,13 @@ ARCHITECTURES = {
     #     "default_lr": 0.0001,
     #     "default_batch_size": 256
     # },
-    "resnet50.a1_in1k": {
-        "name": "resnet50.a1_in1k",
-        "input_size": 224,
-        "type": "resnet",
-        "default_lr": 0.0001,
-        "default_batch_size": 256
-    },
+    # "resnet50.a1_in1k": {
+    #     "name": "resnet50.a1_in1k",
+    #     "input_size": 224,
+    #     "type": "resnet",
+    #     "default_lr": 0.0001,
+    #     "default_batch_size": 256
+    # },
     # "resnet101.a1_in1k": {
     #     "name": "resnet101.a1_in1k",
     #     "input_size": 224,
@@ -202,7 +202,7 @@ ARCHITECTURES = {
     #     "default_batch_size": 512
     # },
     
-    # EfficientNet V2 (5e-5 optimal for AdamW fine-tuning) - COMMENTED OUT: Poor CGD performance (4.1-4.7°)
+    # EfficientNet V2 (5e-5 optimal for AdamW fine-tuning)
     # "tf_efficientnetv2_b0.in1k": {
     #     "name": "tf_efficientnetv2_b0.in1k",
     #     "input_size": 192,
@@ -238,16 +238,16 @@ ARCHITECTURES = {
     #     "default_lr": 0.00005,
     #     "default_batch_size": 512
     # },
-    # "efficientnetv2_rw_t.ra2_in1k": {
-    #     "name": "efficientnetv2_rw_t.ra2_in1k",
-    #     "input_size": 224,
-    #     "type": "efficientnet",
-    #     "default_lr": 0.00005,
-    #     "default_batch_size": 512
-    # },
-    "efficientnetv2_rw_s.ra2_in1k": {
-        "name": "efficientnetv2_rw_s.ra2_in1k",
+    "efficientnetv2_rw_t.ra2_in1k": {
+        "name": "efficientnetv2_rw_t.ra2_in1k",
         "input_size": 224,
+        "type": "efficientnet",
+        "default_lr": 0.00005,
+        "default_batch_size": 512
+    },
+    "efficientnetv2_rw_m.agc_in1k": {
+        "name": "efficientnetv2_rw_m.agc_in1k",
+        "input_size": 320,
         "type": "efficientnet",
         "default_lr": 0.00005,
         "default_batch_size": 512
@@ -261,8 +261,8 @@ ARCHITECTURES = {
         "default_lr": 0.004,
         "default_batch_size": 4096
     },
-    "mambaout_small.in1k": {
-        "name": "mambaout_small.in1k",
+    "mambaout_base.in1k": {
+        "name": "mambaout_base.in1k",
         "input_size": 224,
         "type": "mamba",
         "default_lr": 0.004,
@@ -277,13 +277,13 @@ ARCHITECTURES = {
         "default_lr": 0.0001,
         "default_batch_size": 512
     },
-    # "focalnet_small_lrf.ms_in1k": {
-    #     "name": "focalnet_small_lrf.ms_in1k",
-    #     "input_size": 224,
-    #     "type": "focalnet",
-    #     "default_lr": 0.0001,
-    #     "default_batch_size": 512
-    # },
+    "focalnet_base_lrf.ms_in1k": {
+        "name": "focalnet_base_lrf.ms_in1k",
+        "input_size": 224,
+        "type": "focalnet",
+        "default_lr": 0.0001,
+        "default_batch_size": 512
+    },
     
     # EdgeNeXt (1e-3 for fine-tuning, original paper used 6e-3 for training from scratch)
     "edgenext_xx_small.in1k": {
@@ -293,13 +293,13 @@ ARCHITECTURES = {
         "default_lr": 0.001,
         "default_batch_size": 512
     },
-    "edgenext_x_small.in1k": {
-        "name": "edgenext_x_small.in1k",
-        "input_size": 256,
-        "type": "edgenext",
-        "default_lr": 0.001,
-        "default_batch_size": 512
-    },
+    # "edgenext_x_small.in1k": {
+    #     "name": "edgenext_x_small.in1k",
+    #     "input_size": 256,
+    #     "type": "edgenext",
+    #     "default_lr": 0.001,
+    #     "default_batch_size": 512
+    # },
     # "edgenext_small.usi_in1k": {  # Keeping x_small and base for size coverage
     #     "name": "edgenext_small.usi_in1k",
     #     "input_size": 256,

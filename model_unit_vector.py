@@ -40,7 +40,7 @@ class UnitVectorAngleDetection(pl.LightningModule):
     
     def __init__(self, batch_size, train_dir, model_name="vit_tiny_patch16_224", learning_rate=0.001,
                  validation_split=0.1, random_seed=42, image_size=224,
-                 loss_type="mse", use_custom_head: bool = True, use_unit_regularization: bool = True,
+                 loss_type="mae", use_custom_head: bool = True, use_unit_regularization: bool = True,
                  reg_weight: float = 0.01, test_dir=None, test_rotation_range=360.0, test_random_seed=42):
         super().__init__()
         self.save_hyperparameters()
@@ -395,7 +395,7 @@ class UnitVectorAngleDetection(pl.LightningModule):
         if is_overfitting:
             return {"optimizer": optimizer}
         else:
-            scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(optimizer, mode='min', factor=0.5, patience=5, min_lr=1e-5)
+            scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(optimizer, mode='min', factor=0.5, patience=3, min_lr=1e-5)
             lr_scheduler = {"scheduler": scheduler, "monitor": "val_loss", "frequency": 1}
 
             # scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=self.trainer.max_epochs, eta_min=1e-7)

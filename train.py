@@ -139,8 +139,14 @@ def train_model(args):
             "validation_split": args.validation_split,
             "random_seed": args.random_seed,
             "image_size": args.image_size,
-            "loss_type": args.loss_type
+            "loss_type": args.loss_type,
+            "test_rotation_range": args.test_rotation_range,
+            "test_random_seed": args.test_random_seed,
         }
+        
+        # Add test directory if provided
+        if args.test_dirs:
+            checkpoint_kwargs["test_dir"] = args.test_dirs[0]
         
                 
         model = ModelClass.load_from_checkpoint(args.resume_ckpt, **checkpoint_kwargs)
@@ -155,10 +161,16 @@ def train_model(args):
             "validation_split": args.validation_split,
             "random_seed": args.random_seed,
             "image_size": args.image_size,
+            "test_rotation_range": args.test_rotation_range,
+            "test_random_seed": args.test_random_seed,
         }
         
         if args.loss_type:
             model_kwargs["loss_type"] = args.loss_type
+            
+        # Add test directory if provided
+        if args.test_dirs:
+            model_kwargs["test_dir"] = args.test_dirs[0]
             
 
         model = ModelClass(**model_kwargs)
@@ -521,7 +533,7 @@ def main():
                         help="Enable mixed precision training (16-bit)")
     parser.add_argument("--accumulate-grad-batches", type=int, default=1,
                         help="Number of batches to accumulate gradients over")
-    parser.add_argument("--early-stopping-patience", type=int, default=10,
+    parser.add_argument("--early-stopping-patience", type=int, default=15,
                         help="Number of epochs with no improvement before stopping")
     parser.add_argument("--disable-early-stopping", action="store_true",
                         help="Disable early stopping (train for full max-epochs)")
