@@ -27,7 +27,7 @@ from data_loader import RotationDataset
 from metrics import compute_validation_metrics, compute_test_metrics
 
 
-class DirectAngleDetection(pl.LightningModule):
+class DirectAngleEstimation(pl.LightningModule):
     """
     Direct angle prediction model with single output neuron.
 

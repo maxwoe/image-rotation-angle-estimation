@@ -14,7 +14,7 @@ class RotationDataset(Dataset):
     def __init__(self, image_paths, image_size=None, mode="train", val_angles=None, train_angles=None, model_name=None, 
                  test_rotation_range=360.0, test_random_seed=42):
         """
-        Dataset for image orientation detection with automatic train/val splitting
+        Dataset for image orientation estimation with automatic train/val splitting
         
         Args:
             image_paths: List of image file paths
@@ -68,7 +68,7 @@ class RotationDataset(Dataset):
             try:
                 # Get model-specific data configuration
                 data_config = timm.data.resolve_model_data_config(model_name)
-                # Override crop settings for orientation detection - we need full image content
+                # Override crop settings for orientation estimation - we need full image content
                 data_config['crop_pct'] = 1.0  # Use full image, no center cropping
                 
                 # Determine input size with priority: explicit > model default > fallback

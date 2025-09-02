@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """
-Phase Shift Coder (PSC) Approach for Orientation Detection
+Phase Shift Coder (PSC) Approach for Orientation Estimation
 ==========================================================
 
 This approach implements Phase Shift Coder from the paper "On Boundary Discontinuity 
-in Angle Regression Based Arbitrary Oriented Object Detection".
+in Angle Regression Based Arbitrary Oriented Object Estimation".
 
 PSC addresses boundary discontinuity in angle regression using continuous phase-shifting codes.
 Mathematical formulation: M = {mn = cos(ωθ + 2nπ/Nstep)} for encoding
@@ -33,9 +33,9 @@ from data_loader import RotationDataset
 from metrics import compute_validation_metrics, compute_test_metrics
 
 
-class PSCAngleDetection(pl.LightningModule):
+class PSCAngleEstimation(pl.LightningModule):
     """
-    Phase Shift Coder (PSC) angle detection model.
+    Phase Shift Coder (PSC) angle estimation model.
     
     Uses phase-shifting codes to encode angles without boundary discontinuity:
     M = {mn = cos(ωθ + 2nπ/Nstep)} for n = 0, 1, ..., Nstep-1

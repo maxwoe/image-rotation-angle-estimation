@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Unit Vector Approach for Orientation Detection
+Unit Vector Approach for Orientation Estimation
 ==============================================
 
 This approach uses two output neurons to predict unit vectors [cos(θ), sin(θ)].
@@ -29,9 +29,9 @@ from data_loader import RotationDataset
 from metrics import compute_validation_metrics, compute_test_metrics
 
       
-class UnitVectorAngleDetection(pl.LightningModule):
+class UnitVectorAngleEstimation(pl.LightningModule):
     """
-    Unit vector angle detection model.
+    Unit vector angle estimation model.
     
     Uses two output neurons to predict [cos(θ), sin(θ)] unit vectors.
     This approach naturally handles the circular nature of angles without

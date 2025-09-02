@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Unified Comparison Script for Orientation Detection
+Unified Comparison Script for Orientation Estimation
 ==================================================
 
 Compare ML approaches and model architectures in a unified interface.

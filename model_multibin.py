@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-MultiBin Approach for Orientation Detection
+MultiBin Approach for Orientation Estimation
 ===========================================
 
 This approach uses multiple classification heads with different bin resolutions
@@ -31,9 +31,9 @@ from data_loader import RotationDataset
 from metrics import compute_validation_metrics, compute_test_metrics
 
 
-class MultiBinAngleDetection(pl.LightningModule):
+class MultiBinAngleEstimation(pl.LightningModule):
     """
-    MultiBin angle detection model with multiple overlapping classification heads
+    MultiBin angle estimation model with multiple overlapping classification heads
     and confidence estimation. Based on Lee et al. 2022 and Mousavian et al. 2017.
     
     Uses hierarchical overlapping bin structure (all covering full 360°):

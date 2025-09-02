@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Flexible Training Script for Orientation Detection
+Flexible Training Script for Orientation Estimation
 =================================================
 
 This script allows easy switching between two different approaches:
@@ -31,29 +31,29 @@ import torch
 from architectures import get_default_learning_rate, get_scaled_learning_rate
 
 # Import all model approaches
-from model_unit_vector import UnitVectorAngleDetection
-from model_direct_angle import DirectAngleDetection
-from model_classification import ClassificationAngleDetection
-from model_cgd import CGDAngleDetection
-from model_psc import PSCAngleDetection
-from model_multibin import MultiBinAngleDetection
+from model_unit_vector import UnitVectorAngleEstimation
+from model_direct_angle import DirectAngleEstimation
+from model_classification import ClassificationAngleEstimation
+from model_cgd import CGDAngleEstimation
+from model_psc import PSCAngleEstimation
+from model_multibin import MultiBinAngleEstimation
 
 torch.set_float32_matmul_precision('high')
 
 def get_model_class(approach):
     """Get the appropriate model class based on approach"""
     if approach == "unit_vector":
-        return UnitVectorAngleDetection
+        return UnitVectorAngleEstimation
     elif approach == "direct_angle":
-        return DirectAngleDetection
+        return DirectAngleEstimation
     elif approach == "classification":
-        return ClassificationAngleDetection
+        return ClassificationAngleEstimation
     elif approach == "cgd":
-        return CGDAngleDetection
+        return CGDAngleEstimation
     elif approach == "psc":
-        return PSCAngleDetection
+        return PSCAngleEstimation
     elif approach == "multibin":
-        return MultiBinAngleDetection
+        return MultiBinAngleEstimation
     else:
         raise ValueError(
             f"Unknown approach: {approach}. Use 'unit_vector', 'direct_angle', 'classification', 'cgd', 'psc', 'multibin'")
@@ -489,7 +489,7 @@ def show_comprehensive_test_analysis(test_metrics: dict):
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Training for image angle detection with different approaches",
+        description="Training for image angle estimation with different approaches",
         formatter_class=argparse.ArgumentDefaultsHelpFormatter
     )
 

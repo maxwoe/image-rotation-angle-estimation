@@ -9,11 +9,11 @@ from torchvision import transforms
 import glob
 
 # Import model classes
-from model_unit_vector import UnitVectorAngleDetection
-from model_direct_angle import DirectAngleDetection
-from model_classification import ClassificationAngleDetection
-from model_cgd import CGDAngleDetection
-from model_psc import PSCAngleDetection
+from model_unit_vector import UnitVectorAngleEstimation
+from model_direct_angle import DirectAngleEstimation
+from model_classification import ClassificationAngleEstimation
+from model_cgd import CGDAngleEstimation
+from model_psc import PSCAngleEstimation
 from architectures import get_architecture_names, get_default_input_size
 
 # Constants
@@ -36,11 +36,11 @@ state = ModelState()
 
 # Available approaches and architectures
 APPROACHES = {
-    "unit_vector": UnitVectorAngleDetection,
-    "direct_angle": DirectAngleDetection,
-    "classification": ClassificationAngleDetection,
-    "cgd": CGDAngleDetection,
-    "psc": PSCAngleDetection,
+    "unit_vector": UnitVectorAngleEstimation,
+    "direct_angle": DirectAngleEstimation,
+    "classification": ClassificationAngleEstimation,
+    "cgd": CGDAngleEstimation,
+    "psc": PSCAngleEstimation,
 }
 
 ARCHITECTURES = get_architecture_names()
@@ -99,7 +99,7 @@ def auto_load_model():
         device = get_device()
         result = load_selected_model(
             approach="cgd",
-            architecture="convnextv2_base.fcmae_ft_in1k", 
+            architecture="convnextv2_base.fcmae_ft_in22k_in1k", 
             checkpoint_path=checkpoints[0],
             image_size=None
         )
@@ -318,14 +318,14 @@ def batch_process_images(input_files):
 
 
 if __name__ == "__main__":
-    logger.info("Starting Deep Image Orientation Detection Gradio App")
+    logger.info("Starting Image Rotation Amgle Estimation Gradio App")
     
     # Create interface
     app = gr.Blocks()
     with app:
-        app.load(auto_load_model)
+        # app.load(auto_load_model)
         
-        gr.HTML("<h1>Deep Image Orientation Detection</h1>")
+        gr.HTML("<h1>Image Rotation Amgle Estimation</h1>")
         
         # Model Selection Section
         with gr.Accordion(label="Model Settings", open=False):

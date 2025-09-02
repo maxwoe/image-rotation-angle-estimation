@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
-Comprehensive Circular Metrics for Orientation Detection
+Comprehensive Circular Metrics for Orientation Estimation
 ========================================================
 
-This module provides industry-standard metrics for evaluating orientation detection models,
+This module provides industry-standard metrics for evaluating orientation estimation models,
 including circular-aware statistics and bootstrap confidence intervals.
 
 Metrics included:
@@ -39,7 +39,7 @@ class MetricResult:
 
 class CircularMetrics:
     """
-    Comprehensive circular metrics for orientation detection evaluation.
+    Comprehensive circular metrics for orientation estimation evaluation.
     
     Computes various metrics from predicted and true angles, handling the circular
     nature of angular data (0° = 360°) and providing bootstrap confidence intervals.

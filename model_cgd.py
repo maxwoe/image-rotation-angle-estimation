@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Circular Gaussian Distribution (CGD) Approach for Orientation Detection
+Circular Gaussian Distribution (CGD) Approach for Orientation Estimation
 ======================================================================
 
 This approach represents angles as probability distributions over the angular space.
@@ -178,9 +178,9 @@ class CircularGaussianDistribution(nn.Module):
         return normalized_entropy
 
 
-class CGDAngleDetection(pl.LightningModule):
+class CGDAngleEstimation(pl.LightningModule):
     """
-    Circular Gaussian Distribution (CGD) model for 360° image orientation detection
+    Circular Gaussian Distribution (CGD) model for 360° image orientation estimation
     
     Uses probability distributions over the full 360° angle space.
     Based on the paper: Electronics 2023, 12, 3265 (adapted for full circle)

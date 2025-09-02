@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
-Classification-Based Approach for Orientation Detection
+Classification-Based Approach for Orientation Estimation
 ======================================================
 
-This approach discretizes angles into bins and treats orientation detection as a 
+This approach discretizes angles into bins and treats orientation estimation as a 
 classification problem. The model outputs class probabilities for each angle bin.
 
 Includes state-of-the-art implementations:
@@ -30,11 +30,11 @@ from data_loader import RotationDataset
 from metrics import compute_validation_metrics, compute_test_metrics
 
 
-class ClassificationAngleDetection(pl.LightningModule):
+class ClassificationAngleEstimation(pl.LightningModule):
     """
-    Classification-based angle detection model.
+    Classification-based angle estimation model.
     
-    Discretizes the 360° angle space into bins and treats orientation detection
+    Discretizes the 360° angle space into bins and treats orientation estimation
     as a multi-class classification problem. Each bin represents a range of angles.
     """
 
