@@ -1,0 +1,92 @@
+[
+  {
+    "approach": "oad360",
+    "model_name": "vit-ang-loss",
+    "seed": 0,
+    "metrics": {
+      "test_coco_mae_deg": 9.610,
+      "test_coco_rmse_deg": 35.139,
+      "test_coco_median_deg": 1.422,
+      "test_coco_p90_deg": 3.862,
+      "test_coco_p95_deg": 85.444,
+      "test_coco_acc_2deg": 0.675,
+      "test_coco_acc_5deg": 0.919,
+      "test_coco_acc_10deg": 0.937,
+      "test_coco_auc_2deg": 0.354,
+      "test_coco_auc_5deg": 0.654,
+      "test_coco_auc_10deg": 0.793
+    }
+  },
+  {
+    "approach": "oad360",
+    "model_name": "vit-ang-loss",
+    "seed": 1,
+    "metrics": {
+      "test_coco_mae_deg": 11.957,
+      "test_coco_rmse_deg": 39.600,
+      "test_coco_median_deg": 1.297,
+      "test_coco_p90_deg": 4.631,
+      "test_coco_p95_deg": 92.790,
+      "test_coco_acc_2deg": 0.672,
+      "test_coco_acc_5deg": 0.904,
+      "test_coco_acc_10deg": 0.911,
+      "test_coco_auc_2deg": 0.382,
+      "test_coco_auc_5deg": 0.655,
+      "test_coco_auc_10deg": 0.782
+    }
+  },
+  {
+    "approach": "oad360",
+    "model_name": "vit-ang-loss",
+    "seed": 2,
+    "metrics": {
+      "test_coco_mae_deg": 9.967,
+      "test_coco_rmse_deg": 34.089,
+      "test_coco_median_deg": 1.312,
+      "test_coco_p90_deg": 4.492,
+      "test_coco_p95_deg": 88.200,
+      "test_coco_acc_2deg": 0.672,
+      "test_coco_acc_5deg": 0.907,
+      "test_coco_acc_10deg": 0.923,
+      "test_coco_auc_2deg": 0.373,
+      "test_coco_auc_5deg": 0.650,
+      "test_coco_auc_10deg": 0.784
+    }
+  },
+  {
+    "approach": "oad360",
+    "model_name": "vit-ang-loss",
+    "seed": 3,
+    "metrics": {
+      "test_coco_mae_deg": 9.531,
+      "test_coco_rmse_deg": 33.879,
+      "test_coco_median_deg": 1.395,
+      "test_coco_p90_deg": 4.089,
+      "test_coco_p95_deg": 86.667,
+      "test_coco_acc_2deg": 0.674,
+      "test_coco_acc_5deg": 0.908,
+      "test_coco_acc_10deg": 0.928,
+      "test_coco_auc_2deg": 0.359,
+      "test_coco_auc_5deg": 0.652,
+      "test_coco_auc_10deg": 0.787
+    }
+  },
+  {
+    "approach": "oad360",
+    "model_name": "vit-ang-loss",
+    "seed": 4,
+    "metrics": {
+      "test_coco_mae_deg": 9.372,
+      "test_coco_rmse_deg": 33.164,
+      "test_coco_median_deg": 1.322,
+      "test_coco_p90_deg": 4.356,
+      "test_coco_p95_deg": 87.793,
+      "test_coco_acc_2deg": 0.684,
+      "test_coco_acc_5deg": 0.917,
+      "test_coco_acc_10deg": 0.927,
+      "test_coco_auc_2deg": 0.379,
+      "test_coco_auc_5deg": 0.658,
+      "test_coco_auc_10deg": 0.791
+    }
+  }
+]

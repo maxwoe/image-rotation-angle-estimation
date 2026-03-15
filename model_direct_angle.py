@@ -135,7 +135,7 @@ class DirectAngleEstimation(pl.LightningModule):
                 logger.warning(f"Checkpoint not found at {checkpoint_path}")
                 raise FileNotFoundError("Checkpoint file not found")
 
-        except Exception as e:
+        except (RuntimeError, KeyError, TypeError) as e:
             logger.warning(f"Failed to load checkpoint: {e}")
             logger.info("Creating new model with pretrained weights")
             model = cls(**kwargs)
@@ -185,18 +185,20 @@ class DirectAngleEstimation(pl.LightningModule):
 
     def angular_smooth_l1_sin_loss(self, y_pred, y_true, beta=1.0):
         """
-        Smooth L1 loss applied to sin(θ_p - θ_t)
-        As suggested: L_θ = SmoothL1(sin(θ_p - θ_t))
-        
-        Note: sin() treats 0° and 180° errors equally (both give sin=0)
+        Smooth L1 loss applied to sin((θ_p - θ_t) / 2)
+        L_θ = SmoothL1(sin((θ_p - θ_t) / 2))
+
+        Uses half-angle sine: sin(Δ/2) is monotonically increasing over [0°, 180°],
+        equalling 0 only at 0° error and 1 at 180° error. This avoids the zero-gradient
+        trap of sin(Δ), which is also zero at 180° error (the worst case).
         """
         # Convert to radians
         y_true_rad = self._degrees_to_radians(y_true)
         y_pred_rad = self._degrees_to_radians(y_pred)
-        
-        # Calculate sin of angle difference
+
+        # Half-angle sine: monotonically increasing in [0°, 180°]
         angle_diff = y_pred_rad - y_true_rad
-        sin_diff = torch.sin(angle_diff)
+        sin_diff = torch.sin(angle_diff / 2)
         
         # Apply smooth L1 to sin difference
         smooth_l1 = torch.where(
@@ -305,7 +307,7 @@ class DirectAngleEstimation(pl.LightningModule):
         loss = self.loss_fn(y_hat, y)
 
         # Normalize predicted angles
-        pred_angles = self._normalize_angles(y_hat.squeeze())
+        pred_angles = self._normalize_angles(y_hat)
         
         # Calculate comprehensive metrics
         val_metrics = compute_validation_metrics(pred_angles, y)
@@ -323,7 +325,7 @@ class DirectAngleEstimation(pl.LightningModule):
         loss = self.loss_fn(y_hat, y)
 
         # Normalize predicted angles
-        pred_angles = self._normalize_angles(y_hat.squeeze())
+        pred_angles = self._normalize_angles(y_hat)
         
         # Calculate comprehensive test metrics
         test_metrics = compute_validation_metrics(pred_angles, y, prefix="test")
@@ -425,11 +427,17 @@ class DirectAngleEstimation(pl.LightningModule):
         self.eval()
         image = Image.open(image_path).convert('RGB')
 
-        transform = transforms.Compose([
-            transforms.Resize((self.image_size, self.image_size)),
-            transforms.ToTensor(),
-            transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
-        ])
+        try:
+            import timm.data
+            data_config = timm.data.resolve_model_data_config(self.hparams.model_name)
+            data_config['crop_pct'] = 1.0
+            transform = timm.data.create_transform(**data_config, is_training=False)
+        except Exception:
+            transform = transforms.Compose([
+                transforms.Resize((self.image_size or 224, self.image_size or 224)),
+                transforms.ToTensor(),
+                transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
+            ])
 
         image_tensor = transform(image).unsqueeze(0)
 

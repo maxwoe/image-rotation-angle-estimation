@@ -196,7 +196,7 @@ class CGDAngleEstimation(pl.LightningModule):
         random_seed: int = 42,
         image_size: int = 224,
         num_bins: int = 360,  # Full circle with 1° resolution
-        sigma: float = 6.0,   # Gaussian standard deviation in degrees
+        sigma: float = 6.0,   # Gaussian standard deviation in degrees (Xu et al. 2023 recommendation)
         inference_method: str = 'argmax',
         loss_type: str = 'kl_divergence',
         test_dir=None,
@@ -267,7 +267,7 @@ class CGDAngleEstimation(pl.LightningModule):
                 logger.warning(f"Checkpoint not found at {checkpoint_path}")
                 raise FileNotFoundError("Checkpoint file not found")
 
-        except Exception as e:
+        except (RuntimeError, KeyError, TypeError) as e:
             logger.warning(f"Failed to load checkpoint: {e}")
             logger.info("Creating new model with pretrained weights")
             model = cls(**kwargs)

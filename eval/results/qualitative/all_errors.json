@@ -1,0 +1,6182 @@
+[
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000015953.jpg",
+    "angle_applied": 71.99874896270403,
+    "angle_predicted": 72.0,
+    "error": 0.0012510372959724236
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000058029.jpg",
+    "angle_applied": 238.00230414291582,
+    "angle_predicted": 238.0,
+    "error": 0.0023041429158183746
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000050482.jpg",
+    "angle_applied": 261.9976583571905,
+    "angle_predicted": 262.0,
+    "error": 0.0023416428094833464
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000027756.jpg",
+    "angle_applied": 125.00406645559904,
+    "angle_predicted": 125.0,
+    "error": 0.004066455599044616
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000000873.jpg",
+    "angle_applied": 343.0049965099,
+    "angle_predicted": 343.0,
+    "error": 0.004996509900024648
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000003947.jpg",
+    "angle_applied": 36.00506193175987,
+    "angle_predicted": 36.0,
+    "error": 0.0050619317598687985
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000017741.jpg",
+    "angle_applied": 135.99066214529313,
+    "angle_predicted": 136.0,
+    "error": 0.009337854706870985
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000034773.jpg",
+    "angle_applied": 280.99050346312396,
+    "angle_predicted": 281.0,
+    "error": 0.009496536876042683
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000045835.jpg",
+    "angle_applied": 11.989665556810628,
+    "angle_predicted": 12.0,
+    "error": 0.010334443189371711
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000040729.jpg",
+    "angle_applied": 108.01041101133465,
+    "angle_predicted": 108.0,
+    "error": 0.010411011334653608
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000050350.jpg",
+    "angle_applied": 188.98935921153515,
+    "angle_predicted": 189.0,
+    "error": 0.010640788464854722
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000007274.jpg",
+    "angle_applied": 206.01068608471442,
+    "angle_predicted": 206.0,
+    "error": 0.010686084714421895
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000009171.jpg",
+    "angle_applied": 21.988273344043442,
+    "angle_predicted": 22.0,
+    "error": 0.011726655956557863
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000050124.jpg",
+    "angle_applied": 143.01242898049514,
+    "angle_predicted": 143.0,
+    "error": 0.012428980495144515
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000032760.jpg",
+    "angle_applied": 35.01287812355063,
+    "angle_predicted": 35.0,
+    "error": 0.012878123550628118
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000029680.jpg",
+    "angle_applied": 71.01341074826556,
+    "angle_predicted": 71.0,
+    "error": 0.013410748265556549
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000041279.jpg",
+    "angle_applied": 244.01395324664284,
+    "angle_predicted": 244.0,
+    "error": 0.013953246642842032
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000028649.jpg",
+    "angle_applied": 244.98521321141732,
+    "angle_predicted": 245.0,
+    "error": 0.014786788582682675
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000036773.jpg",
+    "angle_applied": 313.0158709967876,
+    "angle_predicted": 313.0,
+    "error": 0.015870996787612057
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000026803.jpg",
+    "angle_applied": 273.01631538101094,
+    "angle_predicted": 273.0,
+    "error": 0.016315381010940655
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000014845.jpg",
+    "angle_applied": 187.98331284076286,
+    "angle_predicted": 188.0,
+    "error": 0.016687159237136484
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000040557.jpg",
+    "angle_applied": 245.98128079716497,
+    "angle_predicted": 246.0,
+    "error": 0.01871920283502959
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000016439.jpg",
+    "angle_applied": 65.9807410370683,
+    "angle_predicted": 66.0,
+    "error": 0.019258962931701262
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000039743.jpg",
+    "angle_applied": 128.020585625984,
+    "angle_predicted": 128.0,
+    "error": 0.020585625984011813
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000017905.jpg",
+    "angle_applied": 331.02266648609543,
+    "angle_predicted": 331.0,
+    "error": 0.022666486095431537
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000048791.jpg",
+    "angle_applied": 23.023895803553206,
+    "angle_predicted": 23.0,
+    "error": 0.023895803553205752
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000053802.jpg",
+    "angle_applied": 0.9731570016609714,
+    "angle_predicted": 1.0,
+    "error": 0.02684299833902859
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000026226.jpg",
+    "angle_applied": 332.0274613202812,
+    "angle_predicted": 332.0,
+    "error": 0.027461320281190638
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000034167.jpg",
+    "angle_applied": 74.97117076373418,
+    "angle_predicted": 75.0,
+    "error": 0.028829236265821123
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000048905.jpg",
+    "angle_applied": 292.9672150928918,
+    "angle_predicted": 293.0,
+    "error": 0.03278490710818005
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000042953.jpg",
+    "angle_applied": 354.03344721383115,
+    "angle_predicted": 354.0,
+    "error": 0.03344721383115257
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000047571.jpg",
+    "angle_applied": 281.9643977929727,
+    "angle_predicted": 282.0,
+    "error": 0.03560220702729566
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000044054.jpg",
+    "angle_applied": 240.03601756044037,
+    "angle_predicted": 240.0,
+    "error": 0.036017560440370744
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000052232.jpg",
+    "angle_applied": 11.037977397258452,
+    "angle_predicted": 11.0,
+    "error": 0.03797739725845162
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000058690.jpg",
+    "angle_applied": 262.03973701302414,
+    "angle_predicted": 262.0,
+    "error": 0.03973701302413701
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000018426.jpg",
+    "angle_applied": 331.9601262361895,
+    "angle_predicted": 332.0,
+    "error": 0.03987376381047625
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000016005.jpg",
+    "angle_applied": 116.04007369678253,
+    "angle_predicted": 116.0,
+    "error": 0.040073696782528145
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000062298.jpg",
+    "angle_applied": 163.9598938020097,
+    "angle_predicted": 164.0,
+    "error": 0.04010619799029769
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000041247.jpg",
+    "angle_applied": 317.04412429694867,
+    "angle_predicted": 317.0,
+    "error": 0.0441242969486666
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000026622.jpg",
+    "angle_applied": 113.95532156129137,
+    "angle_predicted": 114.0,
+    "error": 0.04467843870862964
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000054679.jpg",
+    "angle_applied": 332.04527344678786,
+    "angle_predicted": 332.0,
+    "error": 0.04527344678785994
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000050352.jpg",
+    "angle_applied": 48.046129536576395,
+    "angle_predicted": 48.0,
+    "error": 0.046129536576394514
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000062824.jpg",
+    "angle_applied": 171.9527410355098,
+    "angle_predicted": 172.0,
+    "error": 0.047258964490197286
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000012860.jpg",
+    "angle_applied": 65.94889032256206,
+    "angle_predicted": 66.0,
+    "error": 0.051109677437935375
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000042968.jpg",
+    "angle_applied": 341.0534125760127,
+    "angle_predicted": 341.0,
+    "error": 0.053412576012703994
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000036844.jpg",
+    "angle_applied": 263.05527568589144,
+    "angle_predicted": 263.0,
+    "error": 0.05527568589144494
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000001000.jpg",
+    "angle_applied": 254.05561583625877,
+    "angle_predicted": 254.0,
+    "error": 0.05561583625876665
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000008832.jpg",
+    "angle_applied": 224.05839428376174,
+    "angle_predicted": 224.0,
+    "error": 0.05839428376174283
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000006673.jpg",
+    "angle_applied": 113.9402683632983,
+    "angle_predicted": 114.0,
+    "error": 0.059731636701698676
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000062023.jpg",
+    "angle_applied": 70.93954086683027,
+    "angle_predicted": 71.0,
+    "error": 0.060459133169729284
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000042694.jpg",
+    "angle_applied": 130.93587753934415,
+    "angle_predicted": 131.0,
+    "error": 0.06412246065585236
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000004975.jpg",
+    "angle_applied": 19.93475535163126,
+    "angle_predicted": 20.0,
+    "error": 0.06524464836873989
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000012471.jpg",
+    "angle_applied": 99.93459518343579,
+    "angle_predicted": 100.0,
+    "error": 0.06540481656421093
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000018728.jpg",
+    "angle_applied": 174.06652587388513,
+    "angle_predicted": 174.0,
+    "error": 0.06652587388512643
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000008292.jpg",
+    "angle_applied": 143.93237040335907,
+    "angle_predicted": 144.0,
+    "error": 0.06762959664092705
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000008211.jpg",
+    "angle_applied": 258.06948522933374,
+    "angle_predicted": 258.0,
+    "error": 0.06948522933373624
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000040937.jpg",
+    "angle_applied": 143.92860920082933,
+    "angle_predicted": 144.0,
+    "error": 0.07139079917067193
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000011260.jpg",
+    "angle_applied": 58.07142643859865,
+    "angle_predicted": 58.0,
+    "error": 0.07142643859864961
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000050926.jpg",
+    "angle_applied": 21.072572004801163,
+    "angle_predicted": 21.0,
+    "error": 0.0725720048011631
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000039405.jpg",
+    "angle_applied": 287.92651844542246,
+    "angle_predicted": 288.0,
+    "error": 0.07348155457754046
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000003595.jpg",
+    "angle_applied": 251.07435833204292,
+    "angle_predicted": 251.0,
+    "error": 0.07435833204291953
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000062020.jpg",
+    "angle_applied": 244.92551976540057,
+    "angle_predicted": 245.0,
+    "error": 0.07448023459943443
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000008583.jpg",
+    "angle_applied": 77.92461393991553,
+    "angle_predicted": 78.0,
+    "error": 0.07538606008446891
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000002006.jpg",
+    "angle_applied": 216.07663252726582,
+    "angle_predicted": 216.0,
+    "error": 0.07663252726581504
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000036661.jpg",
+    "angle_applied": 107.07730230784811,
+    "angle_predicted": 107.0,
+    "error": 0.07730230784811454
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000035012.jpg",
+    "angle_applied": 264.9218028507839,
+    "angle_predicted": 265.0,
+    "error": 0.07819714921612331
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000004665.jpg",
+    "angle_applied": 357.0805184956666,
+    "angle_predicted": 357.0,
+    "error": 0.0805184956665812
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000055780.jpg",
+    "angle_applied": 340.0808101378502,
+    "angle_predicted": 340.0,
+    "error": 0.08081013785022151
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000020161.jpg",
+    "angle_applied": 177.081203415004,
+    "angle_predicted": 177.0,
+    "error": 0.08120341500401196
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000062399.jpg",
+    "angle_applied": 62.91792149793839,
+    "angle_predicted": 63.0,
+    "error": 0.08207850206161282
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000047886.jpg",
+    "angle_applied": 78.08291438345061,
+    "angle_predicted": 78.0,
+    "error": 0.08291438345061408
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000050148.jpg",
+    "angle_applied": 207.91546157929517,
+    "angle_predicted": 208.0,
+    "error": 0.0845384207048312
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000061108.jpg",
+    "angle_applied": 156.91137309562566,
+    "angle_predicted": 157.0,
+    "error": 0.08862690437433685
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000034582.jpg",
+    "angle_applied": 308.08920326133995,
+    "angle_predicted": 308.0,
+    "error": 0.0892032613399465
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000003590.jpg",
+    "angle_applied": 145.0893608655439,
+    "angle_predicted": 145.0,
+    "error": 0.08936086554390954
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000050828.jpg",
+    "angle_applied": 23.09309868556237,
+    "angle_predicted": 23.0,
+    "error": 0.09309868556237078
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000040037.jpg",
+    "angle_applied": 119.90593241075476,
+    "angle_predicted": 120.0,
+    "error": 0.09406758924524183
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000054747.jpg",
+    "angle_applied": 24.90575716526022,
+    "angle_predicted": 25.0,
+    "error": 0.09424283473978079
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000019890.jpg",
+    "angle_applied": 335.09473822727034,
+    "angle_predicted": 335.0,
+    "error": 0.09473822727034076
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000027528.jpg",
+    "angle_applied": 241.90457061449604,
+    "angle_predicted": 242.0,
+    "error": 0.0954293855039623
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000062353.jpg",
+    "angle_applied": 35.90386100451144,
+    "angle_predicted": 36.0,
+    "error": 0.09613899548855898
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000043305.jpg",
+    "angle_applied": 222.0962388749125,
+    "angle_predicted": 222.0,
+    "error": 0.09623887491250116
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000018442.jpg",
+    "angle_applied": 338.09792727145333,
+    "angle_predicted": 338.0,
+    "error": 0.09792727145332947
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000060093.jpg",
+    "angle_applied": 124.09852585518276,
+    "angle_predicted": 124.0,
+    "error": 0.09852585518275703
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000022850.jpg",
+    "angle_applied": 52.90079234413502,
+    "angle_predicted": 53.0,
+    "error": 0.09920765586497993
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000000196.jpg",
+    "angle_applied": 311.8976373343065,
+    "angle_predicted": 312.0,
+    "error": 0.10236266569347663
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000052982.jpg",
+    "angle_applied": 157.89654484643532,
+    "angle_predicted": 158.0,
+    "error": 0.10345515356468127
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000025595.jpg",
+    "angle_applied": 118.8961328508837,
+    "angle_predicted": 119.0,
+    "error": 0.10386714911629724
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000051887.jpg",
+    "angle_applied": 289.894988008503,
+    "angle_predicted": 290.0,
+    "error": 0.10501199149700824
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000050514.jpg",
+    "angle_applied": 36.10581921557922,
+    "angle_predicted": 36.0,
+    "error": 0.10581921557921703
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000049759.jpg",
+    "angle_applied": 14.107605211555443,
+    "angle_predicted": 14.0,
+    "error": 0.10760521155544289
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000000632.jpg",
+    "angle_applied": 175.10776159991957,
+    "angle_predicted": 175.0,
+    "error": 0.10776159991957002
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000022196.jpg",
+    "angle_applied": 334.1092656476127,
+    "angle_predicted": 334.0,
+    "error": 0.10926564761268764
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000033731.jpg",
+    "angle_applied": 20.89049771659522,
+    "angle_predicted": 21.0,
+    "error": 0.10950228340477963
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000014088.jpg",
+    "angle_applied": 166.88715277133184,
+    "angle_predicted": 167.0,
+    "error": 0.11284722866815855
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000056541.jpg",
+    "angle_applied": 152.88676875054225,
+    "angle_predicted": 153.0,
+    "error": 0.11323124945775476
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000005802.jpg",
+    "angle_applied": 163.11392836159624,
+    "angle_predicted": 163.0,
+    "error": 0.11392836159623698
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000010216.jpg",
+    "angle_applied": 10.884692882153733,
+    "angle_predicted": 11.0,
+    "error": 0.11530711784626746
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000009274.jpg",
+    "angle_applied": 196.87856460099198,
+    "angle_predicted": 197.0,
+    "error": 0.12143539900802125
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000034196.jpg",
+    "angle_applied": 257.8777934826836,
+    "angle_predicted": 258.0,
+    "error": 0.12220651731638554
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000021971.jpg",
+    "angle_applied": 357.1240476292107,
+    "angle_predicted": 357.0,
+    "error": 0.12404762921067913
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000001270.jpg",
+    "angle_applied": 160.8757070206317,
+    "angle_predicted": 161.0,
+    "error": 0.12429297936830608
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000050354.jpg",
+    "angle_applied": 155.87431426122507,
+    "angle_predicted": 156.0,
+    "error": 0.1256857387749335
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000015345.jpg",
+    "angle_applied": 38.126215757603596,
+    "angle_predicted": 38.0,
+    "error": 0.12621575760359605
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000040259.jpg",
+    "angle_applied": 93.12626408018677,
+    "angle_predicted": 93.0,
+    "error": 0.12626408018677182
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000060213.jpg",
+    "angle_applied": 27.129264870002523,
+    "angle_predicted": 27.0,
+    "error": 0.12926487000252251
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000013357.jpg",
+    "angle_applied": 242.1296320667477,
+    "angle_predicted": 242.0,
+    "error": 0.12963206674768912
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000046331.jpg",
+    "angle_applied": 166.13257041105547,
+    "angle_predicted": 166.0,
+    "error": 0.13257041105546818
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000048475.jpg",
+    "angle_applied": 325.13387286656575,
+    "angle_predicted": 325.0,
+    "error": 0.1338728665657527
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000064152.jpg",
+    "angle_applied": 63.13394502548779,
+    "angle_predicted": 63.0,
+    "error": 0.1339450254877903
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000059710.jpg",
+    "angle_applied": 251.86393953018603,
+    "angle_predicted": 252.0,
+    "error": 0.13606046981396958
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000015947.jpg",
+    "angle_applied": 280.13643034194615,
+    "angle_predicted": 280.0,
+    "error": 0.1364303419461521
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000025145.jpg",
+    "angle_applied": 216.14120535515025,
+    "angle_predicted": 216.0,
+    "error": 0.14120535515024812
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000033109.jpg",
+    "angle_applied": 71.85461116324116,
+    "angle_predicted": 72.0,
+    "error": 0.1453888367588405
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000017869.jpg",
+    "angle_applied": 345.14673230037346,
+    "angle_predicted": 345.0,
+    "error": 0.14673230037345775
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000015600.jpg",
+    "angle_applied": 16.850287696387948,
+    "angle_predicted": 17.0,
+    "error": 0.149712303612052
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000055868.jpg",
+    "angle_applied": 60.84914620649806,
+    "angle_predicted": 61.0,
+    "error": 0.15085379350193762
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000019247.jpg",
+    "angle_applied": 262.8439306260371,
+    "angle_predicted": 263.0,
+    "error": 0.15606937396290732
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000008045.jpg",
+    "angle_applied": 99.84249766988766,
+    "angle_predicted": 100.0,
+    "error": 0.1575023301123366
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000037615.jpg",
+    "angle_applied": 196.15794587888288,
+    "angle_predicted": 196.0,
+    "error": 0.15794587888288447
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000012081.jpg",
+    "angle_applied": 253.15829872819768,
+    "angle_predicted": 253.0,
+    "error": 0.15829872819767843
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000013769.jpg",
+    "angle_applied": 35.16349228118068,
+    "angle_predicted": 35.0,
+    "error": 0.16349228118068027
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000041899.jpg",
+    "angle_applied": 346.16525563493946,
+    "angle_predicted": 346.0,
+    "error": 0.16525563493945583
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000056752.jpg",
+    "angle_applied": 136.16826297244623,
+    "angle_predicted": 136.0,
+    "error": 0.1682629724462288
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000009941.jpg",
+    "angle_applied": 66.8289399501428,
+    "angle_predicted": 67.0,
+    "error": 0.17106004985720347
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000044136.jpg",
+    "angle_applied": 85.82878113266088,
+    "angle_predicted": 86.0,
+    "error": 0.17121886733912106
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000034137.jpg",
+    "angle_applied": 192.827809088985,
+    "angle_predicted": 193.0,
+    "error": 0.17219091101500794
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000041212.jpg",
+    "angle_applied": 174.82593453646425,
+    "angle_predicted": 175.0,
+    "error": 0.17406546353575436
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000061207.jpg",
+    "angle_applied": 249.8243079364371,
+    "angle_predicted": 250.0,
+    "error": 0.1756920635629058
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000033707.jpg",
+    "angle_applied": 103.8234590393378,
+    "angle_predicted": 104.0,
+    "error": 0.17654096066219438
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000034438.jpg",
+    "angle_applied": 197.8202062062977,
+    "angle_predicted": 198.0,
+    "error": 0.17979379370228799
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000044677.jpg",
+    "angle_applied": 47.17988323749279,
+    "angle_predicted": 47.0,
+    "error": 0.17988323749278834
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000004551.jpg",
+    "angle_applied": 91.18497691432157,
+    "angle_predicted": 91.0,
+    "error": 0.1849769143215667
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000051277.jpg",
+    "angle_applied": 23.813806362103698,
+    "angle_predicted": 24.0,
+    "error": 0.18619363789630228
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000042471.jpg",
+    "angle_applied": 347.81308042578166,
+    "angle_predicted": 348.0,
+    "error": 0.1869195742183365
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000001063.jpg",
+    "angle_applied": 37.1873358306499,
+    "angle_predicted": 37.0,
+    "error": 0.1873358306499
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000011570.jpg",
+    "angle_applied": 205.18736785245537,
+    "angle_predicted": 205.0,
+    "error": 0.1873678524553668
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000043286.jpg",
+    "angle_applied": 351.1877418010389,
+    "angle_predicted": 351.0,
+    "error": 0.18774180103889648
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000048196.jpg",
+    "angle_applied": 277.188187050032,
+    "angle_predicted": 277.0,
+    "error": 0.1881870500320133
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000019142.jpg",
+    "angle_applied": 209.1894946819427,
+    "angle_predicted": 209.0,
+    "error": 0.1894946819427048
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000012230.jpg",
+    "angle_applied": 29.196500395678836,
+    "angle_predicted": 29.0,
+    "error": 0.19650039567883582
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000013943.jpg",
+    "angle_applied": 53.80138967687775,
+    "angle_predicted": 54.0,
+    "error": 0.1986103231222529
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000044524.jpg",
+    "angle_applied": 125.79850513747256,
+    "angle_predicted": 126.0,
+    "error": 0.20149486252743998
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000057671.jpg",
+    "angle_applied": 309.7984225783658,
+    "angle_predicted": 310.0,
+    "error": 0.20157742163422654
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000039811.jpg",
+    "angle_applied": 262.7966024726609,
+    "angle_predicted": 263.0,
+    "error": 0.20339752733912064
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000014635.jpg",
+    "angle_applied": 313.2043733688549,
+    "angle_predicted": 313.0,
+    "error": 0.20437336885487412
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000051628.jpg",
+    "angle_applied": 97.79499633821251,
+    "angle_predicted": 98.0,
+    "error": 0.20500366178748664
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000018896.jpg",
+    "angle_applied": 176.20510875649134,
+    "angle_predicted": 176.0,
+    "error": 0.20510875649134164
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000033044.jpg",
+    "angle_applied": 211.79416087929806,
+    "angle_predicted": 212.0,
+    "error": 0.20583912070193833
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000013414.jpg",
+    "angle_applied": 57.79397609469231,
+    "angle_predicted": 58.0,
+    "error": 0.20602390530768844
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000036861.jpg",
+    "angle_applied": 261.2064722765362,
+    "angle_predicted": 261.0,
+    "error": 0.20647227653620348
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000016961.jpg",
+    "angle_applied": 221.20729433167477,
+    "angle_predicted": 221.0,
+    "error": 0.20729433167477396
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000000143.jpg",
+    "angle_applied": 76.79231185229351,
+    "angle_predicted": 77.0,
+    "error": 0.20768814770649158
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000024755.jpg",
+    "angle_applied": 340.2096396985409,
+    "angle_predicted": 340.0,
+    "error": 0.20963969854091147
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000013659.jpg",
+    "angle_applied": 255.79022498004443,
+    "angle_predicted": 256.0,
+    "error": 0.2097750199555719
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000040064.jpg",
+    "angle_applied": 24.20986732676949,
+    "angle_predicted": 24.0,
+    "error": 0.2098673267694906
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000022621.jpg",
+    "angle_applied": 230.2101059035405,
+    "angle_predicted": 230.0,
+    "error": 0.2101059035404944
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000047004.jpg",
+    "angle_applied": 83.78788654046046,
+    "angle_predicted": 84.0,
+    "error": 0.21211345953953753
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000005394.jpg",
+    "angle_applied": 172.2133105343957,
+    "angle_predicted": 172.0,
+    "error": 0.2133105343957027
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000039760.jpg",
+    "angle_applied": 66.78644310834346,
+    "angle_predicted": 67.0,
+    "error": 0.21355689165653757
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000042793.jpg",
+    "angle_applied": 270.2142082544355,
+    "angle_predicted": 270.0,
+    "error": 0.21420825443550484
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000050637.jpg",
+    "angle_applied": 25.21518845207207,
+    "angle_predicted": 25.0,
+    "error": 0.21518845207206994
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000059201.jpg",
+    "angle_applied": 98.21588487280813,
+    "angle_predicted": 98.0,
+    "error": 0.2158848728081324
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000010844.jpg",
+    "angle_applied": 314.78397014694326,
+    "angle_predicted": 315.0,
+    "error": 0.21602985305673883
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000034873.jpg",
+    "angle_applied": 326.7838646946142,
+    "angle_predicted": 327.0,
+    "error": 0.21613530538581927
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000002640.jpg",
+    "angle_applied": 212.78353710023646,
+    "angle_predicted": 213.0,
+    "error": 0.21646289976354183
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000062808.jpg",
+    "angle_applied": 4.21707030660071,
+    "angle_predicted": 4.0,
+    "error": 0.2170703066007098
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000058141.jpg",
+    "angle_applied": 186.78065357934938,
+    "angle_predicted": 187.0,
+    "error": 0.21934642065062349
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000058254.jpg",
+    "angle_applied": 39.7717599570281,
+    "angle_predicted": 40.0,
+    "error": 0.2282400429718976
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000046316.jpg",
+    "angle_applied": 165.22914966554458,
+    "angle_predicted": 165.0,
+    "error": 0.2291496655445826
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000017425.jpg",
+    "angle_applied": 187.22930998884232,
+    "angle_predicted": 187.0,
+    "error": 0.22930998884231713
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000018699.jpg",
+    "angle_applied": 290.22983605659084,
+    "angle_predicted": 290.0,
+    "error": 0.22983605659084105
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000040051.jpg",
+    "angle_applied": 195.7701420278375,
+    "angle_predicted": 196.0,
+    "error": 0.22985797216250603
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000011334.jpg",
+    "angle_applied": 221.22997193171545,
+    "angle_predicted": 221.0,
+    "error": 0.22997193171545405
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000037044.jpg",
+    "angle_applied": 212.76968431337684,
+    "angle_predicted": 213.0,
+    "error": 0.2303156866231575
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000002346.jpg",
+    "angle_applied": 70.76965020481926,
+    "angle_predicted": 71.0,
+    "error": 0.23034979518074294
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000062510.jpg",
+    "angle_applied": 57.768351799536376,
+    "angle_predicted": 58.0,
+    "error": 0.23164820046362422
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000002154.jpg",
+    "angle_applied": 6.764328157087851,
+    "angle_predicted": 7.0,
+    "error": 0.23567184291214893
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000018336.jpg",
+    "angle_applied": 131.23606535884318,
+    "angle_predicted": 131.0,
+    "error": 0.23606535884317736
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000015335.jpg",
+    "angle_applied": 298.76305269720353,
+    "angle_predicted": 299.0,
+    "error": 0.23694730279646592
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000063565.jpg",
+    "angle_applied": 129.23830020226754,
+    "angle_predicted": 129.0,
+    "error": 0.23830020226753845
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000063882.jpg",
+    "angle_applied": 95.24002035766571,
+    "angle_predicted": 95.0,
+    "error": 0.2400203576657134
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000005820.jpg",
+    "angle_applied": 294.24208012618374,
+    "angle_predicted": 294.0,
+    "error": 0.24208012618373687
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000005105.jpg",
+    "angle_applied": 275.2423107687751,
+    "angle_predicted": 275.0,
+    "error": 0.2423107687750985
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000006005.jpg",
+    "angle_applied": 322.75677450638267,
+    "angle_predicted": 323.0,
+    "error": 0.2432254936173308
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000056580.jpg",
+    "angle_applied": 123.24325558505683,
+    "angle_predicted": 123.0,
+    "error": 0.2432555850568292
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000050627.jpg",
+    "angle_applied": 43.24326557885135,
+    "angle_predicted": 43.0,
+    "error": 0.24326557885135003
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000019444.jpg",
+    "angle_applied": 341.75477606964535,
+    "angle_predicted": 342.0,
+    "error": 0.24522393035465484
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000010681.jpg",
+    "angle_applied": 80.75413043090613,
+    "angle_predicted": 81.0,
+    "error": 0.2458695690938697
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000032907.jpg",
+    "angle_applied": 113.2463862015434,
+    "angle_predicted": 113.0,
+    "error": 0.24638620154340174
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000037688.jpg",
+    "angle_applied": 8.752751895656798,
+    "angle_predicted": 9.0,
+    "error": 0.24724810434320155
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000054389.jpg",
+    "angle_applied": 243.24809315193605,
+    "angle_predicted": 243.0,
+    "error": 0.24809315193604675
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000021979.jpg",
+    "angle_applied": 198.7481796091095,
+    "angle_predicted": 199.0,
+    "error": 0.2518203908904866
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000004275.jpg",
+    "angle_applied": 255.2527656659844,
+    "angle_predicted": 255.0,
+    "error": 0.25276566598441264
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000001573.jpg",
+    "angle_applied": 83.74571741871559,
+    "angle_predicted": 84.0,
+    "error": 0.2542825812844143
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000032887.jpg",
+    "angle_applied": 42.256905901400586,
+    "angle_predicted": 42.0,
+    "error": 0.2569059014005859
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000004175.jpg",
+    "angle_applied": 42.74197882352786,
+    "angle_predicted": 43.0,
+    "error": 0.2580211764721412
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000041773.jpg",
+    "angle_applied": 311.7403686839318,
+    "angle_predicted": 312.0,
+    "error": 0.25963131606818024
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000014226.jpg",
+    "angle_applied": 14.261588128626382,
+    "angle_predicted": 14.0,
+    "error": 0.26158812862638214
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000035711.jpg",
+    "angle_applied": 262.73794879053634,
+    "angle_predicted": 263.0,
+    "error": 0.2620512094636638
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000009172.jpg",
+    "angle_applied": 75.73772198658273,
+    "angle_predicted": 76.0,
+    "error": 0.26227801341727286
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000051040.jpg",
+    "angle_applied": 240.2677367869254,
+    "angle_predicted": 240.0,
+    "error": 0.26773678692541125
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000003690.jpg",
+    "angle_applied": 12.73047687197673,
+    "angle_predicted": 13.0,
+    "error": 0.2695231280232697
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000041550.jpg",
+    "angle_applied": 173.73032701635637,
+    "angle_predicted": 174.0,
+    "error": 0.26967298364363046
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000035429.jpg",
+    "angle_applied": 182.2724006484199,
+    "angle_predicted": 182.0,
+    "error": 0.27240064841990375
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000010707.jpg",
+    "angle_applied": 250.7267320749002,
+    "angle_predicted": 251.0,
+    "error": 0.2732679250997876
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000000241.jpg",
+    "angle_applied": 64.72630470007499,
+    "angle_predicted": 65.0,
+    "error": 0.2736952999250093
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000032941.jpg",
+    "angle_applied": 278.724128196318,
+    "angle_predicted": 279.0,
+    "error": 0.27587180368198005
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000063328.jpg",
+    "angle_applied": 195.72409937811426,
+    "angle_predicted": 196.0,
+    "error": 0.2759006218857394
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000053668.jpg",
+    "angle_applied": 34.722309851058306,
+    "angle_predicted": 35.0,
+    "error": 0.2776901489416943
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000064088.jpg",
+    "angle_applied": 63.72208136429853,
+    "angle_predicted": 64.0,
+    "error": 0.277918635701468
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000059455.jpg",
+    "angle_applied": 335.72203338864256,
+    "angle_predicted": 336.0,
+    "error": 0.27796661135744216
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000047775.jpg",
+    "angle_applied": 149.2782983965885,
+    "angle_predicted": 149.0,
+    "error": 0.27829839658849664
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000052936.jpg",
+    "angle_applied": 7.278623078517259,
+    "angle_predicted": 7.0,
+    "error": 0.278623078517259
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000048546.jpg",
+    "angle_applied": 305.2829625560044,
+    "angle_predicted": 305.0,
+    "error": 0.28296255600440645
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000044309.jpg",
+    "angle_applied": 142.28396767308126,
+    "angle_predicted": 142.0,
+    "error": 0.28396767308126414
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000044171.jpg",
+    "angle_applied": 59.289896339248585,
+    "angle_predicted": 59.0,
+    "error": 0.2898963392485854
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000006497.jpg",
+    "angle_applied": 147.70856256844522,
+    "angle_predicted": 148.0,
+    "error": 0.2914374315547832
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000014108.jpg",
+    "angle_applied": 238.70815311603627,
+    "angle_predicted": 239.0,
+    "error": 0.2918468839637285
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000038034.jpg",
+    "angle_applied": 57.29264529920742,
+    "angle_predicted": 57.0,
+    "error": 0.29264529920742177
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000033489.jpg",
+    "angle_applied": 29.293055587189908,
+    "angle_predicted": 29.0,
+    "error": 0.2930555871899081
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000011182.jpg",
+    "angle_applied": 259.7064004655829,
+    "angle_predicted": 260.0,
+    "error": 0.29359953441712605
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000017482.jpg",
+    "angle_applied": 250.29720212568697,
+    "angle_predicted": 250.0,
+    "error": 0.29720212568696525
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000044858.jpg",
+    "angle_applied": 79.702720665398,
+    "angle_predicted": 80.0,
+    "error": 0.2972793346019955
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000019158.jpg",
+    "angle_applied": 284.7024587618658,
+    "angle_predicted": 285.0,
+    "error": 0.2975412381342153
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000034820.jpg",
+    "angle_applied": 112.30019837265667,
+    "angle_predicted": 112.0,
+    "error": 0.3001983726566664
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000051191.jpg",
+    "angle_applied": 218.30155708605275,
+    "angle_predicted": 218.0,
+    "error": 0.3015570860527532
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000011796.jpg",
+    "angle_applied": 323.3024485969446,
+    "angle_predicted": 323.0,
+    "error": 0.30244859694460047
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000021088.jpg",
+    "angle_applied": 352.30260320379506,
+    "angle_predicted": 352.0,
+    "error": 0.30260320379505856
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000011305.jpg",
+    "angle_applied": 332.6971559834749,
+    "angle_predicted": 333.0,
+    "error": 0.30284401652511406
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000034701.jpg",
+    "angle_applied": 287.6970831180205,
+    "angle_predicted": 288.0,
+    "error": 0.30291688197951316
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000010386.jpg",
+    "angle_applied": 164.30744352206398,
+    "angle_predicted": 164.0,
+    "error": 0.30744352206397707
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000019047.jpg",
+    "angle_applied": 340.30855205246866,
+    "angle_predicted": 340.0,
+    "error": 0.3085520524686558
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000001584.jpg",
+    "angle_applied": 278.3100794597538,
+    "angle_predicted": 278.0,
+    "error": 0.31007945975380835
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000006874.jpg",
+    "angle_applied": 155.31063675623062,
+    "angle_predicted": 155.0,
+    "error": 0.3106367562306218
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000011122.jpg",
+    "angle_applied": 91.3113087324562,
+    "angle_predicted": 91.0,
+    "error": 0.3113087324561974
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000052238.jpg",
+    "angle_applied": 42.31146814633191,
+    "angle_predicted": 42.0,
+    "error": 0.31146814633191156
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000005124.jpg",
+    "angle_applied": 82.31275835386039,
+    "angle_predicted": 82.0,
+    "error": 0.31275835386038864
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000057350.jpg",
+    "angle_applied": 66.68363708502622,
+    "angle_predicted": 67.0,
+    "error": 0.3163629149737801
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000009927.jpg",
+    "angle_applied": 298.3164892400656,
+    "angle_predicted": 298.0,
+    "error": 0.3164892400656072
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000040635.jpg",
+    "angle_applied": 248.68251941635063,
+    "angle_predicted": 249.0,
+    "error": 0.3174805836493704
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000040998.jpg",
+    "angle_applied": 97.31804588593727,
+    "angle_predicted": 97.0,
+    "error": 0.31804588593726635
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000020837.jpg",
+    "angle_applied": 351.318192630672,
+    "angle_predicted": 351.0,
+    "error": 0.31819263067200154
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000054611.jpg",
+    "angle_applied": 126.68147862949533,
+    "angle_predicted": 127.0,
+    "error": 0.3185213705046692
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000029524.jpg",
+    "angle_applied": 21.68116978653714,
+    "angle_predicted": 22.0,
+    "error": 0.31883021346286
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000026393.jpg",
+    "angle_applied": 342.674811659785,
+    "angle_predicted": 343.0,
+    "error": 0.3251883402149929
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000058384.jpg",
+    "angle_applied": 320.32571632039446,
+    "angle_predicted": 320.0,
+    "error": 0.32571632039446285
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000033377.jpg",
+    "angle_applied": 124.32660505088496,
+    "angle_predicted": 124.0,
+    "error": 0.3266050508849645
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000000923.jpg",
+    "angle_applied": 152.67203583690574,
+    "angle_predicted": 153.0,
+    "error": 0.3279641630942649
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000000626.jpg",
+    "angle_applied": 297.6701770975302,
+    "angle_predicted": 298.0,
+    "error": 0.3298229024698003
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000014880.jpg",
+    "angle_applied": 339.3300958912549,
+    "angle_predicted": 339.0,
+    "error": 0.33009589125492766
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000042091.jpg",
+    "angle_applied": 264.66984796413414,
+    "angle_predicted": 265.0,
+    "error": 0.33015203586586495
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000038858.jpg",
+    "angle_applied": 280.3303425387972,
+    "angle_predicted": 280.0,
+    "error": 0.330342538797197
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000005001.jpg",
+    "angle_applied": 163.33086404017632,
+    "angle_predicted": 163.0,
+    "error": 0.33086404017632276
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000010040.jpg",
+    "angle_applied": 157.33150336776293,
+    "angle_predicted": 157.0,
+    "error": 0.33150336776293443
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000019624.jpg",
+    "angle_applied": 6.66784600582103,
+    "angle_predicted": 7.0,
+    "error": 0.3321539941789702
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000049068.jpg",
+    "angle_applied": 281.33265608447806,
+    "angle_predicted": 281.0,
+    "error": 0.33265608447806017
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000056724.jpg",
+    "angle_applied": 58.66359337677793,
+    "angle_predicted": 59.0,
+    "error": 0.33640662322206794
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000033144.jpg",
+    "angle_applied": 54.336563031974976,
+    "angle_predicted": 54.0,
+    "error": 0.3365630319749755
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000012741.jpg",
+    "angle_applied": 237.66247349736662,
+    "angle_predicted": 238.0,
+    "error": 0.3375265026333807
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000003326.jpg",
+    "angle_applied": 322.3389183437556,
+    "angle_predicted": 322.0,
+    "error": 0.3389183437556085
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000037624.jpg",
+    "angle_applied": 325.33910630853603,
+    "angle_predicted": 325.0,
+    "error": 0.3391063085360315
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000009217.jpg",
+    "angle_applied": 301.6601666995694,
+    "angle_predicted": 302.0,
+    "error": 0.33983330043059823
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000014713.jpg",
+    "angle_applied": 123.33995436297252,
+    "angle_predicted": 123.0,
+    "error": 0.33995436297252013
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000034811.jpg",
+    "angle_applied": 207.34073840022455,
+    "angle_predicted": 207.0,
+    "error": 0.34073840022455215
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000038817.jpg",
+    "angle_applied": 273.3416826180005,
+    "angle_predicted": 273.0,
+    "error": 0.3416826180005046
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000052005.jpg",
+    "angle_applied": 268.3433066210255,
+    "angle_predicted": 268.0,
+    "error": 0.3433066210254765
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000005965.jpg",
+    "angle_applied": 282.6550483283296,
+    "angle_predicted": 283.0,
+    "error": 0.3449516716704011
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000045406.jpg",
+    "angle_applied": 68.34524828499286,
+    "angle_predicted": 68.0,
+    "error": 0.34524828499286286
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000020979.jpg",
+    "angle_applied": 152.6516106803431,
+    "angle_predicted": 153.0,
+    "error": 0.3483893196568886
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000047611.jpg",
+    "angle_applied": 272.65109156557514,
+    "angle_predicted": 273.0,
+    "error": 0.34890843442485675
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000017018.jpg",
+    "angle_applied": 125.34909938874723,
+    "angle_predicted": 125.0,
+    "error": 0.34909938874723423
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000009483.jpg",
+    "angle_applied": 143.64911581311674,
+    "angle_predicted": 144.0,
+    "error": 0.3508841868832633
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000045463.jpg",
+    "angle_applied": 128.6448766840636,
+    "angle_predicted": 129.0,
+    "error": 0.355123315936396
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000049075.jpg",
+    "angle_applied": 134.3577440681259,
+    "angle_predicted": 134.0,
+    "error": 0.3577440681258963
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000033672.jpg",
+    "angle_applied": 85.64141569482311,
+    "angle_predicted": 86.0,
+    "error": 0.35858430517689044
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000007276.jpg",
+    "angle_applied": 78.35862364478584,
+    "angle_predicted": 78.0,
+    "error": 0.35862364478583686
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000055768.jpg",
+    "angle_applied": 143.35958239779308,
+    "angle_predicted": 143.0,
+    "error": 0.3595823977930763
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000047916.jpg",
+    "angle_applied": 41.63827388580479,
+    "angle_predicted": 42.0,
+    "error": 0.36172611419520706
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000032300.jpg",
+    "angle_applied": 351.6339917485214,
+    "angle_predicted": 352.0,
+    "error": 0.36600825147860405
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000001228.jpg",
+    "angle_applied": 154.3664600993656,
+    "angle_predicted": 154.0,
+    "error": 0.36646009936561086
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000010138.jpg",
+    "angle_applied": 31.366547892554657,
+    "angle_predicted": 31.0,
+    "error": 0.3665478925546566
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000008803.jpg",
+    "angle_applied": 67.3671210303041,
+    "angle_predicted": 67.0,
+    "error": 0.36712103030410503
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000004265.jpg",
+    "angle_applied": 104.36884185310394,
+    "angle_predicted": 104.0,
+    "error": 0.3688418531039446
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000049883.jpg",
+    "angle_applied": 188.36929924801188,
+    "angle_predicted": 188.0,
+    "error": 0.36929924801188463
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000045229.jpg",
+    "angle_applied": 334.6305540451886,
+    "angle_predicted": 335.0,
+    "error": 0.36944595481139686
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000046775.jpg",
+    "angle_applied": 315.3696652514067,
+    "angle_predicted": 315.0,
+    "error": 0.3696652514066727
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000036563.jpg",
+    "angle_applied": 230.3715676779086,
+    "angle_predicted": 230.0,
+    "error": 0.3715676779085868
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000018918.jpg",
+    "angle_applied": 3.622930436193599,
+    "angle_predicted": 4.0,
+    "error": 0.3770695638064012
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000035891.jpg",
+    "angle_applied": 349.37772969455193,
+    "angle_predicted": 349.0,
+    "error": 0.37772969455193106
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000045746.jpg",
+    "angle_applied": 317.62212189087865,
+    "angle_predicted": 318.0,
+    "error": 0.37787810912135456
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000047597.jpg",
+    "angle_applied": 223.6209290521397,
+    "angle_predicted": 224.0,
+    "error": 0.37907094786029916
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000042893.jpg",
+    "angle_applied": 260.6189034604773,
+    "angle_predicted": 261.0,
+    "error": 0.3810965395226731
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000011887.jpg",
+    "angle_applied": 124.3820362882804,
+    "angle_predicted": 124.0,
+    "error": 0.38203628828040337
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000033405.jpg",
+    "angle_applied": 23.61775219557323,
+    "angle_predicted": 24.0,
+    "error": 0.3822478044267683
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000045367.jpg",
+    "angle_applied": 180.38274222051075,
+    "angle_predicted": 180.0,
+    "error": 0.3827422205107496
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000003149.jpg",
+    "angle_applied": 117.61231743657362,
+    "angle_predicted": 118.0,
+    "error": 0.38768256342638097
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000042551.jpg",
+    "angle_applied": 346.38787624227774,
+    "angle_predicted": 346.0,
+    "error": 0.3878762422777413
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000011269.jpg",
+    "angle_applied": 57.38920684162414,
+    "angle_predicted": 57.0,
+    "error": 0.3892068416241372
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000055126.jpg",
+    "angle_applied": 106.61047110797217,
+    "angle_predicted": 107.0,
+    "error": 0.38952889202782615
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000007414.jpg",
+    "angle_applied": 46.38980356787527,
+    "angle_predicted": 46.0,
+    "error": 0.38980356787526915
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000017029.jpg",
+    "angle_applied": 332.389910721135,
+    "angle_predicted": 332.0,
+    "error": 0.3899107211349815
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000012570.jpg",
+    "angle_applied": 156.3899852009235,
+    "angle_predicted": 156.0,
+    "error": 0.38998520092349054
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000008594.jpg",
+    "angle_applied": 51.607183467256704,
+    "angle_predicted": 52.0,
+    "error": 0.3928165327432964
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000013432.jpg",
+    "angle_applied": 183.60606683457007,
+    "angle_predicted": 184.0,
+    "error": 0.39393316542992807
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000005816.jpg",
+    "angle_applied": 151.39420800483543,
+    "angle_predicted": 151.0,
+    "error": 0.39420800483543417
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000043961.jpg",
+    "angle_applied": 83.60429118153938,
+    "angle_predicted": 84.0,
+    "error": 0.3957088184606192
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000007574.jpg",
+    "angle_applied": 68.6040893784245,
+    "angle_predicted": 69.0,
+    "error": 0.3959106215754957
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000021864.jpg",
+    "angle_applied": 303.39967056654325,
+    "angle_predicted": 303.0,
+    "error": 0.39967056654325006
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000040210.jpg",
+    "angle_applied": 190.40217111104562,
+    "angle_predicted": 190.0,
+    "error": 0.4021711110456181
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000007519.jpg",
+    "angle_applied": 346.5973151424873,
+    "angle_predicted": 347.0,
+    "error": 0.40268485751272465
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000016064.jpg",
+    "angle_applied": 34.59542684182671,
+    "angle_predicted": 35.0,
+    "error": 0.4045731581732923
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000037740.jpg",
+    "angle_applied": 105.40585131858678,
+    "angle_predicted": 105.0,
+    "error": 0.4058513185867838
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000005178.jpg",
+    "angle_applied": 129.592103212211,
+    "angle_predicted": 130.0,
+    "error": 0.4078967877890136
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000049853.jpg",
+    "angle_applied": 341.58996745938265,
+    "angle_predicted": 342.0,
+    "error": 0.41003254061735106
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000012269.jpg",
+    "angle_applied": 152.5878174809447,
+    "angle_predicted": 153.0,
+    "error": 0.4121825190553068
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000015517.jpg",
+    "angle_applied": 164.4133053097743,
+    "angle_predicted": 164.0,
+    "error": 0.4133053097743016
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000014338.jpg",
+    "angle_applied": 77.58276376088104,
+    "angle_predicted": 78.0,
+    "error": 0.4172362391189637
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000036196.jpg",
+    "angle_applied": 190.41837445111793,
+    "angle_predicted": 190.0,
+    "error": 0.41837445111792704
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000034892.jpg",
+    "angle_applied": 324.4183814336982,
+    "angle_predicted": 324.0,
+    "error": 0.4183814336981868
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000010449.jpg",
+    "angle_applied": 142.58149301062573,
+    "angle_predicted": 143.0,
+    "error": 0.418506989374265
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000002890.jpg",
+    "angle_applied": 244.58139845948423,
+    "angle_predicted": 245.0,
+    "error": 0.41860154051576615
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000022935.jpg",
+    "angle_applied": 129.42284420656296,
+    "angle_predicted": 129.0,
+    "error": 0.4228442065629565
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000045594.jpg",
+    "angle_applied": 10.422917649705795,
+    "angle_predicted": 10.0,
+    "error": 0.42291764970579493
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000048850.jpg",
+    "angle_applied": 146.4240045008694,
+    "angle_predicted": 146.0,
+    "error": 0.4240045008693869
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000051533.jpg",
+    "angle_applied": 115.57547641555809,
+    "angle_predicted": 116.0,
+    "error": 0.4245235844419142
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000046101.jpg",
+    "angle_applied": 44.57519382579895,
+    "angle_predicted": 45.0,
+    "error": 0.42480617420105204
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000045070.jpg",
+    "angle_applied": 41.57434696994931,
+    "angle_predicted": 42.0,
+    "error": 0.42565303005068955
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000010219.jpg",
+    "angle_applied": 197.5728614138369,
+    "angle_predicted": 198.0,
+    "error": 0.4271385861630961
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000046185.jpg",
+    "angle_applied": 134.57272965572213,
+    "angle_predicted": 135.0,
+    "error": 0.427270344277872
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000004620.jpg",
+    "angle_applied": 303.42775962076456,
+    "angle_predicted": 303.0,
+    "error": 0.42775962076456153
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000019176.jpg",
+    "angle_applied": 263.4279067558414,
+    "angle_predicted": 263.0,
+    "error": 0.42790675584137716
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000060449.jpg",
+    "angle_applied": 91.56833343734147,
+    "angle_predicted": 92.0,
+    "error": 0.43166656265853476
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000037717.jpg",
+    "angle_applied": 46.56807397393186,
+    "angle_predicted": 47.0,
+    "error": 0.43192602606814035
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000034445.jpg",
+    "angle_applied": 192.56695141795248,
+    "angle_predicted": 193.0,
+    "error": 0.43304858204751895
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000049445.jpg",
+    "angle_applied": 226.43346369281355,
+    "angle_predicted": 226.0,
+    "error": 0.4334636928135467
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000010290.jpg",
+    "angle_applied": 155.43364595555494,
+    "angle_predicted": 155.0,
+    "error": 0.4336459555549368
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000044621.jpg",
+    "angle_applied": 7.434359807662325,
+    "angle_predicted": 7.0,
+    "error": 0.4343598076623252
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000008922.jpg",
+    "angle_applied": 310.43467686092487,
+    "angle_predicted": 310.0,
+    "error": 0.434676860924867
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000035726.jpg",
+    "angle_applied": 16.56263191942689,
+    "angle_predicted": 17.0,
+    "error": 0.4373680805731084
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000019544.jpg",
+    "angle_applied": 351.4412388433752,
+    "angle_predicted": 351.0,
+    "error": 0.4412388433751744
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000039502.jpg",
+    "angle_applied": 295.55756274525663,
+    "angle_predicted": 296.0,
+    "error": 0.4424372547433677
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000041923.jpg",
+    "angle_applied": 338.5555002910127,
+    "angle_predicted": 339.0,
+    "error": 0.44449970898728
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000003742.jpg",
+    "angle_applied": 132.45029561443442,
+    "angle_predicted": 132.0,
+    "error": 0.4502956144344239
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000062877.jpg",
+    "angle_applied": 110.4516358362706,
+    "angle_predicted": 110.0,
+    "error": 0.4516358362705972
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000017089.jpg",
+    "angle_applied": 334.5466311274371,
+    "angle_predicted": 335.0,
+    "error": 0.453368872562919
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000051844.jpg",
+    "angle_applied": 132.45392899333487,
+    "angle_predicted": 132.0,
+    "error": 0.4539289933348698
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000058350.jpg",
+    "angle_applied": 57.544303267508866,
+    "angle_predicted": 58.0,
+    "error": 0.45569673249113407
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000049740.jpg",
+    "angle_applied": 75.54374963104397,
+    "angle_predicted": 76.0,
+    "error": 0.45625036895603444
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000009891.jpg",
+    "angle_applied": 117.45706775377406,
+    "angle_predicted": 117.0,
+    "error": 0.45706775377405506
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000001675.jpg",
+    "angle_applied": 7.542024936382967,
+    "angle_predicted": 8.0,
+    "error": 0.4579750636170328
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000040602.jpg",
+    "angle_applied": 353.45858033457114,
+    "angle_predicted": 353.0,
+    "error": 0.45858033457113834
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000037382.jpg",
+    "angle_applied": 349.4633193974278,
+    "angle_predicted": 349.0,
+    "error": 0.46331939742782424
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000050117.jpg",
+    "angle_applied": 134.4639650960461,
+    "angle_predicted": 134.0,
+    "error": 0.4639650960461097
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000063381.jpg",
+    "angle_applied": 27.53523685090274,
+    "angle_predicted": 28.0,
+    "error": 0.4647631490972586
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000001700.jpg",
+    "angle_applied": 317.53490768276026,
+    "angle_predicted": 318.0,
+    "error": 0.465092317239737
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000000042.jpg",
+    "angle_applied": 152.5342872439702,
+    "angle_predicted": 153.0,
+    "error": 0.4657127560298022
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000016010.jpg",
+    "angle_applied": 348.4676039775217,
+    "angle_predicted": 348.0,
+    "error": 0.4676039775217191
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000042711.jpg",
+    "angle_applied": 157.5313960545693,
+    "angle_predicted": 158.0,
+    "error": 0.4686039454306865
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000002839.jpg",
+    "angle_applied": 229.52977003108543,
+    "angle_predicted": 230.0,
+    "error": 0.47022996891456614
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000048684.jpg",
+    "angle_applied": 17.528506551190276,
+    "angle_predicted": 18.0,
+    "error": 0.4714934488097242
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000018366.jpg",
+    "angle_applied": 293.47178231315286,
+    "angle_predicted": 293.0,
+    "error": 0.47178231315285757
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000062251.jpg",
+    "angle_applied": 40.47383419643205,
+    "angle_predicted": 40.0,
+    "error": 0.47383419643205116
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000017899.jpg",
+    "angle_applied": 114.47394458183138,
+    "angle_predicted": 114.0,
+    "error": 0.47394458183137544
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000036053.jpg",
+    "angle_applied": 187.4741174070698,
+    "angle_predicted": 187.0,
+    "error": 0.474117407069798
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000040681.jpg",
+    "angle_applied": 351.5254074048225,
+    "angle_predicted": 352.0,
+    "error": 0.47459259517751207
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000004243.jpg",
+    "angle_applied": 295.4761634524734,
+    "angle_predicted": 295.0,
+    "error": 0.4761634524733722
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000060704.jpg",
+    "angle_applied": 228.5230762561301,
+    "angle_predicted": 229.0,
+    "error": 0.47692374386988945
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000039670.jpg",
+    "angle_applied": 39.522404902500256,
+    "angle_predicted": 40.0,
+    "error": 0.47759509749974427
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000039357.jpg",
+    "angle_applied": 356.52202106281356,
+    "angle_predicted": 357.0,
+    "error": 0.47797893718643536
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000043092.jpg",
+    "angle_applied": 314.4804578246777,
+    "angle_predicted": 314.0,
+    "error": 0.48045782467772824
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000041110.jpg",
+    "angle_applied": 269.51890314619703,
+    "angle_predicted": 270.0,
+    "error": 0.48109685380296696
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000034930.jpg",
+    "angle_applied": 50.513766452430986,
+    "angle_predicted": 51.0,
+    "error": 0.4862335475690145
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000005617.jpg",
+    "angle_applied": 229.4864198539944,
+    "angle_predicted": 229.0,
+    "error": 0.48641985399439136
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000006397.jpg",
+    "angle_applied": 25.51312014631501,
+    "angle_predicted": 26.0,
+    "error": 0.4868798536849894
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000062363.jpg",
+    "angle_applied": 109.51152897578682,
+    "angle_predicted": 110.0,
+    "error": 0.4884710242131831
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000045550.jpg",
+    "angle_applied": 104.48929532157423,
+    "angle_predicted": 104.0,
+    "error": 0.4892953215742324
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000046869.jpg",
+    "angle_applied": 10.508484545608772,
+    "angle_predicted": 11.0,
+    "error": 0.49151545439122835
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000003938.jpg",
+    "angle_applied": 121.49185743512636,
+    "angle_predicted": 121.0,
+    "error": 0.49185743512636293
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000002153.jpg",
+    "angle_applied": 133.50700771843995,
+    "angle_predicted": 134.0,
+    "error": 0.49299228156004915
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000005278.jpg",
+    "angle_applied": 24.506666630899275,
+    "angle_predicted": 25.0,
+    "error": 0.4933333691007249
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000060340.jpg",
+    "angle_applied": 247.4957794996135,
+    "angle_predicted": 247.0,
+    "error": 0.49577949961349077
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000002315.jpg",
+    "angle_applied": 204.49604199381562,
+    "angle_predicted": 204.0,
+    "error": 0.4960419938156235
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000049885.jpg",
+    "angle_applied": 238.50164575176333,
+    "angle_predicted": 239.0,
+    "error": 0.49835424823666585
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000010114.jpg",
+    "angle_applied": 163.49846288671864,
+    "angle_predicted": 163.0,
+    "error": 0.4984628867186416
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000020395.jpg",
+    "angle_applied": 135.50009586996646,
+    "angle_predicted": 136.0,
+    "error": 0.49990413003354206
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000062347.jpg",
+    "angle_applied": 0.49800599963969017,
+    "angle_predicted": 1.0,
+    "error": 0.5019940003603098
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000039718.jpg",
+    "angle_applied": 109.50248066012877,
+    "angle_predicted": 109.0,
+    "error": 0.5024806601287679
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000038064.jpg",
+    "angle_applied": 176.50992475754538,
+    "angle_predicted": 176.0,
+    "error": 0.5099247575453774
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000014591.jpg",
+    "angle_applied": 92.48999172720087,
+    "angle_predicted": 93.0,
+    "error": 0.5100082727991264
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000042563.jpg",
+    "angle_applied": 164.4881117924757,
+    "angle_predicted": 165.0,
+    "error": 0.5118882075242936
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000033073.jpg",
+    "angle_applied": 277.5141923647132,
+    "angle_predicted": 277.0,
+    "error": 0.5141923647132103
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000021470.jpg",
+    "angle_applied": 222.48555443958296,
+    "angle_predicted": 223.0,
+    "error": 0.5144455604170446
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000026992.jpg",
+    "angle_applied": 38.52149046976496,
+    "angle_predicted": 38.0,
+    "error": 0.5214904697649629
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000044536.jpg",
+    "angle_applied": 20.475813292327967,
+    "angle_predicted": 21.0,
+    "error": 0.5241867076720332
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000033717.jpg",
+    "angle_applied": 356.5242005619218,
+    "angle_predicted": 356.0,
+    "error": 0.5242005619218162
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000043290.jpg",
+    "angle_applied": 338.47548816771626,
+    "angle_predicted": 339.0,
+    "error": 0.5245118322837357
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000033499.jpg",
+    "angle_applied": 98.47513253362888,
+    "angle_predicted": 99.0,
+    "error": 0.5248674663711199
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000017708.jpg",
+    "angle_applied": 145.52770245813315,
+    "angle_predicted": 145.0,
+    "error": 0.5277024581331489
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000031569.jpg",
+    "angle_applied": 183.5305907837703,
+    "angle_predicted": 183.0,
+    "error": 0.5305907837702932
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000038531.jpg",
+    "angle_applied": 264.532958867002,
+    "angle_predicted": 264.0,
+    "error": 0.5329588670019803
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000024522.jpg",
+    "angle_applied": 186.53393296482275,
+    "angle_predicted": 186.0,
+    "error": 0.5339329648227533
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000005032.jpg",
+    "angle_applied": 63.53978000006165,
+    "angle_predicted": 63.0,
+    "error": 0.5397800000616471
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000018462.jpg",
+    "angle_applied": 95.54021673820034,
+    "angle_predicted": 95.0,
+    "error": 0.5402167382003427
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000049194.jpg",
+    "angle_applied": 164.54115407929226,
+    "angle_predicted": 164.0,
+    "error": 0.5411540792922551
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000045920.jpg",
+    "angle_applied": 77.54335356356574,
+    "angle_predicted": 77.0,
+    "error": 0.5433535635657449
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000037734.jpg",
+    "angle_applied": 245.45530767725404,
+    "angle_predicted": 246.0,
+    "error": 0.5446923227459592
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000052282.jpg",
+    "angle_applied": 15.452708619179525,
+    "angle_predicted": 16.0,
+    "error": 0.5472913808204751
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000038488.jpg",
+    "angle_applied": 165.54811815216266,
+    "angle_predicted": 165.0,
+    "error": 0.5481181521626581
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000012543.jpg",
+    "angle_applied": 125.45135605205896,
+    "angle_predicted": 126.0,
+    "error": 0.548643947941045
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000063040.jpg",
+    "angle_applied": 22.548961101531514,
+    "angle_predicted": 22.0,
+    "error": 0.5489611015315141
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000055053.jpg",
+    "angle_applied": 309.4491011110637,
+    "angle_predicted": 310.0,
+    "error": 0.550898888936274
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000016308.jpg",
+    "angle_applied": 89.55113166718489,
+    "angle_predicted": 89.0,
+    "error": 0.5511316671848903
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000010920.jpg",
+    "angle_applied": 203.55167226906323,
+    "angle_predicted": 203.0,
+    "error": 0.5516722690632321
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000009007.jpg",
+    "angle_applied": 243.44729361988664,
+    "angle_predicted": 244.0,
+    "error": 0.5527063801133636
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000052827.jpg",
+    "angle_applied": 47.447230465581185,
+    "angle_predicted": 48.0,
+    "error": 0.5527695344188146
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000019253.jpg",
+    "angle_applied": 113.55420633270619,
+    "angle_predicted": 113.0,
+    "error": 0.5542063327061868
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000012280.jpg",
+    "angle_applied": 204.5583337211442,
+    "angle_predicted": 204.0,
+    "error": 0.5583337211442085
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000038775.jpg",
+    "angle_applied": 272.4403113852801,
+    "angle_predicted": 273.0,
+    "error": 0.5596886147199029
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000006527.jpg",
+    "angle_applied": 105.43988340972528,
+    "angle_predicted": 106.0,
+    "error": 0.5601165902747169
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000000164.jpg",
+    "angle_applied": 143.43633310308374,
+    "angle_predicted": 144.0,
+    "error": 0.5636668969162599
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000015559.jpg",
+    "angle_applied": 114.56406330374246,
+    "angle_predicted": 114.0,
+    "error": 0.5640633037424578
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000063740.jpg",
+    "angle_applied": 325.43422377416533,
+    "angle_predicted": 326.0,
+    "error": 0.5657762258346679
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000044045.jpg",
+    "angle_applied": 169.43362171700744,
+    "angle_predicted": 170.0,
+    "error": 0.5663782829925594
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000034950.jpg",
+    "angle_applied": 108.56693400283775,
+    "angle_predicted": 108.0,
+    "error": 0.5669340028377547
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000012443.jpg",
+    "angle_applied": 241.4296330625374,
+    "angle_predicted": 242.0,
+    "error": 0.5703669374626088
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000000133.jpg",
+    "angle_applied": 104.42793859575987,
+    "angle_predicted": 105.0,
+    "error": 0.5720614042401309
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000040102.jpg",
+    "angle_applied": 25.5729809512393,
+    "angle_predicted": 25.0,
+    "error": 0.5729809512392983
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000014600.jpg",
+    "angle_applied": 187.57317823348654,
+    "angle_predicted": 187.0,
+    "error": 0.5731782334865443
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000060128.jpg",
+    "angle_applied": 245.42638022497002,
+    "angle_predicted": 246.0,
+    "error": 0.5736197750299823
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000036311.jpg",
+    "angle_applied": 350.574730864554,
+    "angle_predicted": 350.0,
+    "error": 0.5747308645539988
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000013832.jpg",
+    "angle_applied": 108.57550841313929,
+    "angle_predicted": 108.0,
+    "error": 0.5755084131392891
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000008899.jpg",
+    "angle_applied": 169.42352541050624,
+    "angle_predicted": 170.0,
+    "error": 0.5764745894937562
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000001205.jpg",
+    "angle_applied": 22.576662728404454,
+    "angle_predicted": 22.0,
+    "error": 0.5766627284044539
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000039871.jpg",
+    "angle_applied": 91.4189913342093,
+    "angle_predicted": 92.0,
+    "error": 0.581008665790705
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000032901.jpg",
+    "angle_applied": 257.4189350874601,
+    "angle_predicted": 258.0,
+    "error": 0.5810649125398868
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000033835.jpg",
+    "angle_applied": 88.58274659674721,
+    "angle_predicted": 88.0,
+    "error": 0.5827465967472136
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000047566.jpg",
+    "angle_applied": 348.58310770594704,
+    "angle_predicted": 348.0,
+    "error": 0.5831077059470431
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000009262.jpg",
+    "angle_applied": 207.4166403904213,
+    "angle_predicted": 208.0,
+    "error": 0.5833596095787072
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000049777.jpg",
+    "angle_applied": 359.5849223644319,
+    "angle_predicted": 359.0,
+    "error": 0.5849223644319181
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000041603.jpg",
+    "angle_applied": 46.41346715574719,
+    "angle_predicted": 47.0,
+    "error": 0.5865328442528082
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000027935.jpg",
+    "angle_applied": 83.41258552963363,
+    "angle_predicted": 84.0,
+    "error": 0.5874144703663688
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000017436.jpg",
+    "angle_applied": 286.4125326755567,
+    "angle_predicted": 287.0,
+    "error": 0.5874673244433097
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000050360.jpg",
+    "angle_applied": 265.41152733473183,
+    "angle_predicted": 266.0,
+    "error": 0.5884726652681707
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000022759.jpg",
+    "angle_applied": 293.5885747566848,
+    "angle_predicted": 293.0,
+    "error": 0.5885747566848067
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000009002.jpg",
+    "angle_applied": 210.4113848240768,
+    "angle_predicted": 211.0,
+    "error": 0.588615175923195
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000011742.jpg",
+    "angle_applied": 253.5891846924718,
+    "angle_predicted": 253.0,
+    "error": 0.5891846924718038
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000056002.jpg",
+    "angle_applied": 120.41054693860136,
+    "angle_predicted": 121.0,
+    "error": 0.5894530613986433
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000061693.jpg",
+    "angle_applied": 248.40900726884186,
+    "angle_predicted": 249.0,
+    "error": 0.5909927311581384
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000035677.jpg",
+    "angle_applied": 305.40429712440215,
+    "angle_predicted": 306.0,
+    "error": 0.5957028755978513
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000007570.jpg",
+    "angle_applied": 253.39989007453187,
+    "angle_predicted": 254.0,
+    "error": 0.6001099254681321
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000038837.jpg",
+    "angle_applied": 14.397408684258108,
+    "angle_predicted": 15.0,
+    "error": 0.6025913157418916
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000005476.jpg",
+    "angle_applied": 345.396002700033,
+    "angle_predicted": 346.0,
+    "error": 0.6039972999669772
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000003335.jpg",
+    "angle_applied": 146.60682170897064,
+    "angle_predicted": 146.0,
+    "error": 0.6068217089706422
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000061316.jpg",
+    "angle_applied": 93.39212316432777,
+    "angle_predicted": 94.0,
+    "error": 0.6078768356722293
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000001591.jpg",
+    "angle_applied": 109.60862665583502,
+    "angle_predicted": 109.0,
+    "error": 0.6086266558350246
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000041638.jpg",
+    "angle_applied": 329.3894773136227,
+    "angle_predicted": 330.0,
+    "error": 0.6105226863772941
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000033645.jpg",
+    "angle_applied": 130.38806121818016,
+    "angle_predicted": 131.0,
+    "error": 0.6119387818198447
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000013774.jpg",
+    "angle_applied": 80.61288770173685,
+    "angle_predicted": 80.0,
+    "error": 0.6128877017368524
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000036962.jpg",
+    "angle_applied": 107.38163734417108,
+    "angle_predicted": 108.0,
+    "error": 0.6183626558289177
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000004988.jpg",
+    "angle_applied": 4.3816164995731555,
+    "angle_predicted": 5.0,
+    "error": 0.6183835004268445
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000009857.jpg",
+    "angle_applied": 155.6213332252675,
+    "angle_predicted": 155.0,
+    "error": 0.6213332252675059
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000058462.jpg",
+    "angle_applied": 21.377947682084123,
+    "angle_predicted": 22.0,
+    "error": 0.6220523179158768
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000019667.jpg",
+    "angle_applied": 323.62599320173143,
+    "angle_predicted": 323.0,
+    "error": 0.6259932017314327
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000035963.jpg",
+    "angle_applied": 185.37199269723664,
+    "angle_predicted": 186.0,
+    "error": 0.6280073027633648
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000017235.jpg",
+    "angle_applied": 352.6296945607651,
+    "angle_predicted": 352.0,
+    "error": 0.6296945607650741
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000034580.jpg",
+    "angle_applied": 185.62980479445062,
+    "angle_predicted": 185.0,
+    "error": 0.6298047944506209
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000002124.jpg",
+    "angle_applied": 212.36759148764554,
+    "angle_predicted": 213.0,
+    "error": 0.6324085123544592
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000009400.jpg",
+    "angle_applied": 254.3668942582724,
+    "angle_predicted": 255.0,
+    "error": 0.6331057417276043
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000044910.jpg",
+    "angle_applied": 145.36538664024042,
+    "angle_predicted": 146.0,
+    "error": 0.6346133597595838
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000012959.jpg",
+    "angle_applied": 236.63480998217105,
+    "angle_predicted": 236.0,
+    "error": 0.6348099821710491
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000009772.jpg",
+    "angle_applied": 290.63482514100383,
+    "angle_predicted": 290.0,
+    "error": 0.6348251410038301
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000002764.jpg",
+    "angle_applied": 204.63622159271347,
+    "angle_predicted": 204.0,
+    "error": 0.6362215927134685
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000026671.jpg",
+    "angle_applied": 58.36329385517996,
+    "angle_predicted": 59.0,
+    "error": 0.6367061448200388
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000053450.jpg",
+    "angle_applied": 337.36213509858635,
+    "angle_predicted": 338.0,
+    "error": 0.6378649014136499
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000045966.jpg",
+    "angle_applied": 82.64428008910193,
+    "angle_predicted": 82.0,
+    "error": 0.644280089101926
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000043170.jpg",
+    "angle_applied": 222.34877894731574,
+    "angle_predicted": 223.0,
+    "error": 0.6512210526842637
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000008351.jpg",
+    "angle_applied": 200.6527648766101,
+    "angle_predicted": 200.0,
+    "error": 0.6527648766100924
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000017627.jpg",
+    "angle_applied": 164.34716085455594,
+    "angle_predicted": 165.0,
+    "error": 0.6528391454440623
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000010192.jpg",
+    "angle_applied": 179.34464367465964,
+    "angle_predicted": 180.0,
+    "error": 0.6553563253403638
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000054605.jpg",
+    "angle_applied": 162.65580576111347,
+    "angle_predicted": 162.0,
+    "error": 0.65580576111347
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000034212.jpg",
+    "angle_applied": 278.65703977151,
+    "angle_predicted": 278.0,
+    "error": 0.6570397715099716
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000062566.jpg",
+    "angle_applied": 342.3429399799419,
+    "angle_predicted": 343.0,
+    "error": 0.6570600200581111
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000011449.jpg",
+    "angle_applied": 64.65732392146853,
+    "angle_predicted": 64.0,
+    "error": 0.6573239214685316
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000046048.jpg",
+    "angle_applied": 310.3425345064346,
+    "angle_predicted": 311.0,
+    "error": 0.6574654935653825
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000027578.jpg",
+    "angle_applied": 103.33854717106671,
+    "angle_predicted": 104.0,
+    "error": 0.6614528289332924
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000053183.jpg",
+    "angle_applied": 37.66603994729067,
+    "angle_predicted": 37.0,
+    "error": 0.6660399472906704
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000034193.jpg",
+    "angle_applied": 47.33380774480594,
+    "angle_predicted": 48.0,
+    "error": 0.666192255194062
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000019763.jpg",
+    "angle_applied": 199.67222110329345,
+    "angle_predicted": 199.0,
+    "error": 0.6722211032934524
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000039866.jpg",
+    "angle_applied": 330.676722428526,
+    "angle_predicted": 330.0,
+    "error": 0.6767224285259772
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000039468.jpg",
+    "angle_applied": 132.32227321724275,
+    "angle_predicted": 133.0,
+    "error": 0.6777267827572473
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000034691.jpg",
+    "angle_applied": 278.3196189019509,
+    "angle_predicted": 279.0,
+    "error": 0.6803810980491107
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000022103.jpg",
+    "angle_applied": 336.3170392529258,
+    "angle_predicted": 337.0,
+    "error": 0.6829607470742189
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000022671.jpg",
+    "angle_applied": 248.31657542799016,
+    "angle_predicted": 249.0,
+    "error": 0.6834245720098409
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000013168.jpg",
+    "angle_applied": 153.68556967598653,
+    "angle_predicted": 153.0,
+    "error": 0.6855696759865282
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000020760.jpg",
+    "angle_applied": 189.68668165878492,
+    "angle_predicted": 189.0,
+    "error": 0.68668165878492
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000000257.jpg",
+    "angle_applied": 199.68761111811082,
+    "angle_predicted": 199.0,
+    "error": 0.6876111181108229
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000026472.jpg",
+    "angle_applied": 249.3113724279957,
+    "angle_predicted": 250.0,
+    "error": 0.6886275720042931
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000016523.jpg",
+    "angle_applied": 1.6903714293169436,
+    "angle_predicted": 1.0,
+    "error": 0.6903714293169436
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000007566.jpg",
+    "angle_applied": 344.3060602065416,
+    "angle_predicted": 345.0,
+    "error": 0.6939397934584122
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000007125.jpg",
+    "angle_applied": 126.69704657844866,
+    "angle_predicted": 126.0,
+    "error": 0.6970465784486635
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000053503.jpg",
+    "angle_applied": 201.3025615566128,
+    "angle_predicted": 202.0,
+    "error": 0.697438443387199
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000051249.jpg",
+    "angle_applied": 143.6980122917183,
+    "angle_predicted": 143.0,
+    "error": 0.6980122917182996
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000050099.jpg",
+    "angle_applied": 86.69836076956085,
+    "angle_predicted": 86.0,
+    "error": 0.6983607695608498
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000008473.jpg",
+    "angle_applied": 245.30130381738164,
+    "angle_predicted": 246.0,
+    "error": 0.6986961826183631
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000008218.jpg",
+    "angle_applied": 292.6993907690858,
+    "angle_predicted": 292.0,
+    "error": 0.6993907690858236
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000000939.jpg",
+    "angle_applied": 260.70034918015557,
+    "angle_predicted": 260.0,
+    "error": 0.7003491801555697
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000016598.jpg",
+    "angle_applied": 286.7009308262394,
+    "angle_predicted": 286.0,
+    "error": 0.7009308262394143
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000056400.jpg",
+    "angle_applied": 134.7011929203212,
+    "angle_predicted": 134.0,
+    "error": 0.7011929203212048
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000054598.jpg",
+    "angle_applied": 307.2981752266579,
+    "angle_predicted": 308.0,
+    "error": 0.7018247733420822
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000037709.jpg",
+    "angle_applied": 160.70198957395306,
+    "angle_predicted": 160.0,
+    "error": 0.7019895739530568
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000054305.jpg",
+    "angle_applied": 56.29800559246669,
+    "angle_predicted": 57.0,
+    "error": 0.7019944075333129
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000027032.jpg",
+    "angle_applied": 171.2974305086002,
+    "angle_predicted": 172.0,
+    "error": 0.7025694913997995
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000058816.jpg",
+    "angle_applied": 346.2970962770024,
+    "angle_predicted": 347.0,
+    "error": 0.7029037229975756
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000005352.jpg",
+    "angle_applied": 287.29686020852296,
+    "angle_predicted": 288.0,
+    "error": 0.7031397914770423
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000046877.jpg",
+    "angle_applied": 188.70618974175295,
+    "angle_predicted": 188.0,
+    "error": 0.7061897417529508
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000056874.jpg",
+    "angle_applied": 134.2925509970691,
+    "angle_predicted": 135.0,
+    "error": 0.7074490029309004
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000004438.jpg",
+    "angle_applied": 287.71293144686103,
+    "angle_predicted": 287.0,
+    "error": 0.7129314468610346
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000042008.jpg",
+    "angle_applied": 168.71443259317257,
+    "angle_predicted": 168.0,
+    "error": 0.7144325931725746
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000018525.jpg",
+    "angle_applied": 268.2838656115665,
+    "angle_predicted": 269.0,
+    "error": 0.7161343884334883
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000041998.jpg",
+    "angle_applied": 41.723448777316705,
+    "angle_predicted": 41.0,
+    "error": 0.7234487773167046
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000032777.jpg",
+    "angle_applied": 163.27536576410478,
+    "angle_predicted": 164.0,
+    "error": 0.7246342358952234
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000020247.jpg",
+    "angle_applied": 66.72549131257782,
+    "angle_predicted": 66.0,
+    "error": 0.725491312577816
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000041011.jpg",
+    "angle_applied": 207.27041833615408,
+    "angle_predicted": 208.0,
+    "error": 0.72958166384592
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000063939.jpg",
+    "angle_applied": 223.73222453991488,
+    "angle_predicted": 223.0,
+    "error": 0.7322245399148812
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000004296.jpg",
+    "angle_applied": 122.2671758998317,
+    "angle_predicted": 123.0,
+    "error": 0.7328241001683011
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000050232.jpg",
+    "angle_applied": 265.2671382050828,
+    "angle_predicted": 266.0,
+    "error": 0.7328617949171985
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000050485.jpg",
+    "angle_applied": 39.73505081914985,
+    "angle_predicted": 39.0,
+    "error": 0.7350508191498477
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000048104.jpg",
+    "angle_applied": 36.736131869290105,
+    "angle_predicted": 36.0,
+    "error": 0.7361318692901051
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000042408.jpg",
+    "angle_applied": 111.7370973527321,
+    "angle_predicted": 111.0,
+    "error": 0.737097352732107
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000051025.jpg",
+    "angle_applied": 62.262487537616295,
+    "angle_predicted": 63.0,
+    "error": 0.7375124623837053
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000003932.jpg",
+    "angle_applied": 359.7400778119816,
+    "angle_predicted": 359.0,
+    "error": 0.7400778119816209
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000002881.jpg",
+    "angle_applied": 147.25947433430218,
+    "angle_predicted": 148.0,
+    "error": 0.7405256656978167
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000015956.jpg",
+    "angle_applied": 32.257092325897936,
+    "angle_predicted": 33.0,
+    "error": 0.7429076741020637
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000033561.jpg",
+    "angle_applied": 299.74314439725765,
+    "angle_predicted": 299.0,
+    "error": 0.7431443972576517
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000061899.jpg",
+    "angle_applied": 314.7436679849809,
+    "angle_predicted": 314.0,
+    "error": 0.7436679849809025
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000015386.jpg",
+    "angle_applied": 217.74438710821656,
+    "angle_predicted": 217.0,
+    "error": 0.7443871082165572
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000042399.jpg",
+    "angle_applied": 206.75708958584838,
+    "angle_predicted": 206.0,
+    "error": 0.7570895858483766
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000016546.jpg",
+    "angle_applied": 234.757177200608,
+    "angle_predicted": 234.0,
+    "error": 0.7571772006079982
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000064155.jpg",
+    "angle_applied": 211.24236472494076,
+    "angle_predicted": 212.0,
+    "error": 0.7576352750592434
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000009699.jpg",
+    "angle_applied": 88.7604983320162,
+    "angle_predicted": 88.0,
+    "error": 0.7604983320161978
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000002985.jpg",
+    "angle_applied": 191.76069148968986,
+    "angle_predicted": 191.0,
+    "error": 0.7606914896898616
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000044604.jpg",
+    "angle_applied": 7.238716627497679,
+    "angle_predicted": 8.0,
+    "error": 0.7612833725023211
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000035206.jpg",
+    "angle_applied": 9.238578499631366,
+    "angle_predicted": 10.0,
+    "error": 0.761421500368634
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000016410.jpg",
+    "angle_applied": 186.23739006578884,
+    "angle_predicted": 187.0,
+    "error": 0.7626099342111559
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000003580.jpg",
+    "angle_applied": 79.23738988112629,
+    "angle_predicted": 80.0,
+    "error": 0.7626101188737096
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000038572.jpg",
+    "angle_applied": 255.76407342161696,
+    "angle_predicted": 255.0,
+    "error": 0.7640734216169562
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000038540.jpg",
+    "angle_applied": 4.765268793203816,
+    "angle_predicted": 4.0,
+    "error": 0.7652687932038162
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000049165.jpg",
+    "angle_applied": 19.233785443257094,
+    "angle_predicted": 20.0,
+    "error": 0.7662145567429057
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000037988.jpg",
+    "angle_applied": 345.23377987085047,
+    "angle_predicted": 346.0,
+    "error": 0.7662201291495307
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000019456.jpg",
+    "angle_applied": 300.2333917955874,
+    "angle_predicted": 301.0,
+    "error": 0.7666082044125915
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000059152.jpg",
+    "angle_applied": 186.23106619282396,
+    "angle_predicted": 187.0,
+    "error": 0.7689338071760403
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000047603.jpg",
+    "angle_applied": 80.23097448539288,
+    "angle_predicted": 81.0,
+    "error": 0.7690255146071223
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000028540.jpg",
+    "angle_applied": 207.77048784732304,
+    "angle_predicted": 207.0,
+    "error": 0.7704878473230394
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000017311.jpg",
+    "angle_applied": 57.2290501123871,
+    "angle_predicted": 58.0,
+    "error": 0.7709498876129004
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000061735.jpg",
+    "angle_applied": 101.77187434039318,
+    "angle_predicted": 101.0,
+    "error": 0.7718743403931825
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000021671.jpg",
+    "angle_applied": 120.22735305485129,
+    "angle_predicted": 121.0,
+    "error": 0.7726469451487077
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000010800.jpg",
+    "angle_applied": 354.7769139515871,
+    "angle_predicted": 354.0,
+    "error": 0.7769139515871188
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000033345.jpg",
+    "angle_applied": 222.77742056689553,
+    "angle_predicted": 222.0,
+    "error": 0.777420566895529
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000029045.jpg",
+    "angle_applied": 120.77934108332387,
+    "angle_predicted": 120.0,
+    "error": 0.779341083323871
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000007726.jpg",
+    "angle_applied": 116.2186335173115,
+    "angle_predicted": 117.0,
+    "error": 0.7813664826884974
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000014961.jpg",
+    "angle_applied": 10.782116965709768,
+    "angle_predicted": 10.0,
+    "error": 0.7821169657097684
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000042070.jpg",
+    "angle_applied": 316.21409833679786,
+    "angle_predicted": 317.0,
+    "error": 0.7859016632021394
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000019157.jpg",
+    "angle_applied": 261.21397111580836,
+    "angle_predicted": 262.0,
+    "error": 0.7860288841916372
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000020334.jpg",
+    "angle_applied": 352.78643748323134,
+    "angle_predicted": 352.0,
+    "error": 0.7864374832313388
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000003849.jpg",
+    "angle_applied": 171.21208215054375,
+    "angle_predicted": 172.0,
+    "error": 0.7879178494562495
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000029170.jpg",
+    "angle_applied": 53.21112361101805,
+    "angle_predicted": 54.0,
+    "error": 0.7888763889819472
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000008771.jpg",
+    "angle_applied": 198.78928917206636,
+    "angle_predicted": 198.0,
+    "error": 0.7892891720663613
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000047498.jpg",
+    "angle_applied": 164.21060404817268,
+    "angle_predicted": 165.0,
+    "error": 0.7893959518273164
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000047367.jpg",
+    "angle_applied": 115.20617429608842,
+    "angle_predicted": 116.0,
+    "error": 0.7938257039115797
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000021483.jpg",
+    "angle_applied": 213.20295075426125,
+    "angle_predicted": 214.0,
+    "error": 0.7970492457387479
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000021903.jpg",
+    "angle_applied": 97.20287034917935,
+    "angle_predicted": 98.0,
+    "error": 0.7971296508206507
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000044263.jpg",
+    "angle_applied": 320.201247173712,
+    "angle_predicted": 321.0,
+    "error": 0.7987528262880232
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000033114.jpg",
+    "angle_applied": 223.7995571231728,
+    "angle_predicted": 223.0,
+    "error": 0.7995571231728036
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000043997.jpg",
+    "angle_applied": 179.19968681712305,
+    "angle_predicted": 180.0,
+    "error": 0.8003131828769483
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000038678.jpg",
+    "angle_applied": 322.80166549452315,
+    "angle_predicted": 322.0,
+    "error": 0.8016654945231494
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000058614.jpg",
+    "angle_applied": 207.80229189750034,
+    "angle_predicted": 207.0,
+    "error": 0.8022918975003392
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000000208.jpg",
+    "angle_applied": 0.19654736291843555,
+    "angle_predicted": 1.0,
+    "error": 0.8034526370815644
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000023660.jpg",
+    "angle_applied": 75.19563219414049,
+    "angle_predicted": 76.0,
+    "error": 0.8043678058595134
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000057725.jpg",
+    "angle_applied": 96.19453147043471,
+    "angle_predicted": 97.0,
+    "error": 0.8054685295652888
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000058772.jpg",
+    "angle_applied": 332.1923796811315,
+    "angle_predicted": 333.0,
+    "error": 0.8076203188684872
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000018957.jpg",
+    "angle_applied": 137.81090129682747,
+    "angle_predicted": 137.0,
+    "error": 0.8109012968274669
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000026374.jpg",
+    "angle_applied": 251.81253911430156,
+    "angle_predicted": 251.0,
+    "error": 0.8125391143015577
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000008181.jpg",
+    "angle_applied": 145.81282078690197,
+    "angle_predicted": 145.0,
+    "error": 0.8128207869019661
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000034786.jpg",
+    "angle_applied": 87.18429388539076,
+    "angle_predicted": 88.0,
+    "error": 0.8157061146092417
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000019322.jpg",
+    "angle_applied": 331.8188640735,
+    "angle_predicted": 331.0,
+    "error": 0.8188640734999808
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000040705.jpg",
+    "angle_applied": 312.1801772778717,
+    "angle_predicted": 313.0,
+    "error": 0.8198227221283219
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000020470.jpg",
+    "angle_applied": 280.17942022671974,
+    "angle_predicted": 281.0,
+    "error": 0.820579773280258
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000001532.jpg",
+    "angle_applied": 101.82126678338985,
+    "angle_predicted": 101.0,
+    "error": 0.821266783389845
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000014990.jpg",
+    "angle_applied": 172.821919615472,
+    "angle_predicted": 172.0,
+    "error": 0.8219196154720123
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000035825.jpg",
+    "angle_applied": 53.166808154414646,
+    "angle_predicted": 54.0,
+    "error": 0.833191845585354
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000006608.jpg",
+    "angle_applied": 89.16660809723373,
+    "angle_predicted": 90.0,
+    "error": 0.833391902766266
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000014282.jpg",
+    "angle_applied": 322.83401696078755,
+    "angle_predicted": 322.0,
+    "error": 0.8340169607875509
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000002532.jpg",
+    "angle_applied": 309.1598885634848,
+    "angle_predicted": 310.0,
+    "error": 0.8401114365152011
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000000073.jpg",
+    "angle_applied": 235.1522951485681,
+    "angle_predicted": 236.0,
+    "error": 0.8477048514318994
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000038828.jpg",
+    "angle_applied": 34.84942314421471,
+    "angle_predicted": 34.0,
+    "error": 0.8494231442147111
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000041322.jpg",
+    "angle_applied": 310.84943370969086,
+    "angle_predicted": 310.0,
+    "error": 0.8494337096908566
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000008711.jpg",
+    "angle_applied": 81.85048166790065,
+    "angle_predicted": 81.0,
+    "error": 0.8504816679006524
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000030895.jpg",
+    "angle_applied": 146.13923590858215,
+    "angle_predicted": 147.0,
+    "error": 0.8607640914178489
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000037677.jpg",
+    "angle_applied": 40.138580627537614,
+    "angle_predicted": 41.0,
+    "error": 0.861419372462386
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000028874.jpg",
+    "angle_applied": 213.13509525786205,
+    "angle_predicted": 214.0,
+    "error": 0.8649047421379521
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000060363.jpg",
+    "angle_applied": 266.1348885833886,
+    "angle_predicted": 267.0,
+    "error": 0.8651114166113985
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000036451.jpg",
+    "angle_applied": 135.86636613199943,
+    "angle_predicted": 135.0,
+    "error": 0.8663661319994276
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000046252.jpg",
+    "angle_applied": 61.86711565715149,
+    "angle_predicted": 61.0,
+    "error": 0.8671156571514871
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000012085.jpg",
+    "angle_applied": 159.1328295827731,
+    "angle_predicted": 160.0,
+    "error": 0.8671704172269017
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000050355.jpg",
+    "angle_applied": 36.868953042869904,
+    "angle_predicted": 36.0,
+    "error": 0.8689530428699044
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000061315.jpg",
+    "angle_applied": 152.87868102261345,
+    "angle_predicted": 152.0,
+    "error": 0.8786810226134492
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000040497.jpg",
+    "angle_applied": 13.880608581239407,
+    "angle_predicted": 13.0,
+    "error": 0.8806085812394073
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000056070.jpg",
+    "angle_applied": 6.884243081528321,
+    "angle_predicted": 6.0,
+    "error": 0.8842430815283207
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000050277.jpg",
+    "angle_applied": 8.884342220879242,
+    "angle_predicted": 8.0,
+    "error": 0.8843422208792422
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000009175.jpg",
+    "angle_applied": 103.8851847546104,
+    "angle_predicted": 103.0,
+    "error": 0.8851847546104068
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000060823.jpg",
+    "angle_applied": 4.11388510501117,
+    "angle_predicted": 5.0,
+    "error": 0.8861148949888298
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000042147.jpg",
+    "angle_applied": 263.1080904372568,
+    "angle_predicted": 264.0,
+    "error": 0.8919095627431943
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000060364.jpg",
+    "angle_applied": 211.1076598270776,
+    "angle_predicted": 212.0,
+    "error": 0.8923401729223883
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000056433.jpg",
+    "angle_applied": 338.8959736943395,
+    "angle_predicted": 338.0,
+    "error": 0.8959736943394887
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000020307.jpg",
+    "angle_applied": 351.89825030800085,
+    "angle_predicted": 351.0,
+    "error": 0.8982503080008541
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000032190.jpg",
+    "angle_applied": 345.90047690268005,
+    "angle_predicted": 345.0,
+    "error": 0.9004769026800545
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000012238.jpg",
+    "angle_applied": 111.90239177159377,
+    "angle_predicted": 111.0,
+    "error": 0.9023917715937699
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000020608.jpg",
+    "angle_applied": 11.906852931182023,
+    "angle_predicted": 11.0,
+    "error": 0.9068529311820228
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000039081.jpg",
+    "angle_applied": 155.90788167645664,
+    "angle_predicted": 155.0,
+    "error": 0.9078816764566398
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000058927.jpg",
+    "angle_applied": 5.9146666529307135,
+    "angle_predicted": 5.0,
+    "error": 0.9146666529307135
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000034464.jpg",
+    "angle_applied": 261.9169168793507,
+    "angle_predicted": 261.0,
+    "error": 0.9169168793507083
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000042260.jpg",
+    "angle_applied": 346.91859378037054,
+    "angle_predicted": 346.0,
+    "error": 0.9185937803705428
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000011494.jpg",
+    "angle_applied": 187.9186585067937,
+    "angle_predicted": 187.0,
+    "error": 0.9186585067936903
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000063661.jpg",
+    "angle_applied": 136.9206660699263,
+    "angle_predicted": 136.0,
+    "error": 0.9206660699263125
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000023033.jpg",
+    "angle_applied": 285.0766450671245,
+    "angle_predicted": 286.0,
+    "error": 0.9233549328754975
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000034471.jpg",
+    "angle_applied": 292.92431389267085,
+    "angle_predicted": 292.0,
+    "error": 0.9243138926708525
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000007304.jpg",
+    "angle_applied": 78.07329003277464,
+    "angle_predicted": 79.0,
+    "error": 0.9267099672253636
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000045959.jpg",
+    "angle_applied": 119.93225473031109,
+    "angle_predicted": 119.0,
+    "error": 0.9322547303110866
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000060434.jpg",
+    "angle_applied": 296.0664258080485,
+    "angle_predicted": 297.0,
+    "error": 0.933574191951493
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000000459.jpg",
+    "angle_applied": 50.06617241350061,
+    "angle_predicted": 51.0,
+    "error": 0.9338275864993903
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000043680.jpg",
+    "angle_applied": 89.06355199409533,
+    "angle_predicted": 90.0,
+    "error": 0.9364480059046656
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000025997.jpg",
+    "angle_applied": 259.06325682322375,
+    "angle_predicted": 260.0,
+    "error": 0.9367431767762469
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000038073.jpg",
+    "angle_applied": 120.06268768485911,
+    "angle_predicted": 121.0,
+    "error": 0.9373123151408862
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000008119.jpg",
+    "angle_applied": 165.0611401439202,
+    "angle_predicted": 166.0,
+    "error": 0.9388598560798016
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000053120.jpg",
+    "angle_applied": 154.94487822290205,
+    "angle_predicted": 154.0,
+    "error": 0.944878222902048
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000022199.jpg",
+    "angle_applied": 160.05142361206828,
+    "angle_predicted": 161.0,
+    "error": 0.9485763879317233
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000026363.jpg",
+    "angle_applied": 323.9520274800109,
+    "angle_predicted": 323.0,
+    "error": 0.9520274800108837
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000035857.jpg",
+    "angle_applied": 229.95423265195055,
+    "angle_predicted": 229.0,
+    "error": 0.954232651950548
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000017282.jpg",
+    "angle_applied": 256.95607262760586,
+    "angle_predicted": 256.0,
+    "error": 0.9560726276058631
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000049413.jpg",
+    "angle_applied": 312.0438755732744,
+    "angle_predicted": 313.0,
+    "error": 0.9561244267255802
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000014297.jpg",
+    "angle_applied": 289.0416137620803,
+    "angle_predicted": 290.0,
+    "error": 0.958386237919683
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000034114.jpg",
+    "angle_applied": 86.96053441437063,
+    "angle_predicted": 86.0,
+    "error": 0.9605344143706276
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000056129.jpg",
+    "angle_applied": 321.03828028154874,
+    "angle_predicted": 322.0,
+    "error": 0.9617197184512634
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000011699.jpg",
+    "angle_applied": 124.03096587155241,
+    "angle_predicted": 125.0,
+    "error": 0.9690341284475892
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000046503.jpg",
+    "angle_applied": 67.02948211692102,
+    "angle_predicted": 68.0,
+    "error": 0.9705178830789833
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000027272.jpg",
+    "angle_applied": 12.972174274285013,
+    "angle_predicted": 12.0,
+    "error": 0.9721742742850132
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000046345.jpg",
+    "angle_applied": 339.9740603942161,
+    "angle_predicted": 339.0,
+    "error": 0.9740603942161101
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000063047.jpg",
+    "angle_applied": 352.97483884884247,
+    "angle_predicted": 352.0,
+    "error": 0.9748388488424666
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000026025.jpg",
+    "angle_applied": 203.97652351436705,
+    "angle_predicted": 203.0,
+    "error": 0.9765235143670452
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000038186.jpg",
+    "angle_applied": 76.98072484857116,
+    "angle_predicted": 76.0,
+    "error": 0.9807248485711568
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000009275.jpg",
+    "angle_applied": 331.0137409480825,
+    "angle_predicted": 332.0,
+    "error": 0.9862590519175001
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000004312.jpg",
+    "angle_applied": 123.01132135130356,
+    "angle_predicted": 124.0,
+    "error": 0.9886786486964354
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000005713.jpg",
+    "angle_applied": 353.00884780342165,
+    "angle_predicted": 354.0,
+    "error": 0.991152196578355
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000045404.jpg",
+    "angle_applied": 28.99152124986387,
+    "angle_predicted": 28.0,
+    "error": 0.9915212498638688
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000048972.jpg",
+    "angle_applied": 87.99321312057698,
+    "angle_predicted": 87.0,
+    "error": 0.9932131205769821
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000054337.jpg",
+    "angle_applied": 190.99339724260145,
+    "angle_predicted": 190.0,
+    "error": 0.9933972426014464
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000044950.jpg",
+    "angle_applied": 216.99481538579178,
+    "angle_predicted": 216.0,
+    "error": 0.9948153857917816
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000060835.jpg",
+    "angle_applied": 292.99685109142894,
+    "angle_predicted": 294.0,
+    "error": 1.0031489085710632
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000003771.jpg",
+    "angle_applied": 120.99681590395946,
+    "angle_predicted": 122.0,
+    "error": 1.0031840960405418
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000017313.jpg",
+    "angle_applied": 150.00903248713595,
+    "angle_predicted": 149.0,
+    "error": 1.0090324871359542
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000012209.jpg",
+    "angle_applied": 342.9896441461146,
+    "angle_predicted": 344.0,
+    "error": 1.0103558538854145
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000014450.jpg",
+    "angle_applied": 117.97934456056281,
+    "angle_predicted": 119.0,
+    "error": 1.020655439437192
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000057703.jpg",
+    "angle_applied": 285.02101370975925,
+    "angle_predicted": 284.0,
+    "error": 1.021013709759245
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000052016.jpg",
+    "angle_applied": 193.0238980932427,
+    "angle_predicted": 192.0,
+    "error": 1.0238980932427069
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000015725.jpg",
+    "angle_applied": 207.97539275406254,
+    "angle_predicted": 209.0,
+    "error": 1.0246072459374602
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000011172.jpg",
+    "angle_applied": 48.038195428417445,
+    "angle_predicted": 47.0,
+    "error": 1.0381954284174455
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000032193.jpg",
+    "angle_applied": 226.9612572720448,
+    "angle_predicted": 228.0,
+    "error": 1.0387427279551957
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000000569.jpg",
+    "angle_applied": 34.956459285502056,
+    "angle_predicted": 36.0,
+    "error": 1.0435407144979436
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000061897.jpg",
+    "angle_applied": 141.04689788327968,
+    "angle_predicted": 140.0,
+    "error": 1.0468978832796836
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000058344.jpg",
+    "angle_applied": 138.04700190188328,
+    "angle_predicted": 137.0,
+    "error": 1.0470019018832772
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000008888.jpg",
+    "angle_applied": 99.94633426610349,
+    "angle_predicted": 101.0,
+    "error": 1.0536657338965085
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000004266.jpg",
+    "angle_applied": 211.94625958930374,
+    "angle_predicted": 213.0,
+    "error": 1.053740410696264
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000063355.jpg",
+    "angle_applied": 218.05630461730038,
+    "angle_predicted": 217.0,
+    "error": 1.056304617300384
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000035160.jpg",
+    "angle_applied": 50.942334823884096,
+    "angle_predicted": 52.0,
+    "error": 1.0576651761159042
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000034180.jpg",
+    "angle_applied": 259.94001580932525,
+    "angle_predicted": 261.0,
+    "error": 1.0599841906747542
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000000564.jpg",
+    "angle_applied": 241.9372106474092,
+    "angle_predicted": 243.0,
+    "error": 1.062789352590812
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000017379.jpg",
+    "angle_applied": 127.93278544989467,
+    "angle_predicted": 129.0,
+    "error": 1.0672145501053336
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000003761.jpg",
+    "angle_applied": 319.06967979116155,
+    "angle_predicted": 318.0,
+    "error": 1.0696797911615477
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000035438.jpg",
+    "angle_applied": 164.92997781361544,
+    "angle_predicted": 166.0,
+    "error": 1.0700221863845627
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000051203.jpg",
+    "angle_applied": 98.0772823677465,
+    "angle_predicted": 97.0,
+    "error": 1.0772823677465055
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000004359.jpg",
+    "angle_applied": 250.91900702099545,
+    "angle_predicted": 252.0,
+    "error": 1.0809929790045487
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000037725.jpg",
+    "angle_applied": 36.0816794324284,
+    "angle_predicted": 35.0,
+    "error": 1.0816794324284018
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000000810.jpg",
+    "angle_applied": 140.08848375642688,
+    "angle_predicted": 139.0,
+    "error": 1.088483756426882
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000043243.jpg",
+    "angle_applied": 261.09154073507057,
+    "angle_predicted": 260.0,
+    "error": 1.0915407350705664
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000060730.jpg",
+    "angle_applied": 165.09742623669092,
+    "angle_predicted": 164.0,
+    "error": 1.0974262366909215
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000034500.jpg",
+    "angle_applied": 347.90038971764164,
+    "angle_predicted": 349.0,
+    "error": 1.0996102823583556
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000053139.jpg",
+    "angle_applied": 84.90032067802878,
+    "angle_predicted": 86.0,
+    "error": 1.099679321971223
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000018193.jpg",
+    "angle_applied": 24.900118363849696,
+    "angle_predicted": 26.0,
+    "error": 1.0998816361503039
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000040341.jpg",
+    "angle_applied": 230.1072837211413,
+    "angle_predicted": 229.0,
+    "error": 1.1072837211413002
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000017667.jpg",
+    "angle_applied": 235.11899716754343,
+    "angle_predicted": 234.0,
+    "error": 1.1189971675434265
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000016451.jpg",
+    "angle_applied": 22.879358941017035,
+    "angle_predicted": 24.0,
+    "error": 1.1206410589829652
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000056373.jpg",
+    "angle_applied": 5.878260966134841,
+    "angle_predicted": 7.0,
+    "error": 1.1217390338651594
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000018291.jpg",
+    "angle_applied": 204.8762659012536,
+    "angle_predicted": 206.0,
+    "error": 1.1237340987464108
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000062025.jpg",
+    "angle_applied": 158.8757292649479,
+    "angle_predicted": 160.0,
+    "error": 1.1242707350521073
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000005443.jpg",
+    "angle_applied": 167.87187822827028,
+    "angle_predicted": 169.0,
+    "error": 1.1281217717297238
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000063104.jpg",
+    "angle_applied": 149.13467802528118,
+    "angle_predicted": 148.0,
+    "error": 1.1346780252811755
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000034757.jpg",
+    "angle_applied": 315.8635641026831,
+    "angle_predicted": 317.0,
+    "error": 1.1364358973169146
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000057265.jpg",
+    "angle_applied": 280.1417743620915,
+    "angle_predicted": 279.0,
+    "error": 1.1417743620914962
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000035474.jpg",
+    "angle_applied": 153.1446211278197,
+    "angle_predicted": 152.0,
+    "error": 1.144621127819704
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000008267.jpg",
+    "angle_applied": 211.14465653162995,
+    "angle_predicted": 210.0,
+    "error": 1.1446565316299484
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000013639.jpg",
+    "angle_applied": 251.14723053381536,
+    "angle_predicted": 250.0,
+    "error": 1.1472305338153603
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000060347.jpg",
+    "angle_applied": 91.14882974022669,
+    "angle_predicted": 90.0,
+    "error": 1.148829740226688
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000019523.jpg",
+    "angle_applied": 54.84769404758297,
+    "angle_predicted": 56.0,
+    "error": 1.1523059524170307
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000036492.jpg",
+    "angle_applied": 251.8470216809105,
+    "angle_predicted": 253.0,
+    "error": 1.1529783190894989
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000038645.jpg",
+    "angle_applied": 314.1542359610623,
+    "angle_predicted": 313.0,
+    "error": 1.1542359610622839
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000008599.jpg",
+    "angle_applied": 231.83647172266947,
+    "angle_predicted": 233.0,
+    "error": 1.1635282773305278
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000044723.jpg",
+    "angle_applied": 190.16427210427287,
+    "angle_predicted": 189.0,
+    "error": 1.164272104272868
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000051028.jpg",
+    "angle_applied": 134.1644651355584,
+    "angle_predicted": 133.0,
+    "error": 1.1644651355584017
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000000400.jpg",
+    "angle_applied": 326.83521396755737,
+    "angle_predicted": 328.0,
+    "error": 1.1647860324426347
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000010012.jpg",
+    "angle_applied": 271.1664430531837,
+    "angle_predicted": 270.0,
+    "error": 1.1664430531836842
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000042387.jpg",
+    "angle_applied": 15.831155528672616,
+    "angle_predicted": 17.0,
+    "error": 1.1688444713273842
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000057194.jpg",
+    "angle_applied": 241.16995677272763,
+    "angle_predicted": 240.0,
+    "error": 1.1699567727276303
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000027371.jpg",
+    "angle_applied": 348.82981368132664,
+    "angle_predicted": 350.0,
+    "error": 1.170186318673359
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000034847.jpg",
+    "angle_applied": 337.8283278099788,
+    "angle_predicted": 339.0,
+    "error": 1.1716721900211837
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000061747.jpg",
+    "angle_applied": 105.17310964531758,
+    "angle_predicted": 104.0,
+    "error": 1.1731096453175809
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000019132.jpg",
+    "angle_applied": 177.82482023540047,
+    "angle_predicted": 179.0,
+    "error": 1.1751797645995339
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000007088.jpg",
+    "angle_applied": 33.818583873039,
+    "angle_predicted": 35.0,
+    "error": 1.1814161269609968
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000018485.jpg",
+    "angle_applied": 148.18158490095317,
+    "angle_predicted": 147.0,
+    "error": 1.181584900953169
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000054091.jpg",
+    "angle_applied": 187.18285484550177,
+    "angle_predicted": 186.0,
+    "error": 1.1828548455017653
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000058886.jpg",
+    "angle_applied": 327.1837386285858,
+    "angle_predicted": 326.0,
+    "error": 1.183738628585786
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000046323.jpg",
+    "angle_applied": 355.8145817013214,
+    "angle_predicted": 357.0,
+    "error": 1.1854182986785986
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000036810.jpg",
+    "angle_applied": 129.7964017749212,
+    "angle_predicted": 131.0,
+    "error": 1.2035982250787924
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000020935.jpg",
+    "angle_applied": 333.7962506543225,
+    "angle_predicted": 335.0,
+    "error": 1.2037493456775223
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000029833.jpg",
+    "angle_applied": 80.78890029150247,
+    "angle_predicted": 82.0,
+    "error": 1.2110997084975281
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000000761.jpg",
+    "angle_applied": 55.21279602936446,
+    "angle_predicted": 54.0,
+    "error": 1.212796029364462
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000003794.jpg",
+    "angle_applied": 61.78668381411859,
+    "angle_predicted": 63.0,
+    "error": 1.2133161858814105
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000039267.jpg",
+    "angle_applied": 65.2143462252851,
+    "angle_predicted": 64.0,
+    "error": 1.214346225285098
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000001757.jpg",
+    "angle_applied": 333.214789785358,
+    "angle_predicted": 332.0,
+    "error": 1.2147897853579934
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000033208.jpg",
+    "angle_applied": 325.7814043979737,
+    "angle_predicted": 327.0,
+    "error": 1.218595602026312
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000046327.jpg",
+    "angle_applied": 308.78015190967966,
+    "angle_predicted": 310.0,
+    "error": 1.2198480903203404
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000006894.jpg",
+    "angle_applied": 35.22401441785226,
+    "angle_predicted": 34.0,
+    "error": 1.2240144178522598
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000044494.jpg",
+    "angle_applied": 185.22458758755243,
+    "angle_predicted": 184.0,
+    "error": 1.2245875875524348
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000018837.jpg",
+    "angle_applied": 136.77370412404338,
+    "angle_predicted": 138.0,
+    "error": 1.2262958759566231
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000026432.jpg",
+    "angle_applied": 73.77252730549263,
+    "angle_predicted": 75.0,
+    "error": 1.2274726945073695
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000038816.jpg",
+    "angle_applied": 243.7708118801127,
+    "angle_predicted": 245.0,
+    "error": 1.2291881198873114
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000047801.jpg",
+    "angle_applied": 48.770663120082084,
+    "angle_predicted": 50.0,
+    "error": 1.2293368799179163
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000035567.jpg",
+    "angle_applied": 235.2316180009093,
+    "angle_predicted": 234.0,
+    "error": 1.2316180009092932
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000050006.jpg",
+    "angle_applied": 17.765620843838295,
+    "angle_predicted": 19.0,
+    "error": 1.2343791561617046
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000021639.jpg",
+    "angle_applied": 22.754742601907033,
+    "angle_predicted": 24.0,
+    "error": 1.245257398092967
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000005513.jpg",
+    "angle_applied": 212.75429951652657,
+    "angle_predicted": 214.0,
+    "error": 1.2457004834734278
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000003209.jpg",
+    "angle_applied": 346.7510262937368,
+    "angle_predicted": 348.0,
+    "error": 1.2489737062632003
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000006847.jpg",
+    "angle_applied": 350.2510160483269,
+    "angle_predicted": 349.0,
+    "error": 1.2510160483269033
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000005038.jpg",
+    "angle_applied": 134.7466259955298,
+    "angle_predicted": 136.0,
+    "error": 1.2533740044702029
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000019102.jpg",
+    "angle_applied": 161.7449935275857,
+    "angle_predicted": 163.0,
+    "error": 1.2550064724142942
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000037671.jpg",
+    "angle_applied": 186.2564785754811,
+    "angle_predicted": 185.0,
+    "error": 1.2564785754811112
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000042383.jpg",
+    "angle_applied": 142.74206670491446,
+    "angle_predicted": 144.0,
+    "error": 1.257933295085536
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000018098.jpg",
+    "angle_applied": 230.26400746694696,
+    "angle_predicted": 229.0,
+    "error": 1.264007466946964
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000044831.jpg",
+    "angle_applied": 250.73367505252205,
+    "angle_predicted": 252.0,
+    "error": 1.2663249474779548
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000057306.jpg",
+    "angle_applied": 350.7322366144981,
+    "angle_predicted": 352.0,
+    "error": 1.267763385501894
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000017921.jpg",
+    "angle_applied": 218.27092789623066,
+    "angle_predicted": 217.0,
+    "error": 1.2709278962306598
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000010705.jpg",
+    "angle_applied": 236.27865220749842,
+    "angle_predicted": 235.0,
+    "error": 1.2786522074984248
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000057377.jpg",
+    "angle_applied": 255.7212584307168,
+    "angle_predicted": 257.0,
+    "error": 1.2787415692831985
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000024458.jpg",
+    "angle_applied": 212.71419404934235,
+    "angle_predicted": 214.0,
+    "error": 1.2858059506576467
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000000397.jpg",
+    "angle_applied": 64.28878850075627,
+    "angle_predicted": 63.0,
+    "error": 1.2887885007562687
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000021604.jpg",
+    "angle_applied": 249.28996297320714,
+    "angle_predicted": 248.0,
+    "error": 1.289962973207139
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000016896.jpg",
+    "angle_applied": 212.29010028487826,
+    "angle_predicted": 211.0,
+    "error": 1.290100284878264
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000036420.jpg",
+    "angle_applied": 193.29228038966056,
+    "angle_predicted": 192.0,
+    "error": 1.2922803896605615
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000029138.jpg",
+    "angle_applied": 258.7055005228147,
+    "angle_predicted": 260.0,
+    "error": 1.2944994771852976
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000011987.jpg",
+    "angle_applied": 150.29509492656425,
+    "angle_predicted": 149.0,
+    "error": 1.2950949265642464
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000047010.jpg",
+    "angle_applied": 27.704320915187783,
+    "angle_predicted": 29.0,
+    "error": 1.2956790848122175
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000034452.jpg",
+    "angle_applied": 292.29788220876696,
+    "angle_predicted": 291.0,
+    "error": 1.2978822087669641
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000016775.jpg",
+    "angle_applied": 175.70026103362363,
+    "angle_predicted": 177.0,
+    "error": 1.299738966376367
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000004498.jpg",
+    "angle_applied": 90.69875576859344,
+    "angle_predicted": 92.0,
+    "error": 1.3012442314065567
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000001369.jpg",
+    "angle_applied": 319.3058812382703,
+    "angle_predicted": 318.0,
+    "error": 1.305881238270274
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000057878.jpg",
+    "angle_applied": 42.30923144530956,
+    "angle_predicted": 41.0,
+    "error": 1.3092314453095568
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000025467.jpg",
+    "angle_applied": 80.30938775062259,
+    "angle_predicted": 79.0,
+    "error": 1.3093877506225908
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000039914.jpg",
+    "angle_applied": 57.68296787525158,
+    "angle_predicted": 59.0,
+    "error": 1.3170321247484225
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000016238.jpg",
+    "angle_applied": 53.330709941339414,
+    "angle_predicted": 52.0,
+    "error": 1.3307099413394141
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000005205.jpg",
+    "angle_applied": 88.33219554702411,
+    "angle_predicted": 87.0,
+    "error": 1.3321955470241136
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000054533.jpg",
+    "angle_applied": 305.33413692491456,
+    "angle_predicted": 304.0,
+    "error": 1.33413692491456
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000050672.jpg",
+    "angle_applied": 305.65379103426386,
+    "angle_predicted": 307.0,
+    "error": 1.346208965736139
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000003983.jpg",
+    "angle_applied": 41.653163997753715,
+    "angle_predicted": 43.0,
+    "error": 1.3468360022462846
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000053606.jpg",
+    "angle_applied": 222.65289342458922,
+    "angle_predicted": 224.0,
+    "error": 1.347106575410777
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000011051.jpg",
+    "angle_applied": 149.34847296008306,
+    "angle_predicted": 148.0,
+    "error": 1.3484729600830576
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000045775.jpg",
+    "angle_applied": 154.35673234047582,
+    "angle_predicted": 153.0,
+    "error": 1.3567323404758156
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000022589.jpg",
+    "angle_applied": 266.35821041847635,
+    "angle_predicted": 265.0,
+    "error": 1.3582104184763466
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000050411.jpg",
+    "angle_applied": 326.35997971962445,
+    "angle_predicted": 325.0,
+    "error": 1.359979719624448
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000055810.jpg",
+    "angle_applied": 141.36324355695396,
+    "angle_predicted": 140.0,
+    "error": 1.363243556953961
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000041397.jpg",
+    "angle_applied": 220.63203112211724,
+    "angle_predicted": 222.0,
+    "error": 1.3679688778827597
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000008690.jpg",
+    "angle_applied": 131.3682609676457,
+    "angle_predicted": 130.0,
+    "error": 1.3682609676457105
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000029431.jpg",
+    "angle_applied": 316.6277338885428,
+    "angle_predicted": 318.0,
+    "error": 1.3722661114571792
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000028826.jpg",
+    "angle_applied": 123.62102236472978,
+    "angle_predicted": 125.0,
+    "error": 1.3789776352702177
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000059295.jpg",
+    "angle_applied": 5.618183200858158,
+    "angle_predicted": 7.0,
+    "error": 1.3818167991418422
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000042568.jpg",
+    "angle_applied": 144.61687273665552,
+    "angle_predicted": 146.0,
+    "error": 1.3831272633444769
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000009520.jpg",
+    "angle_applied": 293.38793257328905,
+    "angle_predicted": 292.0,
+    "error": 1.3879325732890493
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000011034.jpg",
+    "angle_applied": 85.61060731405398,
+    "angle_predicted": 87.0,
+    "error": 1.3893926859460208
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000011712.jpg",
+    "angle_applied": 218.60977464415475,
+    "angle_predicted": 220.0,
+    "error": 1.3902253558452458
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000029253.jpg",
+    "angle_applied": 221.6014431421839,
+    "angle_predicted": 223.0,
+    "error": 1.3985568578160894
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000037403.jpg",
+    "angle_applied": 164.60044320738854,
+    "angle_predicted": 166.0,
+    "error": 1.3995567926114632
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000027789.jpg",
+    "angle_applied": 38.59586835427657,
+    "angle_predicted": 40.0,
+    "error": 1.4041316457234316
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000039009.jpg",
+    "angle_applied": 232.40528800416138,
+    "angle_predicted": 231.0,
+    "error": 1.4052880041613776
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000014494.jpg",
+    "angle_applied": 95.41429141121354,
+    "angle_predicted": 94.0,
+    "error": 1.41429141121354
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000000589.jpg",
+    "angle_applied": 265.42028869710043,
+    "angle_predicted": 264.0,
+    "error": 1.4202886971004318
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000033830.jpg",
+    "angle_applied": 42.57879331281596,
+    "angle_predicted": 44.0,
+    "error": 1.4212066871840392
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000010142.jpg",
+    "angle_applied": 172.5784377801077,
+    "angle_predicted": 174.0,
+    "error": 1.4215622198923086
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000045110.jpg",
+    "angle_applied": 317.424730267747,
+    "angle_predicted": 316.0,
+    "error": 1.4247302677470088
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000060483.jpg",
+    "angle_applied": 250.42516042998858,
+    "angle_predicted": 249.0,
+    "error": 1.4251604299885798
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000048037.jpg",
+    "angle_applied": 308.5649703016442,
+    "angle_predicted": 310.0,
+    "error": 1.4350296983557769
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000052546.jpg",
+    "angle_applied": 175.56347647375472,
+    "angle_predicted": 177.0,
+    "error": 1.4365235262452813
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000032909.jpg",
+    "angle_applied": 19.561675802131305,
+    "angle_predicted": 21.0,
+    "error": 1.4383241978686954
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000045387.jpg",
+    "angle_applied": 278.443996001651,
+    "angle_predicted": 277.0,
+    "error": 1.4439960016509872
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000003779.jpg",
+    "angle_applied": 322.44886483567325,
+    "angle_predicted": 321.0,
+    "error": 1.4488648356732483
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000042507.jpg",
+    "angle_applied": 178.54930633444906,
+    "angle_predicted": 180.0,
+    "error": 1.4506936655509435
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000032779.jpg",
+    "angle_applied": 334.544910228977,
+    "angle_predicted": 336.0,
+    "error": 1.4550897710229833
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000013333.jpg",
+    "angle_applied": 211.53586867070004,
+    "angle_predicted": 213.0,
+    "error": 1.4641313292999598
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000041077.jpg",
+    "angle_applied": 20.465307515966508,
+    "angle_predicted": 19.0,
+    "error": 1.4653075159665079
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000006473.jpg",
+    "angle_applied": 182.47066505543285,
+    "angle_predicted": 181.0,
+    "error": 1.4706650554328462
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000033116.jpg",
+    "angle_applied": 341.47450840638277,
+    "angle_predicted": 340.0,
+    "error": 1.4745084063827676
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000038875.jpg",
+    "angle_applied": 152.5157277620057,
+    "angle_predicted": 154.0,
+    "error": 1.484272237994304
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000015818.jpg",
+    "angle_applied": 201.48566609644126,
+    "angle_predicted": 200.0,
+    "error": 1.485666096441264
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000015954.jpg",
+    "angle_applied": 105.48730242280682,
+    "angle_predicted": 104.0,
+    "error": 1.4873024228068203
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000038919.jpg",
+    "angle_applied": 23.509514574640875,
+    "angle_predicted": 25.0,
+    "error": 1.4904854253591253
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000016497.jpg",
+    "angle_applied": 358.4935054654686,
+    "angle_predicted": 357.0,
+    "error": 1.4935054654686155
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000054517.jpg",
+    "angle_applied": 316.5024015674656,
+    "angle_predicted": 318.0,
+    "error": 1.497598432534403
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000000675.jpg",
+    "angle_applied": 280.50459598866024,
+    "angle_predicted": 279.0,
+    "error": 1.5045959886602418
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000035489.jpg",
+    "angle_applied": 158.49495101861706,
+    "angle_predicted": 160.0,
+    "error": 1.5050489813829415
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000047882.jpg",
+    "angle_applied": 75.50998187602863,
+    "angle_predicted": 74.0,
+    "error": 1.5099818760286325
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000050811.jpg",
+    "angle_applied": 103.51602082100214,
+    "angle_predicted": 102.0,
+    "error": 1.5160208210021437
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000064196.jpg",
+    "angle_applied": 150.51931622928032,
+    "angle_predicted": 149.0,
+    "error": 1.5193162292803208
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000037907.jpg",
+    "angle_applied": 232.5218807039962,
+    "angle_predicted": 231.0,
+    "error": 1.521880703996203
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000020371.jpg",
+    "angle_applied": 180.47677749361281,
+    "angle_predicted": 182.0,
+    "error": 1.5232225063871851
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000003109.jpg",
+    "angle_applied": 316.5245146912778,
+    "angle_predicted": 315.0,
+    "error": 1.5245146912777727
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000057345.jpg",
+    "angle_applied": 312.52538065255715,
+    "angle_predicted": 311.0,
+    "error": 1.5253806525571463
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000035435.jpg",
+    "angle_applied": 100.46446136229541,
+    "angle_predicted": 102.0,
+    "error": 1.5355386377045903
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000057095.jpg",
+    "angle_applied": 315.54188831397266,
+    "angle_predicted": 314.0,
+    "error": 1.5418883139726631
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000044269.jpg",
+    "angle_applied": 186.55225701503878,
+    "angle_predicted": 185.0,
+    "error": 1.5522570150387764
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000026731.jpg",
+    "angle_applied": 355.44555254662856,
+    "angle_predicted": 357.0,
+    "error": 1.5544474533714379
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000042499.jpg",
+    "angle_applied": 213.43689748121673,
+    "angle_predicted": 215.0,
+    "error": 1.5631025187832677
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000012744.jpg",
+    "angle_applied": 269.5637727144479,
+    "angle_predicted": 268.0,
+    "error": 1.5637727144479072
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000012547.jpg",
+    "angle_applied": 266.4351092223657,
+    "angle_predicted": 268.0,
+    "error": 1.5648907776342753
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000008981.jpg",
+    "angle_applied": 176.56517110232414,
+    "angle_predicted": 175.0,
+    "error": 1.5651711023241432
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000018888.jpg",
+    "angle_applied": 89.42884742986956,
+    "angle_predicted": 91.0,
+    "error": 1.5711525701304367
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000047511.jpg",
+    "angle_applied": 246.5763979260814,
+    "angle_predicted": 245.0,
+    "error": 1.5763979260813983
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000004760.jpg",
+    "angle_applied": 101.42283807142167,
+    "angle_predicted": 103.0,
+    "error": 1.5771619285783345
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000018982.jpg",
+    "angle_applied": 86.40729841669544,
+    "angle_predicted": 88.0,
+    "error": 1.5927015833045601
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000030645.jpg",
+    "angle_applied": 348.40608184746065,
+    "angle_predicted": 350.0,
+    "error": 1.593918152539345
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000001089.jpg",
+    "angle_applied": 109.60069116505618,
+    "angle_predicted": 108.0,
+    "error": 1.6006911650561761
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000062311.jpg",
+    "angle_applied": 160.6087845573127,
+    "angle_predicted": 159.0,
+    "error": 1.6087845573127026
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000053697.jpg",
+    "angle_applied": 1.3897265436939943,
+    "angle_predicted": 3.0,
+    "error": 1.6102734563060057
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000043561.jpg",
+    "angle_applied": 224.38608228724704,
+    "angle_predicted": 226.0,
+    "error": 1.613917712752965
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000000715.jpg",
+    "angle_applied": 135.62685610595523,
+    "angle_predicted": 134.0,
+    "error": 1.626856105955227
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000056624.jpg",
+    "angle_applied": 28.62794973123207,
+    "angle_predicted": 27.0,
+    "error": 1.6279497312320714
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000013132.jpg",
+    "angle_applied": 291.37138973611144,
+    "angle_predicted": 293.0,
+    "error": 1.628610263888561
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000063521.jpg",
+    "angle_applied": 251.3694520145846,
+    "angle_predicted": 253.0,
+    "error": 1.6305479854154044
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000038929.jpg",
+    "angle_applied": 209.6351038987399,
+    "angle_predicted": 208.0,
+    "error": 1.6351038987399136
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000006189.jpg",
+    "angle_applied": 94.36253372628417,
+    "angle_predicted": 96.0,
+    "error": 1.6374662737158303
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000016360.jpg",
+    "angle_applied": 277.6411666677277,
+    "angle_predicted": 276.0,
+    "error": 1.6411666677277026
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000009791.jpg",
+    "angle_applied": 329.3507116200178,
+    "angle_predicted": 331.0,
+    "error": 1.6492883799821811
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000006580.jpg",
+    "angle_applied": 97.65074763427108,
+    "angle_predicted": 96.0,
+    "error": 1.6507476342710845
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000054355.jpg",
+    "angle_applied": 141.32476384637437,
+    "angle_predicted": 143.0,
+    "error": 1.675236153625633
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000014820.jpg",
+    "angle_applied": 343.3232507138327,
+    "angle_predicted": 345.0,
+    "error": 1.6767492861673077
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000038630.jpg",
+    "angle_applied": 74.68922715879938,
+    "angle_predicted": 73.0,
+    "error": 1.6892271587993832
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000026630.jpg",
+    "angle_applied": 38.69012439676963,
+    "angle_predicted": 37.0,
+    "error": 1.690124396769633
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000043678.jpg",
+    "angle_applied": 345.2999770926801,
+    "angle_predicted": 347.0,
+    "error": 1.7000229073199193
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000006484.jpg",
+    "angle_applied": 230.2938381870457,
+    "angle_predicted": 232.0,
+    "error": 1.7061618129542921
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000022403.jpg",
+    "angle_applied": 304.707122089606,
+    "angle_predicted": 303.0,
+    "error": 1.7071220896060026
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000012764.jpg",
+    "angle_applied": 49.284097806815616,
+    "angle_predicted": 51.0,
+    "error": 1.7159021931843839
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000010583.jpg",
+    "angle_applied": 270.2753502790867,
+    "angle_predicted": 272.0,
+    "error": 1.7246497209133054
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000012748.jpg",
+    "angle_applied": 308.2594246642015,
+    "angle_predicted": 310.0,
+    "error": 1.7405753357984963
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000038259.jpg",
+    "angle_applied": 209.25823414890914,
+    "angle_predicted": 211.0,
+    "error": 1.741765851090861
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000018687.jpg",
+    "angle_applied": 38.742373853849486,
+    "angle_predicted": 37.0,
+    "error": 1.742373853849486
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000021989.jpg",
+    "angle_applied": 49.74586248550097,
+    "angle_predicted": 48.0,
+    "error": 1.7458624855009717
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000020178.jpg",
+    "angle_applied": 177.2501064087183,
+    "angle_predicted": 179.0,
+    "error": 1.7498935912817046
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000044612.jpg",
+    "angle_applied": 106.76025542305075,
+    "angle_predicted": 105.0,
+    "error": 1.7602554230507508
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000024744.jpg",
+    "angle_applied": 228.23917118807788,
+    "angle_predicted": 230.0,
+    "error": 1.7608288119221243
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000048281.jpg",
+    "angle_applied": 266.2382862177435,
+    "angle_predicted": 268.0,
+    "error": 1.7617137822564928
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000040317.jpg",
+    "angle_applied": 42.23537293853197,
+    "angle_predicted": 44.0,
+    "error": 1.7646270614680333
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000045053.jpg",
+    "angle_applied": 342.77137102635146,
+    "angle_predicted": 341.0,
+    "error": 1.77137102635146
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000049862.jpg",
+    "angle_applied": 188.7767319877992,
+    "angle_predicted": 187.0,
+    "error": 1.7767319877991952
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000039399.jpg",
+    "angle_applied": 24.78670721761462,
+    "angle_predicted": 23.0,
+    "error": 1.7867072176146195
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000020147.jpg",
+    "angle_applied": 101.81050652750744,
+    "angle_predicted": 100.0,
+    "error": 1.8105065275074423
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000056651.jpg",
+    "angle_applied": 299.17744388502854,
+    "angle_predicted": 301.0,
+    "error": 1.8225561149714622
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000043670.jpg",
+    "angle_applied": 193.16851599914,
+    "angle_predicted": 195.0,
+    "error": 1.8314840008600015
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000034089.jpg",
+    "angle_applied": 2.8382772630385356,
+    "angle_predicted": 1.0,
+    "error": 1.8382772630385356
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000063729.jpg",
+    "angle_applied": 255.15734073877752,
+    "angle_predicted": 257.0,
+    "error": 1.8426592612224795
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000011511.jpg",
+    "angle_applied": 90.1433566272862,
+    "angle_predicted": 92.0,
+    "error": 1.8566433727138048
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000004011.jpg",
+    "angle_applied": 180.86020469613413,
+    "angle_predicted": 179.0,
+    "error": 1.860204696134133
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000049370.jpg",
+    "angle_applied": 323.11539527378596,
+    "angle_predicted": 325.0,
+    "error": 1.884604726214036
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000001799.jpg",
+    "angle_applied": 182.11189817711102,
+    "angle_predicted": 184.0,
+    "error": 1.8881018228889843
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000043331.jpg",
+    "angle_applied": 133.89074946448608,
+    "angle_predicted": 132.0,
+    "error": 1.8907494644860776
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000020342.jpg",
+    "angle_applied": 249.8968264928852,
+    "angle_predicted": 248.0,
+    "error": 1.8968264928851966
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000023954.jpg",
+    "angle_applied": 194.89708575256887,
+    "angle_predicted": 193.0,
+    "error": 1.89708575256887
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000063650.jpg",
+    "angle_applied": 211.91004010511517,
+    "angle_predicted": 210.0,
+    "error": 1.910040105115172
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000040275.jpg",
+    "angle_applied": 86.91070322756664,
+    "angle_predicted": 85.0,
+    "error": 1.9107032275666427
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000041271.jpg",
+    "angle_applied": 93.92561977718151,
+    "angle_predicted": 92.0,
+    "error": 1.9256197771815096
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000037882.jpg",
+    "angle_applied": 359.9310881221075,
+    "angle_predicted": 358.0,
+    "error": 1.9310881221074965
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000023230.jpg",
+    "angle_applied": 145.93448982548017,
+    "angle_predicted": 144.0,
+    "error": 1.9344898254801706
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000045248.jpg",
+    "angle_applied": 320.0615831483023,
+    "angle_predicted": 322.0,
+    "error": 1.9384168516976956
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000002684.jpg",
+    "angle_applied": 179.06089157951857,
+    "angle_predicted": 181.0,
+    "error": 1.939108420481432
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000041888.jpg",
+    "angle_applied": 203.94219851609859,
+    "angle_predicted": 202.0,
+    "error": 1.9421985160985855
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000030534.jpg",
+    "angle_applied": 120.95191524249188,
+    "angle_predicted": 119.0,
+    "error": 1.9519152424918786
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000035594.jpg",
+    "angle_applied": 295.9623839499284,
+    "angle_predicted": 294.0,
+    "error": 1.9623839499283804
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000058937.jpg",
+    "angle_applied": 30.032076759126678,
+    "angle_predicted": 32.0,
+    "error": 1.967923240873322
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000018224.jpg",
+    "angle_applied": 225.98451223030239,
+    "angle_predicted": 224.0,
+    "error": 1.9845122303023857
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000059328.jpg",
+    "angle_applied": 224.00318118232616,
+    "angle_predicted": 226.0,
+    "error": 1.9968188176738408
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000012938.jpg",
+    "angle_applied": 309.0015499083345,
+    "angle_predicted": 307.0,
+    "error": 2.001549908334482
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000005385.jpg",
+    "angle_applied": 21.00828923301192,
+    "angle_predicted": 19.0,
+    "error": 2.0082892330119186
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000040621.jpg",
+    "angle_applied": 310.9880181323633,
+    "angle_predicted": 313.0,
+    "error": 2.0119818676366776
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000037707.jpg",
+    "angle_applied": 357.9842842731646,
+    "angle_predicted": 0.0,
+    "error": 2.015715726835424
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000019292.jpg",
+    "angle_applied": 263.98408835402137,
+    "angle_predicted": 266.0,
+    "error": 2.0159116459786333
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000033753.jpg",
+    "angle_applied": 16.06042845148107,
+    "angle_predicted": 14.0,
+    "error": 2.0604284514810693
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000043530.jpg",
+    "angle_applied": 6.073802413214291,
+    "angle_predicted": 4.0,
+    "error": 2.073802413214291
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000008665.jpg",
+    "angle_applied": 184.07483371672416,
+    "angle_predicted": 182.0,
+    "error": 2.0748337167241573
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000004092.jpg",
+    "angle_applied": 291.9019014464225,
+    "angle_predicted": 294.0,
+    "error": 2.098098553577472
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000009448.jpg",
+    "angle_applied": 62.87701874220208,
+    "angle_predicted": 65.0,
+    "error": 2.1229812577979175
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000057023.jpg",
+    "angle_applied": 257.1268678376801,
+    "angle_predicted": 255.0,
+    "error": 2.126867837680095
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000009668.jpg",
+    "angle_applied": 279.8667222655511,
+    "angle_predicted": 282.0,
+    "error": 2.133277734448882
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000006954.jpg",
+    "angle_applied": 35.861374879657674,
+    "angle_predicted": 38.0,
+    "error": 2.1386251203423257
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000009236.jpg",
+    "angle_applied": 52.1451933636158,
+    "angle_predicted": 50.0,
+    "error": 2.145193363615803
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000002972.jpg",
+    "angle_applied": 88.16021259123579,
+    "angle_predicted": 86.0,
+    "error": 2.1602125912357906
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000009450.jpg",
+    "angle_applied": 104.1861934609924,
+    "angle_predicted": 102.0,
+    "error": 2.186193460992399
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000036331.jpg",
+    "angle_applied": 94.79605562537424,
+    "angle_predicted": 97.0,
+    "error": 2.203944374625763
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000053410.jpg",
+    "angle_applied": 53.20848026354055,
+    "angle_predicted": 51.0,
+    "error": 2.208480263540551
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000030548.jpg",
+    "angle_applied": 89.79121478032243,
+    "angle_predicted": 92.0,
+    "error": 2.2087852196775657
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000013783.jpg",
+    "angle_applied": 32.21803621184404,
+    "angle_predicted": 30.0,
+    "error": 2.218036211844037
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000059239.jpg",
+    "angle_applied": 59.77721682764844,
+    "angle_predicted": 62.0,
+    "error": 2.222783172351562
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000044165.jpg",
+    "angle_applied": 102.23999163435639,
+    "angle_predicted": 100.0,
+    "error": 2.239991634356386
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000000827.jpg",
+    "angle_applied": 339.7493082652647,
+    "angle_predicted": 342.0,
+    "error": 2.2506917347353124
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000000395.jpg",
+    "angle_applied": 261.7359345760782,
+    "angle_predicted": 264.0,
+    "error": 2.2640654239218065
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000007050.jpg",
+    "angle_applied": 47.26415825037217,
+    "angle_predicted": 45.0,
+    "error": 2.2641582503721693
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000005060.jpg",
+    "angle_applied": 43.270762036740805,
+    "angle_predicted": 41.0,
+    "error": 2.2707620367408055
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000036557.jpg",
+    "angle_applied": 87.72403510124359,
+    "angle_predicted": 90.0,
+    "error": 2.2759648987564134
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000016776.jpg",
+    "angle_applied": 237.30352986601017,
+    "angle_predicted": 235.0,
+    "error": 2.303529866010166
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000047361.jpg",
+    "angle_applied": 128.67287457409668,
+    "angle_predicted": 131.0,
+    "error": 2.3271254259033185
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000043448.jpg",
+    "angle_applied": 220.3544601800717,
+    "angle_predicted": 218.0,
+    "error": 2.3544601800716976
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000020784.jpg",
+    "angle_applied": 270.3677935883034,
+    "angle_predicted": 268.0,
+    "error": 2.367793588303414
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000030494.jpg",
+    "angle_applied": 79.61792952459018,
+    "angle_predicted": 82.0,
+    "error": 2.3820704754098188
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000041837.jpg",
+    "angle_applied": 174.58763225690538,
+    "angle_predicted": 177.0,
+    "error": 2.41236774309462
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000003716.jpg",
+    "angle_applied": 317.4192764401823,
+    "angle_predicted": 315.0,
+    "error": 2.419276440182273
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000017267.jpg",
+    "angle_applied": 176.55116703705906,
+    "angle_predicted": 179.0,
+    "error": 2.4488329629409407
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000007325.jpg",
+    "angle_applied": 144.45342028929915,
+    "angle_predicted": 142.0,
+    "error": 2.453420289299146
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000010104.jpg",
+    "angle_applied": 47.54451828425519,
+    "angle_predicted": 50.0,
+    "error": 2.45548171574481
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000037038.jpg",
+    "angle_applied": 11.462014631270826,
+    "angle_predicted": 9.0,
+    "error": 2.4620146312708258
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000008688.jpg",
+    "angle_applied": 275.5170913705075,
+    "angle_predicted": 278.0,
+    "error": 2.482908629492499
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000039322.jpg",
+    "angle_applied": 58.497456483494936,
+    "angle_predicted": 56.0,
+    "error": 2.497456483494936
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000045136.jpg",
+    "angle_applied": 144.51406174998718,
+    "angle_predicted": 142.0,
+    "error": 2.514061749987178
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000042178.jpg",
+    "angle_applied": 261.4832871904207,
+    "angle_predicted": 264.0,
+    "error": 2.516712809579303
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000051335.jpg",
+    "angle_applied": 317.4827411148596,
+    "angle_predicted": 320.0,
+    "error": 2.517258885140393
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000024530.jpg",
+    "angle_applied": 76.47637006585477,
+    "angle_predicted": 79.0,
+    "error": 2.5236299341452337
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000032715.jpg",
+    "angle_applied": 257.468171894071,
+    "angle_predicted": 260.0,
+    "error": 2.53182810592898
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000049733.jpg",
+    "angle_applied": 125.46697301732277,
+    "angle_predicted": 128.0,
+    "error": 2.533026982677228
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000028820.jpg",
+    "angle_applied": 50.53822480776488,
+    "angle_predicted": 48.0,
+    "error": 2.538224807764877
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000038449.jpg",
+    "angle_applied": 136.46048258787428,
+    "angle_predicted": 139.0,
+    "error": 2.5395174121257185
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000020001.jpg",
+    "angle_applied": 325.4559814443448,
+    "angle_predicted": 328.0,
+    "error": 2.5440185556552137
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000007989.jpg",
+    "angle_applied": 343.5601735413691,
+    "angle_predicted": 341.0,
+    "error": 2.5601735413691245
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000046743.jpg",
+    "angle_applied": 131.43595574160352,
+    "angle_predicted": 134.0,
+    "error": 2.5640442583964784
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000022168.jpg",
+    "angle_applied": 21.579947369846373,
+    "angle_predicted": 19.0,
+    "error": 2.579947369846373
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000026176.jpg",
+    "angle_applied": 226.40343806221213,
+    "angle_predicted": 229.0,
+    "error": 2.596561937787868
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000030942.jpg",
+    "angle_applied": 47.69554851287387,
+    "angle_predicted": 45.0,
+    "error": 2.69554851287387
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000019532.jpg",
+    "angle_applied": 32.71886353166741,
+    "angle_predicted": 30.0,
+    "error": 2.7188635316674095
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000020571.jpg",
+    "angle_applied": 285.7311732086714,
+    "angle_predicted": 283.0,
+    "error": 2.7311732086714073
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000005282.jpg",
+    "angle_applied": 359.2664104783224,
+    "angle_predicted": 2.0,
+    "error": 2.7335895216775725
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000016995.jpg",
+    "angle_applied": 112.24651751787692,
+    "angle_predicted": 115.0,
+    "error": 2.7534824821230757
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000035894.jpg",
+    "angle_applied": 312.2241859664873,
+    "angle_predicted": 315.0,
+    "error": 2.775814033512688
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000014629.jpg",
+    "angle_applied": 313.84286451197744,
+    "angle_predicted": 311.0,
+    "error": 2.8428645119774387
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000017714.jpg",
+    "angle_applied": 6.909551391360069,
+    "angle_predicted": 4.0,
+    "error": 2.9095513913600692
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000039072.jpg",
+    "angle_applied": 87.08461351253453,
+    "angle_predicted": 90.0,
+    "error": 2.9153864874654687
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000058225.jpg",
+    "angle_applied": 118.07568032690868,
+    "angle_predicted": 121.0,
+    "error": 2.9243196730913184
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000006906.jpg",
+    "angle_applied": 98.93648515233477,
+    "angle_predicted": 96.0,
+    "error": 2.936485152334768
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000017365.jpg",
+    "angle_applied": 84.03129196851467,
+    "angle_predicted": 87.0,
+    "error": 2.9687080314853347
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000043165.jpg",
+    "angle_applied": 174.02167267286114,
+    "angle_predicted": 177.0,
+    "error": 2.9783273271388566
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000041859.jpg",
+    "angle_applied": 180.97947401231664,
+    "angle_predicted": 178.0,
+    "error": 2.9794740123166434
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000000192.jpg",
+    "angle_applied": 146.98904700230813,
+    "angle_predicted": 144.0,
+    "error": 2.9890470023081264
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000044476.jpg",
+    "angle_applied": 331.121811880137,
+    "angle_predicted": 328.0,
+    "error": 3.1218118801369883
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000053677.jpg",
+    "angle_applied": 317.1971509600182,
+    "angle_predicted": 314.0,
+    "error": 3.1971509600181776
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000044347.jpg",
+    "angle_applied": 132.74106143794708,
+    "angle_predicted": 136.0,
+    "error": 3.2589385620529185
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000041020.jpg",
+    "angle_applied": 298.4184105182507,
+    "angle_predicted": 295.0,
+    "error": 3.4184105182507096
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000051143.jpg",
+    "angle_applied": 314.5795842004985,
+    "angle_predicted": 318.0,
+    "error": 3.420415799501484
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000031993.jpg",
+    "angle_applied": 147.5014340270677,
+    "angle_predicted": 144.0,
+    "error": 3.5014340270676882
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000049327.jpg",
+    "angle_applied": 192.57006777375022,
+    "angle_predicted": 189.0,
+    "error": 3.5700677737502247
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000055668.jpg",
+    "angle_applied": 310.388946271806,
+    "angle_predicted": 314.0,
+    "error": 3.6110537281940083
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000014549.jpg",
+    "angle_applied": 335.66181802577796,
+    "angle_predicted": 332.0,
+    "error": 3.6618180257779613
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000053893.jpg",
+    "angle_applied": 214.71590352586418,
+    "angle_predicted": 211.0,
+    "error": 3.715903525864178
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000038092.jpg",
+    "angle_applied": 356.1875198223953,
+    "angle_predicted": 0.0,
+    "error": 3.812480177604698
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000006871.jpg",
+    "angle_applied": 1.8550671368483629,
+    "angle_predicted": 358.0,
+    "error": 3.8550671368483904
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000006012.jpg",
+    "angle_applied": 160.96513630234585,
+    "angle_predicted": 165.0,
+    "error": 4.034863697654146
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000033759.jpg",
+    "angle_applied": 102.06678476958,
+    "angle_predicted": 98.0,
+    "error": 4.066784769579996
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000048050.jpg",
+    "angle_applied": 303.9245861590887,
+    "angle_predicted": 308.0,
+    "error": 4.075413840911324
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000051054.jpg",
+    "angle_applied": 108.14532593705539,
+    "angle_predicted": 104.0,
+    "error": 4.145325937055389
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000052952.jpg",
+    "angle_applied": 295.20807691311063,
+    "angle_predicted": 291.0,
+    "error": 4.208076913110631
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000001425.jpg",
+    "angle_applied": 121.73722266126443,
+    "angle_predicted": 126.0,
+    "error": 4.2627773387355745
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000022870.jpg",
+    "angle_applied": 104.70272639642732,
+    "angle_predicted": 109.0,
+    "error": 4.297273603572677
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000000285.jpg",
+    "angle_applied": 236.43430503870135,
+    "angle_predicted": 232.0,
+    "error": 4.434305038701353
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000031597.jpg",
+    "angle_applied": 217.4824094475175,
+    "angle_predicted": 222.0,
+    "error": 4.517590552482488
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000031255.jpg",
+    "angle_applied": 128.41448054491545,
+    "angle_predicted": 133.0,
+    "error": 4.585519455084551
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000035975.jpg",
+    "angle_applied": 85.58705736562996,
+    "angle_predicted": 81.0,
+    "error": 4.58705736562996
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000008445.jpg",
+    "angle_applied": 41.700240468318704,
+    "angle_predicted": 37.0,
+    "error": 4.700240468318704
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000004286.jpg",
+    "angle_applied": 30.71193232273321,
+    "angle_predicted": 26.0,
+    "error": 4.711932322733212
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000036149.jpg",
+    "angle_applied": 138.03894677727996,
+    "angle_predicted": 133.0,
+    "error": 5.0389467772799605
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000060677.jpg",
+    "angle_applied": 321.092407805642,
+    "angle_predicted": 316.0,
+    "error": 5.092407805641983
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000014941.jpg",
+    "angle_applied": 182.74879700667535,
+    "angle_predicted": 188.0,
+    "error": 5.251202993324654
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000010432.jpg",
+    "angle_applied": 4.333040243155537,
+    "angle_predicted": 359.0,
+    "error": 5.333040243155551
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000005804.jpg",
+    "angle_applied": 223.37996410079558,
+    "angle_predicted": 218.0,
+    "error": 5.379964100795576
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000013876.jpg",
+    "angle_applied": 222.43560909030856,
+    "angle_predicted": 217.0,
+    "error": 5.43560909030856
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000022002.jpg",
+    "angle_applied": 170.33147224763192,
+    "angle_predicted": 176.0,
+    "error": 5.668527752368078
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000022834.jpg",
+    "angle_applied": 345.291210712071,
+    "angle_predicted": 351.0,
+    "error": 5.708789287928994
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000016959.jpg",
+    "angle_applied": 132.6904582066623,
+    "angle_predicted": 139.0,
+    "error": 6.309541793337701
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000054421.jpg",
+    "angle_applied": 187.8653958300258,
+    "angle_predicted": 181.0,
+    "error": 6.86539583002579
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000009105.jpg",
+    "angle_applied": 204.4245605319027,
+    "angle_predicted": 212.0,
+    "error": 7.575439468097301
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000010928.jpg",
+    "angle_applied": 161.41290440327904,
+    "angle_predicted": 171.0,
+    "error": 9.587095596720957
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000005184.jpg",
+    "angle_applied": 81.86926607039636,
+    "angle_predicted": 97.0,
+    "error": 15.130733929603636
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000039472.jpg",
+    "angle_applied": 76.12372648166888,
+    "angle_predicted": 92.0,
+    "error": 15.876273518331118
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000014756.jpg",
+    "angle_applied": 65.89198514877161,
+    "angle_predicted": 96.0,
+    "error": 30.10801485122839
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000037470.jpg",
+    "angle_applied": 221.02774414772256,
+    "angle_predicted": 308.0,
+    "error": 86.97225585227744
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000007559.jpg",
+    "angle_applied": 232.99079540185298,
+    "angle_predicted": 145.0,
+    "error": 87.99079540185298
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000005694.jpg",
+    "angle_applied": 205.27083735043666,
+    "angle_predicted": 117.0,
+    "error": 88.27083735043666
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000033990.jpg",
+    "angle_applied": 250.6836559735654,
+    "angle_predicted": 339.0,
+    "error": 88.31634402643459
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000017769.jpg",
+    "angle_applied": 146.58598700135988,
+    "angle_predicted": 235.0,
+    "error": 88.41401299864012
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000035326.jpg",
+    "angle_applied": 239.70928232130757,
+    "angle_predicted": 151.0,
+    "error": 88.70928232130757
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000003711.jpg",
+    "angle_applied": 42.2336031059498,
+    "angle_predicted": 131.0,
+    "error": 88.7663968940502
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000034522.jpg",
+    "angle_applied": 283.8763844303467,
+    "angle_predicted": 195.0,
+    "error": 88.87638443034672
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000007241.jpg",
+    "angle_applied": 302.1080840131149,
+    "angle_predicted": 31.0,
+    "error": 88.89191598688512
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000045094.jpg",
+    "angle_applied": 81.99342055362995,
+    "angle_predicted": 171.0,
+    "error": 89.00657944637005
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000015006.jpg",
+    "angle_applied": 58.44886124856004,
+    "angle_predicted": 329.0,
+    "error": 89.44886124856004
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000062041.jpg",
+    "angle_applied": 35.007453227672876,
+    "angle_predicted": 305.0,
+    "error": 90.0074532276729
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000061471.jpg",
+    "angle_applied": 336.8995488780439,
+    "angle_predicted": 67.0,
+    "error": 90.1004511219561
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000034139.jpg",
+    "angle_applied": 241.69805232125512,
+    "angle_predicted": 332.0,
+    "error": 90.30194767874488
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000035368.jpg",
+    "angle_applied": 332.3901844400987,
+    "angle_predicted": 63.0,
+    "error": 90.60981555990128
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000056013.jpg",
+    "angle_applied": 224.2418515868709,
+    "angle_predicted": 129.0,
+    "error": 95.2418515868709
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000017778.jpg",
+    "angle_applied": 277.40906946099943,
+    "angle_predicted": 86.0,
+    "error": 168.59093053900057
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000041273.jpg",
+    "angle_applied": 228.98197996097088,
+    "angle_predicted": 51.0,
+    "error": 177.98197996097088
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000000636.jpg",
+    "angle_applied": 164.21411959795748,
+    "angle_predicted": 345.0,
+    "error": 179.21411959795748
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000000987.jpg",
+    "angle_applied": 294.4919900721018,
+    "angle_predicted": 114.0,
+    "error": 179.50800992789817
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000003799.jpg",
+    "angle_applied": 305.61967991265055,
+    "angle_predicted": 126.0,
+    "error": 179.61967991265055
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000011615.jpg",
+    "angle_applied": 107.34744947870307,
+    "angle_predicted": 287.0,
+    "error": 179.65255052129692
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000056036.jpg",
+    "angle_applied": 114.68482288247652,
+    "angle_predicted": 295.0,
+    "error": 179.6848228824765
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000035940.jpg",
+    "angle_applied": 344.1901085003606,
+    "angle_predicted": 164.0,
+    "error": 179.80989149963938
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000002434.jpg",
+    "angle_applied": 105.86759845793979,
+    "angle_predicted": 286.0,
+    "error": 179.86759845793978
+  },
+  {
+    "image_path": "data/datasets/test_coco/COCO_val2014_000000058133.jpg",
+    "angle_applied": 332.9880883031492,
+    "angle_predicted": 153.0,
+    "error": 179.9880883031492
+  }
+]

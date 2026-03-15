@@ -167,10 +167,14 @@ class RotationDataset(Dataset):
         """
         # Get all image paths
         image_dir = Path(image_dir)
-        image_paths = list(image_dir.glob("*.jpg")) + list(image_dir.glob("*.jpeg"))
-        
+        extensions = ["*.jpg", "*.jpeg", "*.png", "*.bmp", "*.tiff",
+                      "*.JPG", "*.JPEG", "*.PNG", "*.BMP", "*.TIFF"]
+        image_paths = []
+        for ext in extensions:
+            image_paths.extend(image_dir.glob(ext))
+
         if len(image_paths) == 0:
-            raise ValueError(f"No images found in {image_dir}")
+            raise ValueError(f"No images found in {image_dir} (searched: jpg, jpeg, png, bmp, tiff)")
         
         # Split into train and validation sets
         train_paths, val_paths = train_test_split(
@@ -184,13 +188,7 @@ class RotationDataset(Dataset):
         val_angles = []
         random.seed(random_seed)  # Ensure reproducible validation angles
         for i in range(len(val_paths)):
-            # Mix of common angles and random angles for comprehensive testing
-            if i % 4 == 0:
-                angle = random.choice([0, 90, 180, 270])  # Cardinal directions
-            elif i % 4 == 1:
-                angle = random.choice([45, 135, 225, 315])  # Diagonal directions
-            else:
-                angle = random.uniform(0, 359)  # Random angles
+            angle = random.uniform(0, 360)  # Uniform random — no bias toward cardinal/diagonal
             val_angles.append(angle)
         
         # Create predefined training angles for consistent overfitting if enabled

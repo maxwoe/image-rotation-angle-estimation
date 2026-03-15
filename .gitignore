@@ -196,5 +196,5 @@ pyrightconfig.json
 
 .*/
 data/*
-comparison/*
+comparison*/
 tests/*

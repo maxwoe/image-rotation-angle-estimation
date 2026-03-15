@@ -1,0 +1,98 @@
+[
+  {
+    "prefix": "good_1",
+    "category": "good",
+    "source": "COCO_val2014_000000015953.jpg",
+    "angle_applied": 72.0,
+    "angle_predicted": 72.0,
+    "error": 0.0
+  },
+  {
+    "prefix": "good_2",
+    "category": "good",
+    "source": "COCO_val2014_000000058029.jpg",
+    "angle_applied": 238.0,
+    "angle_predicted": 238.0,
+    "error": 0.0
+  },
+  {
+    "prefix": "good_3",
+    "category": "good",
+    "source": "COCO_val2014_000000050482.jpg",
+    "angle_applied": 262.0,
+    "angle_predicted": 262.0,
+    "error": 0.0
+  },
+  {
+    "prefix": "good_4",
+    "category": "good",
+    "source": "COCO_val2014_000000027756.jpg",
+    "angle_applied": 125.0,
+    "angle_predicted": 125.0,
+    "error": 0.0
+  },
+  {
+    "prefix": "good_5",
+    "category": "good",
+    "source": "COCO_val2014_000000000873.jpg",
+    "angle_applied": 343.0,
+    "angle_predicted": 343.0,
+    "error": 0.0
+  },
+  {
+    "prefix": "good_6",
+    "category": "good",
+    "source": "COCO_val2014_000000003947.jpg",
+    "angle_applied": 36.0,
+    "angle_predicted": 36.0,
+    "error": 0.0
+  },
+  {
+    "prefix": "bad_1",
+    "category": "bad",
+    "source": "COCO_val2014_000000003799.jpg",
+    "angle_applied": 305.6,
+    "angle_predicted": 126.0,
+    "error": 179.6
+  },
+  {
+    "prefix": "bad_2",
+    "category": "bad",
+    "source": "COCO_val2014_000000011615.jpg",
+    "angle_applied": 107.3,
+    "angle_predicted": 287.0,
+    "error": 179.7
+  },
+  {
+    "prefix": "bad_3",
+    "category": "bad",
+    "source": "COCO_val2014_000000056036.jpg",
+    "angle_applied": 114.7,
+    "angle_predicted": 295.0,
+    "error": 179.7
+  },
+  {
+    "prefix": "bad_4",
+    "category": "bad",
+    "source": "COCO_val2014_000000035940.jpg",
+    "angle_applied": 344.2,
+    "angle_predicted": 164.0,
+    "error": 179.8
+  },
+  {
+    "prefix": "bad_5",
+    "category": "bad",
+    "source": "COCO_val2014_000000002434.jpg",
+    "angle_applied": 105.9,
+    "angle_predicted": 286.0,
+    "error": 179.9
+  },
+  {
+    "prefix": "bad_6",
+    "category": "bad",
+    "source": "COCO_val2014_000000058133.jpg",
+    "angle_applied": 333.0,
+    "angle_predicted": 153.0,
+    "error": 180.0
+  }
+]

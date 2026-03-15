@@ -122,7 +122,7 @@ class PSCAngleEstimation(pl.LightningModule):
                 logger.warning(f"Checkpoint not found at {checkpoint_path}")
                 raise FileNotFoundError("Checkpoint file not found")
 
-        except Exception as e:
+        except (RuntimeError, KeyError, TypeError) as e:
             logger.warning(f"Failed to load checkpoint: {e}")
             logger.info("Creating new model with pretrained weights")
             model = cls(**kwargs)

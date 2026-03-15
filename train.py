@@ -191,10 +191,11 @@ def train_model(args):
             json.dump(vars(args), fp, indent=4)
 
     # Setup callbacks
-    cp_callback = ModelCheckpoint(monitor='val_loss',
+    cp_callback = ModelCheckpoint(monitor='val_mae_deg',
                                   mode="min",
                                   save_top_k=1,  # Save the best checkpoint
-                                  save_last=True,  # Also save the last checkpoint
+                                  save_last=(not args.no_save_last),
+                                  save_weights_only=args.save_weights_only,
                                   auto_insert_metric_name=True,
                                   filename="{epoch:04d}-{step:07d}-{train_loss:.4f}-{val_loss:.4f}-{train_mae_deg_epoch:.4f}-{val_mae_deg:.4f}")
     # add model name and version to checkpoint files (monkey-patch the callback’s filename)
@@ -208,7 +209,7 @@ def train_model(args):
     # Add EarlyStopping if not disabled
     if not args.disable_early_stopping:
         early_stopping = EarlyStopping(
-            monitor="val_loss",
+            monitor="val_mae_deg",
             patience=args.early_stopping_patience,
             mode="min",
             verbose=True
@@ -380,6 +381,8 @@ def run_test_evaluation(model, args, trainer=None):
                 print(f"{key}={value:.3f}")
             else:
                 print(f"{key}={value}")
+        if trainer is not None and hasattr(trainer, 'current_epoch'):
+            print(f"actual_epochs={trainer.current_epoch + 1}")
         print("=== TEST_RESULTS_END ===")
         
         # Show comprehensive evaluation if requested
@@ -527,6 +530,11 @@ def main():
     # Model saving
     parser.add_argument("--save-dir", type=str, default="data/saved_models",
                         help="Directory to save model weights")
+    parser.add_argument("--save-weights-only", action="store_true",
+                        help="Save only model weights in checkpoints (no optimizer/scheduler state). "
+                             "~3-4x smaller files. Use when you don't need to resume training.")
+    parser.add_argument("--no-save-last", action="store_true",
+                        help="Do not save last.ckpt (only best.ckpt). Halves checkpoint disk usage.")
 
     # Training options
     parser.add_argument("--mixed-precision", action="store_true",
@@ -567,7 +575,7 @@ def main():
                         help="Path to checkpoint file to load weights from (fresh optimizer/scheduler)")
 
     # Test evaluation options
-    parser.add_argument("--test-dirs", type=str, nargs='+', default=["data/datasets/test_drdc"],
+    parser.add_argument("--test-dirs", type=str, nargs='+', default=["data/datasets/test_drcd"],
                         help="Path(s) to test dataset directory(ies)")
     parser.add_argument("--run-test", action="store_true",
                         help="Run test evaluation after training. Uses the BEST validation checkpoint")
