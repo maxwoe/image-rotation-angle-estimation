@@ -196,5 +196,13 @@ pyrightconfig.json
 
 .*/
 data/*
+# Include COCO test split labels for reproducibility
+!data/datasets/
+data/datasets/*
+!data/datasets/ds_coco/
+data/datasets/ds_coco/*
+!data/datasets/ds_coco/02_coco_val_labels.csv
+!data/datasets/remove_test_images.sh
+!data/datasets/train_drcd_filenames.txt
 comparison*/
 tests/*

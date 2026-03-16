@@ -318,14 +318,14 @@ def batch_process_images(input_files):
 
 
 if __name__ == "__main__":
-    logger.info("Starting Image Rotation Amgle Estimation Gradio App")
+    logger.info("Starting Image Rotation Angle Estimation Gradio App")
     
     # Create interface
     app = gr.Blocks()
     with app:
         # app.load(auto_load_model)
         
-        gr.HTML("<h1>Image Rotation Amgle Estimation</h1>")
+        gr.HTML("<h1>Image Rotation Angle Estimation</h1>")
         
         # Model Selection Section
         with gr.Accordion(label="Model Settings", open=False):
