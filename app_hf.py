@@ -10,7 +10,6 @@ import torch
 from PIL import Image
 import os
 import random
-import tempfile
 import numpy as np
 from loguru import logger
 from huggingface_hub import hf_hub_download
@@ -75,22 +74,22 @@ def load_model(name):
 def store_original(image):
     """Store the uploaded image as the original for rotation."""
     if image is None:
-        return None
+        return None, ""
     if isinstance(image, np.ndarray):
         image = Image.fromarray(image)
-    return image
+    return image, ""
 
 
 def random_rotate(original):
     """Apply a random rotation to the original uploaded image."""
     if original is None:
-        return None, None
+        return None, None, ""
 
     angle = random.uniform(0, 360)
     img_array = np.array(original)
     rotated_array = rotate_image_crop_max_area(img_array, angle)
     rotated = Image.fromarray(rotated_array)
-    return rotated, angle
+    return rotated, angle, f"{angle:.1f}°"
 
 
 def correct_orientation(image):
@@ -103,15 +102,7 @@ def correct_orientation(image):
     if isinstance(image, np.ndarray):
         image = Image.fromarray(image)
 
-    # Save to temp file (predict_angle expects a file path)
-    temp_fd, temp_path = tempfile.mkstemp(suffix=".jpg")
-    os.close(temp_fd)
-    image.convert("RGB").save(temp_path)
-
-    try:
-        predicted_angle = model.predict_angle(temp_path)
-    finally:
-        os.unlink(temp_path)
+    predicted_angle = model.predict_angle(image)
 
     corrected = image.rotate(-predicted_angle, expand=True, fillcolor=(255, 255, 255))
 
@@ -140,23 +131,40 @@ with app:
 
     with gr.Row():
         with gr.Column():
-            input_image = gr.Image(type="pil", label="Upload Image", height=400)
+            input_image = gr.Image(type="pil", label="Upload Image", height=400, format="png")
             rotate_btn = gr.Button("Random Rotate", variant="secondary", size="lg")
         with gr.Column():
-            corrected_image = gr.Image(label="Corrected Image", height=400, interactive=False)
-            result_text = gr.Textbox(label="Prediction Result", lines=1, interactive=False)
+            corrected_image = gr.Image(label="Corrected Image", height=400, interactive=False, format="png")
+            correct_btn = gr.Button("Correct Orientation", variant="primary", size="lg")
 
-    correct_btn = gr.Button("Correct Orientation", variant="primary", size="lg")
+    with gr.Row():
+        rotation_info = gr.Textbox(label="Applied Rotation", lines=1, interactive=False)
+        result_text = gr.Textbox(label="Predicted Rotation", lines=1, interactive=False)
+
+    gr.Examples(
+        examples=[
+            "examples/COCO_val2014_000000168337.jpg",
+            "examples/COCO_val2014_000000122166.jpg",
+            "examples/COCO_val2014_000000446053.jpg",
+            "examples/COCO_val2014_000000477919.jpg",
+            "examples/COCO_val2014_000000016995.jpg",
+        ],
+        inputs=input_image,
+        fn=store_original,
+        outputs=[original_image_state, rotation_info],
+        cache_examples=False,
+        run_on_click=True,
+    )
 
     input_image.upload(
         store_original,
         inputs=[input_image],
-        outputs=[original_image_state],
+        outputs=[original_image_state, rotation_info],
     )
     rotate_btn.click(
         random_rotate,
         inputs=[original_image_state],
-        outputs=[input_image, actual_angle_state],
+        outputs=[input_image, actual_angle_state, rotation_info],
     )
     correct_btn.click(
         correct_orientation,

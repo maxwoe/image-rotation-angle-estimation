@@ -28,6 +28,7 @@ import pytorch_lightning as pl
 import timm
 import timm.data
 from PIL import Image
+import numpy as np
 import os
 import glob
 from loguru import logger
@@ -491,15 +492,32 @@ class CGDAngleEstimation(pl.LightningModule):
             logger.warning("Test dataset not available")
             return None
 
-    def predict_angle(self, image_path: str) -> float:
-        """Detect the current orientation angle of an image"""
+    def predict_angle(self, image) -> float:
+        """Detect the current orientation angle of an image.
+
+        Args:
+            image: PIL Image, numpy array, or file path string.
+                   Note: JPEG file paths will go through lossy decompression which
+                   can degrade accuracy. For best results, pass PIL/numpy directly.
+        """
         self.eval()
-        image = Image.open(image_path).convert('RGB')
+
+        if isinstance(image, str):
+            image = Image.open(image).convert('RGB')
+        elif isinstance(image, np.ndarray):
+            image = Image.fromarray(image).convert('RGB')
+        elif not isinstance(image, Image.Image):
+            raise TypeError(f"Expected PIL Image, numpy array, or file path, got {type(image)}")
+        else:
+            image = image.convert('RGB')
 
         # Use TIMM transforms if possible
         try:
             # Get model-specific data configuration
             data_config = timm.data.resolve_model_data_config(self.hparams.model_name)
+            # Match DataLoader settings exactly
+            data_config['crop_pct'] = 1.0
+            data_config['input_size'] = (3, self.image_size, self.image_size)
             transform = timm.data.create_transform(**data_config, is_training=False)
         except:
             # Fallback to standard transforms

@@ -61,6 +61,12 @@ def main():
             else:
                 print(f"Warning: {filename} not found, skipping")
 
+        # Copy example images
+        examples_src = "examples"
+        if os.path.isdir(examples_src):
+            shutil.copytree(examples_src, os.path.join(staging_dir, "examples"))
+            print(f"Copied {len(os.listdir(examples_src))} example images")
+
         # Step 3: Upload everything
         print(f"Uploading to {REPO_ID}...")
         upload_folder(

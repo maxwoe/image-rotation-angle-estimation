@@ -4,7 +4,6 @@ from PIL import Image
 import os
 from pathlib import Path
 from loguru import logger
-import numpy as np
 from torchvision import transforms
 import glob
 
@@ -236,13 +235,16 @@ def get_current_model():
         raise Exception("No model loaded. Please select and load a model first.")
     return state.model
 
-def predict_angle(model, image_path):
-    """Predict the orientation angle of an image using the model's built-in predict_angle method"""
-    # Use the model's own predict_angle method which handles all the approach-specific logic
+def predict_angle(model, image):
+    """Predict the orientation angle of an image using the model's built-in predict_angle method.
+
+    Args:
+        model: Loaded model instance
+        image: PIL Image, numpy array, or file path
+    """
     if hasattr(model, 'predict_angle'):
-        return model.predict_angle(image_path)
+        return model.predict_angle(image)
     else:
-        # Fallback to manual prediction if predict_angle method is not available
         raise NotImplementedError(f"Model {type(model).__name__} does not have a predict_angle method")
 
 def predict_and_correct_orientation(input_image):
@@ -255,20 +257,12 @@ def predict_and_correct_orientation(input_image):
         
         if input_image is None:
             return None, "Please upload an image first."
-        
-        # Save temporary input image
-        temp_input_path = "temp_input.jpg"
-        input_image.save(temp_input_path)
-        
-        # Predict angle
-        predicted_angle = predict_angle(current_model, temp_input_path)
-        
-        # Correct orientation (negative angle to counter-rotate)
+
+        # Predict angle (pass PIL image directly to avoid JPEG recompression artifacts)
+        predicted_angle = predict_angle(current_model, input_image)
+
+        # Correct orientation
         corrected_image = input_image.rotate(-predicted_angle, expand=True, fillcolor=(255, 255, 255))
-        
-        # Clean up temporary file
-        if os.path.exists(temp_input_path):
-            os.remove(temp_input_path)
         
         result_message = f"Predicted rotation angle: {predicted_angle:.2f}°\nModel: {state.current_approach} ({state.current_architecture})\nImage size: {state.current_image_size}x{state.current_image_size}"
         
@@ -297,7 +291,7 @@ def batch_process_images(input_files):
             try:
                 # Process each image
                 input_image = Image.open(input_file.name).convert('RGB')
-                predicted_angle = predict_angle(current_model, input_file.name)
+                predicted_angle = predict_angle(current_model, input_image)
                 corrected_image = input_image.rotate(-predicted_angle, expand=True, fillcolor=(255, 255, 255))
                 
                 corrected_images.append(corrected_image)
@@ -378,9 +372,10 @@ if __name__ == "__main__":
                 with gr.Row():
                     with gr.Column():
                         input_image = gr.Image(
-                            type="pil", 
+                            type="pil",
                             label="Upload Image",
-                            height=400
+                            height=400,
+                            format="png"
                         )
                         process_btn = gr.Button(
                             "Correct Orientation", 
@@ -391,7 +386,8 @@ if __name__ == "__main__":
                     with gr.Column():
                         output_image = gr.Image(
                             label="Corrected Image",
-                            height=400
+                            height=400,
+                            format="png"
                         )
                         result_text = gr.Textbox(
                             label="Results",
