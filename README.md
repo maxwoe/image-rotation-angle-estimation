@@ -158,6 +158,17 @@ python train.py --approach cgd --model-name mambaout_base \
   --test-random-seed 0
 ```
 
+## Training on Custom Dataset
+
+To train on your own images, prepare a directory of correctly-oriented images (JPEG, PNG, etc.). No annotation files or labels are needed — the training pipeline applies random rotations and learns to predict the applied angle.
+
+```bash
+python train.py --approach cgd --model-name mambaout_base \
+  --train-dir path/to/your/images --validation-split 0.1 \
+  --batch-size 16 --mixed-precision \
+  --test-dirs path/to/test/images --run-test
+```
+
 Test angles are deterministic for a given seed. Results in the paper use seeds 0–4 and report the mean.
 
 ## Demo
