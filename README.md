@@ -1,5 +1,7 @@
 # Image Rotation Angle Estimation
 
+**[Try the interactive demo](https://huggingface.co/spaces/maxwoe/image-rotation-angle-estimation)** | **[Pretrained models](https://huggingface.co/maxwoe/image-rotation-angle-estimation)**
+
 Systematic comparison of five circular-aware methods for image rotation angle estimation across sixteen architectures. Accompanies the paper:
 
 > **Image Rotation Angle Estimation: Comparing Circular-Aware Methods**

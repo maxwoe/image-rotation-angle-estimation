@@ -16,6 +16,8 @@ library_name: pytorch
 
 # Image Rotation Angle Estimation
 
+**[Try the interactive demo](https://huggingface.co/spaces/maxwoe/image-rotation-angle-estimation)**
+
 Predicts the rotation angle of an image using the **Circular Gaussian Distribution (CGD)** method with a **MambaOut Base** backbone.
 
 The model outputs a probability distribution over 360 angle bins (1 degree resolution) and extracts the predicted angle via argmax. It handles the full 360 degree range with no boundary discontinuities.
@@ -73,10 +75,6 @@ print(f"Predicted rotation: {angle:.2f} degrees")
 - **Output:** Probability distribution over 360 angle bins, converted to angle via argmax
 - **Loss:** KL Divergence with soft Gaussian labels
 - **Optimizer:** AdamW with ReduceLROnPlateau scheduler
-
-## Demo
-
-Try the interactive demo: [HuggingFace Space](https://huggingface.co/spaces/maxwoe/image-rotation-angle-estimation)
 
 ## License
 
