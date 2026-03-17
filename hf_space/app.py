@@ -116,7 +116,6 @@ with app:
     gr.Markdown(
         "Upload an image, apply a random rotation, and see the model predict and correct the angle.\n\n"
         "Uses the **CGD** (Circular Gaussian Distribution) method with **MambaOut Base** architecture. "
-        # "See the [paper and code](https://github.com/maxwoe/image-rotation-angle-estimation) for details."
     )
 
     original_image_state = gr.State(value=None)
