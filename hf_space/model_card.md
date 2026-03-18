@@ -6,12 +6,12 @@ tags:
   - angle-detection
   - circular-gaussian-distribution
   - mambaout
+  - pytorch
 datasets:
   - coco
 metrics:
   - mae
 pipeline_tag: image-classification
-library_name: pytorch
 ---
 
 # Image Rotation Angle Estimation
@@ -31,24 +31,30 @@ The model outputs a probability distribution over 360 angle bins (1 degree resol
 
 ## Usage
 
-```python
-import torch
-from huggingface_hub import hf_hub_download
-from PIL import Image
+The inference code (`model_cgd.py`, `architectures.py`, `rotation_utils.py`) is included in this repo.
 
-# Download checkpoint
-ckpt_path = hf_hub_download(
+```python
+from huggingface_hub import snapshot_download
+
+# Download inference code
+snapshot_download(
     repo_id="maxwoe/image-rotation-angle-estimation",
-    filename="cgd_mambaout_base_coco2017.ckpt",
+    allow_patterns=["*.py", "*.json"],
+    local_dir=".",
 )
 
-# Load model
+# Load model (defaults to COCO 2017 checkpoint)
 from model_cgd import CGDAngleEstimation
+model = CGDAngleEstimation.from_pretrained("maxwoe/image-rotation-angle-estimation")
 
-model = CGDAngleEstimation.load_from_checkpoint(ckpt_path, image_size=224)
-model.eval()
+# Or load a specific checkpoint by filename
+# model = CGDAngleEstimation.from_pretrained(
+#     "maxwoe/image-rotation-angle-estimation",
+#     model_name="cgd_mambaout_base_coco2014.ckpt",
+# )
 
 # Predict rotation angle
+from PIL import Image
 image = Image.open("your_image.jpg")
 angle = model.predict_angle(image)
 print(f"Predicted rotation: {angle:.2f} degrees")

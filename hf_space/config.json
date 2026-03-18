@@ -1,0 +1,15 @@
+{
+  "models": {
+    "CGD + MambaOut Base (COCO 2017) \u2014 2.84\u00b0 MAE": {
+      "filename": "cgd_mambaout_base_coco2017.ckpt",
+      "architecture": "mambaout_base.in1k",
+      "input_size": 224
+    },
+    "CGD + MambaOut Base (COCO 2014) \u2014 3.71\u00b0 MAE": {
+      "filename": "cgd_mambaout_base_coco2014.ckpt",
+      "architecture": "mambaout_base.in1k",
+      "input_size": 224
+    }
+  },
+  "default_model": "CGD + MambaOut Base (COCO 2017) \u2014 2.84\u00b0 MAE"
+}

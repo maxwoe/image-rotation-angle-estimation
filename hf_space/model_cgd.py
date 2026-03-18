@@ -139,6 +139,43 @@ class CGDAngleEstimation(pl.LightningModule):
             return model
         raise FileNotFoundError("Checkpoint file not found")
 
+    @classmethod
+    def from_pretrained(cls, repo_id, model_name=None):
+        """Load a pretrained model from HuggingFace Hub.
+
+        Args:
+            repo_id: HuggingFace repo ID (e.g. "maxwoe/image-rotation-angle-estimation")
+            model_name: Display name or checkpoint filename from config.json.
+                Defaults to the default model.
+        """
+        import json
+        from huggingface_hub import hf_hub_download
+
+        config_path = hf_hub_download(repo_id=repo_id, filename="config.json")
+        with open(config_path) as f:
+            config = json.load(f)
+
+        if model_name is None:
+            model_name = config["default_model"]
+
+        # Look up by display name or by filename
+        if model_name in config["models"]:
+            model_info = config["models"][model_name]
+        else:
+            model_info = None
+            for info in config["models"].values():
+                if info["filename"] == model_name:
+                    model_info = info
+                    break
+            if model_info is None:
+                available = [i["filename"] for i in config["models"].values()]
+                raise ValueError(f"Unknown model: {model_name}. Available: {available}")
+
+        ckpt_path = hf_hub_download(repo_id=repo_id, filename=model_info["filename"])
+        model = cls.try_load(checkpoint_path=ckpt_path, image_size=model_info["input_size"])
+        model.eval()
+        return model
+
     def forward(self, x: torch.Tensor, return_logits: bool = False) -> torch.Tensor:
         """Forward pass returning probability distribution over angles."""
         logits = self.model(x)

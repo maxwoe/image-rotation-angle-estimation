@@ -5,6 +5,8 @@ Two-step interactive demo:
 2. Click "Correct Orientation" to see the model predict and correct the angle
 """
 
+import json
+
 import gradio as gr
 import torch
 from PIL import Image
@@ -20,17 +22,13 @@ from rotation_utils import rotate_image_crop_max_area
 
 # HuggingFace Hub configuration
 HF_REPO_ID = os.environ.get("HF_MODEL_REPO", "maxwoe/image-rotation-angle-estimation")
-HF_MODELS = {
-    "CGD + MambaOut Base (COCO 2017) — 2.84° MAE": {
-        "filename": "cgd_mambaout_base_coco2017.ckpt",
-        "architecture": "mambaout_base.in1k",
-    },
-    "CGD + MambaOut Base (COCO 2014) — 3.71° MAE": {
-        "filename": "cgd_mambaout_base_coco2014.ckpt",
-        "architecture": "mambaout_base.in1k",
-    },
-}
-HF_DEFAULT_MODEL = "CGD + MambaOut Base (COCO 2017) — 2.84° MAE"
+
+# Fetch config.json from model repo (this is the HF download-tracking query file)
+_config_path = hf_hub_download(repo_id=HF_REPO_ID, filename="config.json")
+with open(_config_path) as _f:
+    _config = json.load(_f)
+HF_MODELS = _config["models"]
+HF_DEFAULT_MODEL = _config["default_model"]
 
 # Global model state
 model = None

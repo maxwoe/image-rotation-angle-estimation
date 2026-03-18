@@ -8,9 +8,14 @@ from model_cgd import CGDAngleEstimation
 from architectures import get_default_input_size
 from huggingface_hub import hf_hub_download
 
+HF_REPO_ID = "maxwoe/image-rotation-angle-estimation"
+
+# Fetch config.json first (this is the HF download-tracking query file)
+hf_hub_download(repo_id=HF_REPO_ID, filename="config.json")
+
 print("Loading model...")
 ckpt = hf_hub_download(
-    repo_id="maxwoe/image-rotation-angle-estimation",
+    repo_id=HF_REPO_ID,
     filename="cgd_mambaout_base_coco2017.ckpt",
 )
 model = CGDAngleEstimation.try_load(
