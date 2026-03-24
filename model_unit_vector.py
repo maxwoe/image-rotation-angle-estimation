@@ -172,7 +172,15 @@ class UnitVectorAngleEstimation(pl.LightningModule):
             return model
 
     def load_pretrained_weights(self, checkpoint_path):
-        raise NotImplementedError("Pretrained weights loading not implemented for UV model")
+        """Load model weights from a checkpoint for fine-tuning (fresh optimizer/scheduler)."""
+        checkpoint = torch.load(checkpoint_path, map_location="cpu", weights_only=False)
+        state_dict = checkpoint.get("state_dict", checkpoint)
+        missing, unexpected = self.load_state_dict(state_dict, strict=False)
+        if missing:
+            logger.warning(f"Missing keys when loading pretrained weights: {missing}")
+        if unexpected:
+            logger.warning(f"Unexpected keys when loading pretrained weights: {unexpected}")
+        logger.info(f"Loaded pretrained weights from {checkpoint_path}")
     
     def smooth_l1_cos_loss(self, y_pred_unit, y_true_unit, beta=1.0):
         """

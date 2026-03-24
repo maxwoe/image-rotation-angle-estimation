@@ -98,7 +98,7 @@ class CircularGaussianDistribution(nn.Module):
         
         Args:
             distributions: Probability distributions [B, num_bins]
-            method: Extraction method ('argmax', 'weighted_average', 'peak_fitting')
+            method: Extraction method ('argmax', 'weighted_average', 'peak_fitting', 'local_weighted_average')
             
         Returns:
             angles: Extracted angles in degrees [B] in [0°, 360°) range
@@ -151,9 +151,31 @@ class CircularGaussianDistribution(nn.Module):
                     angles[i] = self.bin_centers[peak_idx] + offset * self.bin_size
                 else:
                     angles[i] = self.bin_centers[peak_idx]
+        elif method == 'local_weighted_average':
+            # Weighted average within a local window around the peak
+            # Combines sub-bin precision of weighted_average with robustness of argmax
+            window = 15  # ±15 bins (±15°) around peak
+            peak_indices = torch.argmax(distributions, dim=1)
+            bin_angles_rad = self.bin_centers * torch.pi / 180.0
+            cos_components = torch.cos(bin_angles_rad)
+            sin_components = torch.sin(bin_angles_rad)
+
+            angles = torch.zeros(distributions.shape[0], device=distributions.device)
+            for i in range(distributions.shape[0]):
+                peak = peak_indices[i].item()
+                # Gather indices within window, wrapping circularly
+                idx = torch.arange(peak - window, peak + window + 1, device=distributions.device) % self.num_bins
+                local_weights = distributions[i, idx]
+                local_weights = local_weights / (local_weights.sum() + 1e-8)
+                avg_cos = torch.sum(local_weights * cos_components[idx])
+                avg_sin = torch.sum(local_weights * sin_components[idx])
+                angles[i] = torch.atan2(avg_sin, avg_cos) * 180.0 / torch.pi
+
+            angles = angles % 360.0
+
         else:
             raise ValueError(f"Unknown extraction method: {method}")
-        
+
         # Ensure angles are in [0°, 360°) range
         angles = angles % 360.0
         return angles
@@ -276,7 +298,15 @@ class CGDAngleEstimation(pl.LightningModule):
             return model
 
     def load_pretrained_weights(self, checkpoint_path):
-        raise NotImplementedError("Pretrained weights loading not implemented for CGD model")
+        """Load model weights from a checkpoint for fine-tuning (fresh optimizer/scheduler)."""
+        checkpoint = torch.load(checkpoint_path, map_location="cpu", weights_only=False)
+        state_dict = checkpoint.get("state_dict", checkpoint)
+        missing, unexpected = self.load_state_dict(state_dict, strict=False)
+        if missing:
+            logger.warning(f"Missing keys when loading pretrained weights: {missing}")
+        if unexpected:
+            logger.warning(f"Unexpected keys when loading pretrained weights: {unexpected}")
+        logger.info(f"Loaded pretrained weights from {checkpoint_path}")
 
 
     def calculate_angular_mae_from_distribution(self, y_true_angles: torch.Tensor, pred_distributions: torch.Tensor) -> torch.Tensor:
