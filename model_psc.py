@@ -131,7 +131,7 @@ class PSCAngleEstimation(pl.LightningModule):
             return model
 
     def load_pretrained_weights(self, checkpoint_path):
-        raise NotImplementedError("Pretrained weights loading not implemented for classification model")
+        raise NotImplementedError("Pretrained weights loading not implemented for PSC model")
 
     def angle_to_psc(self, angle):
         """

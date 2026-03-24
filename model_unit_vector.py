@@ -172,7 +172,7 @@ class UnitVectorAngleEstimation(pl.LightningModule):
             return model
 
     def load_pretrained_weights(self, checkpoint_path):
-        raise NotImplementedError("Pretrained weights loading not implemented for classification model")
+        raise NotImplementedError("Pretrained weights loading not implemented for UV model")
     
     def smooth_l1_cos_loss(self, y_pred_unit, y_true_unit, beta=1.0):
         """

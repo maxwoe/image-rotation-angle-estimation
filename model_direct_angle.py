@@ -144,7 +144,7 @@ class DirectAngleEstimation(pl.LightningModule):
             return model
 
     def load_pretrained_weights(self, checkpoint_path):
-        raise NotImplementedError("Pretrained weights loading not implemented for classification model")
+        raise NotImplementedError("Pretrained weights loading not implemented for DA model")
 
     def angular_mae_loss(self, y_pred, y_true):
         """

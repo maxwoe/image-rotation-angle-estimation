@@ -105,7 +105,7 @@ class ClassificationAngleEstimation(pl.LightningModule):
             return model
 
     def load_pretrained_weights(self, checkpoint_path):
-        raise NotImplementedError("Pretrained weights loading not implemented for classification model")
+        raise NotImplementedError("Pretrained weights loading not implemented for CL model")
 
     def angle_to_class(self, angle):
         """Convert continuous angle to discrete class index"""

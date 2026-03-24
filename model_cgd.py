@@ -276,7 +276,7 @@ class CGDAngleEstimation(pl.LightningModule):
             return model
 
     def load_pretrained_weights(self, checkpoint_path):
-        raise NotImplementedError("Pretrained weights loading not implemented for classification model")
+        raise NotImplementedError("Pretrained weights loading not implemented for CGD model")
 
 
     def calculate_angular_mae_from_distribution(self, y_true_angles: torch.Tensor, pred_distributions: torch.Tensor) -> torch.Tensor:
