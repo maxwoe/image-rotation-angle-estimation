@@ -2,7 +2,7 @@
 
 **[Try the interactive demo](https://huggingface.co/spaces/maxwoe/image-rotation-angle-estimation)** | **[Pretrained models](https://huggingface.co/maxwoe/image-rotation-angle-estimation)**
 
-Systematic comparison of five circular-aware methods for image rotation angle estimation across sixteen architectures. Accompanies the paper:
+Estimate how much an image is rotated from its upright orientation. Includes training and evaluation code, pretrained models, and an interactive demo. Accompanies the paper:
 
 > **Image Rotation Angle Estimation: Comparing Circular-Aware Methods**
 
@@ -181,10 +181,17 @@ python app.py
 
 Launches a Gradio web interface for interactive angle prediction. Upload an image, select a model, and see the predicted rotation angle with a corrected output.
 
-## Hardware
+<!--
+## Citation
 
-Training was performed on a single NVIDIA GPU. Batch size 16 with mixed precision is recommended. Training time varies by architecture (roughly 1–3 hours per model on DRC-D).
+If you find this work useful, please cite:
 
-## License
-
-MIT
+```bibtex
+@article{woehrer2026image,
+  title={Image Rotation Angle Estimation: Comparing Circular-Aware Methods},
+  author={Woehrer, Maximilian},
+  journal={arXiv preprint arXiv:XXXX.XXXXX},
+  year={2026}
+}
+```
+-->
