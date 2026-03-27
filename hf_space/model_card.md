@@ -16,7 +16,7 @@ pipeline_tag: image-classification
 
 # Image Rotation Angle Estimation
 
-**[Try the interactive demo](https://huggingface.co/spaces/maxwoe/image-rotation-angle-estimation)**
+**[Try the interactive demo](https://huggingface.co/spaces/maxwoe/image-rotation-angle-estimation)** | **[GitHub](https://github.com/maxwoe/image-rotation-angle-estimation)** | **[Paper](https://arxiv.org/abs/2603.25351)**
 
 Predicts the rotation angle of an image using the **Circular Gaussian Distribution (CGD)** method with a **MambaOut Base** backbone.
 
@@ -26,56 +26,49 @@ The model outputs a probability distribution over 360 angle bins (1 degree resol
 
 | Checkpoint | Dataset | MAE | Median Error |
 |---|---|---|---|
-| `cgd_mambaout_base_coco2017.ckpt` | COCO 2017 | 2.84 deg | 0.55 deg |
-| `cgd_mambaout_base_coco2014.ckpt` | COCO 2014 | 3.71 deg | 0.68 deg |
+| `cgd_mambaout_base_coco2017.ckpt` | COCO 2017 | 2.84° | 0.55° |
+| `cgd_mambaout_base_coco2014.ckpt` | COCO 2014 | 3.71° | 0.68° |
 
 ## Usage
 
-The inference code (`model_cgd.py`, `architectures.py`, `rotation_utils.py`) is included in this repo.
+Download the inference code from this Hub repo (`model_cgd.py`, `architectures.py`, `rotation_utils.py`), then:
 
 ```python
-from huggingface_hub import snapshot_download
-
-# Download inference code
-snapshot_download(
-    repo_id="maxwoe/image-rotation-angle-estimation",
-    allow_patterns=["*.py", "*.json"],
-    local_dir=".",
-)
+from model_cgd import CGDAngleEstimation
+from PIL import Image
 
 # Load model (defaults to COCO 2017 checkpoint)
-from model_cgd import CGDAngleEstimation
 model = CGDAngleEstimation.from_pretrained("maxwoe/image-rotation-angle-estimation")
 
-# Or load a specific checkpoint by filename
+# Or load a specific checkpoint
 # model = CGDAngleEstimation.from_pretrained(
 #     "maxwoe/image-rotation-angle-estimation",
 #     model_name="cgd_mambaout_base_coco2014.ckpt",
 # )
 
-# Predict rotation angle
-from PIL import Image
 image = Image.open("your_image.jpg")
 angle = model.predict_angle(image)
-print(f"Predicted rotation: {angle:.2f} degrees")
+print(f"Predicted rotation: {angle:.1f}°")
 ```
+
+`predict_angle` accepts a PIL Image, numpy array, or file path.
 
 ## Evaluation Results (COCO 2017, 5 seeds)
 
 | Metric | Value |
 |---|---|
-| MAE | 2.84 deg |
-| Median Error | 0.55 deg |
-| RMSE | 8.45 deg |
-| P90 Error | 3.54 deg |
-| P95 Error | 12.00 deg |
-| Accuracy at 2 deg | 90.2% |
-| Accuracy at 5 deg | 97.5% |
-| Accuracy at 10 deg | 98.1% |
+| MAE | 2.84° |
+| Median Error | 0.55° |
+| RMSE | 8.45° |
+| P90 Error | 3.54° |
+| P95 Error | 12.00° |
+| Accuracy at 2° | 90.2% |
+| Accuracy at 5° | 97.5% |
+| Accuracy at 10° | 98.1% |
 
 ## Model Details
 
-- **Method:** Circular Gaussian Distribution (CGD) — 360 bins, sigma = 6.0 degrees
+- **Method:** Circular Gaussian Distribution (CGD), 360 bins, sigma = 6.0°
 - **Backbone:** MambaOut Base (`mambaout_base.in1k`), pretrained on ImageNet-1K
 - **Input size:** 224 x 224 pixels
 - **Output:** Probability distribution over 360 angle bins, converted to angle via argmax

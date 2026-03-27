@@ -206,3 +206,4 @@ data/datasets/ds_coco/*
 !data/datasets/train_drcd_filenames.txt
 comparison*/
 tests/*
+weights/*.ckpt
