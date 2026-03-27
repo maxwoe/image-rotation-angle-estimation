@@ -196,6 +196,7 @@ pyrightconfig.json
 
 .*/
 data/*
+!data/DATASETS.md
 # Include COCO test split labels for reproducibility
 !data/datasets/
 data/datasets/*
