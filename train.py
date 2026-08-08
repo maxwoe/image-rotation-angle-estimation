@@ -139,11 +139,16 @@ def train_model(args):
             "validation_split": args.validation_split,
             "random_seed": args.random_seed,
             "image_size": args.image_size,
-            "loss_type": args.loss_type,
             "test_rotation_range": args.test_rotation_range,
             "test_random_seed": args.test_random_seed,
         }
-        
+
+        # Only override the checkpoint's own loss_type when one is given, matching
+        # the fresh-training path below. Passing it unconditionally would inject
+        # None whenever --loss-type is omitted on resume, which the model rejects.
+        if args.loss_type:
+            checkpoint_kwargs["loss_type"] = args.loss_type
+
         # Add test directory if provided
         if args.test_dirs:
             checkpoint_kwargs["test_dir"] = args.test_dirs[0]
@@ -167,7 +172,13 @@ def train_model(args):
         
         if args.loss_type:
             model_kwargs["loss_type"] = args.loss_type
-            
+
+        if args.inference_method and args.approach in ("classification", "cgd"):
+            model_kwargs["inference_method"] = args.inference_method
+
+        if args.no_unit_regularization and args.approach == "unit_vector":
+            model_kwargs["use_unit_regularization"] = False
+
         # Add test directory if provided
         if args.test_dirs:
             model_kwargs["test_dir"] = args.test_dirs[0]
@@ -211,11 +222,13 @@ def train_model(args):
         early_stopping = EarlyStopping(
             monitor="val_mae_deg",
             patience=args.early_stopping_patience,
+            min_delta=args.early_stopping_min_delta,
             mode="min",
             verbose=True
         )
         callbacks.append(early_stopping)
-        logger.info(f"EarlyStopping enabled with patience={args.early_stopping_patience}")
+        logger.info(f"EarlyStopping enabled with patience={args.early_stopping_patience}, "
+                    f"min_delta={args.early_stopping_min_delta}")
 
     # Configure trainer
     trainer_kwargs = {
@@ -526,7 +539,19 @@ def main():
 
     # Loss function options
     parser.add_argument("--loss-type", type=str, help="Loss function type")
-       
+
+    # Head-specific options
+    parser.add_argument("--inference-method", type=str, default=None,
+                        choices=["argmax", "weighted_average", "peak_fitting", "local_weighted_average"],
+                        help="Decode method for classification/cgd heads (default: argmax). "
+                             "'weighted_average' = soft-argmax via circular mean over all bins")
+    parser.add_argument("--no-unit-regularization", action="store_true",
+                        help="Disable unit-norm regularization for the unit_vector head "
+                             "(naive (cos,sin) regression baseline)")
+    parser.add_argument("--rotation-mode", type=str, default="crop", choices=["crop", "pad"],
+                        help="Rotation preprocessing: 'crop' = largest inscribed rectangle (default), "
+                             "'pad' = keep full rotated image with black corner padding")
+
     # Model saving
     parser.add_argument("--save-dir", type=str, default="data/saved_models",
                         help="Directory to save model weights")
@@ -543,6 +568,11 @@ def main():
                         help="Number of batches to accumulate gradients over")
     parser.add_argument("--early-stopping-patience", type=int, default=15,
                         help="Number of epochs with no improvement before stopping")
+    parser.add_argument("--early-stopping-min-delta", type=float, default=0.0,
+                        help="Minimum improvement in val_mae_deg (degrees) that counts as progress. "
+                             "The default of 0.0 means any improvement, however small, resets the "
+                             "patience counter; a value such as 0.1 ignores noise-level fluctuations "
+                             "and lets runs that oscillate within noise terminate.")
     parser.add_argument("--disable-early-stopping", action="store_true",
                         help="Disable early stopping (train for full max-epochs)")
 
@@ -591,6 +621,10 @@ def main():
                         help="Show comprehensive metrics with confidence intervals after test evaluation")
 
     args = parser.parse_args()
+
+    # Rotation mode is consumed by RotationDataset (deep inside each model's setup),
+    # communicated via environment to avoid threading it through every model class
+    os.environ["ROTATION_MODE"] = args.rotation_mode
 
     # Validate arguments
     if not (0.0 < args.validation_split < 1.0):

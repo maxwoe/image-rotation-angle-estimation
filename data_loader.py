@@ -1,4 +1,5 @@
 
+import os
 import torch
 from torch.utils.data import Dataset
 import torchvision.transforms as transforms
@@ -33,7 +34,14 @@ class RotationDataset(Dataset):
         self.train_angles = train_angles
         self.test_rotation_range = test_rotation_range
         self.test_random_seed = test_random_seed
-        
+
+        # Rotation preprocessing mode, set by train.py --rotation-mode (env avoids
+        # threading the option through every model class)
+        self.rotation_mode = os.environ.get("ROTATION_MODE", "crop")
+        if self.rotation_mode != "crop":
+            logger.warning(f"Rotation mode '{self.rotation_mode}' active for {mode} dataset "
+                           f"(control experiment — paper default is 'crop')")
+
         # Generate repeatable test angles if in test mode
         if mode == "test":
             self.test_angles = self._generate_test_angles()
@@ -117,7 +125,7 @@ class RotationDataset(Dataset):
             angle = self.test_angles[idx]
             
             # Apply rotation with the predefined angle
-            rotated_image = rotate_preserve_content(image_path, angle)
+            rotated_image = rotate_preserve_content(image_path, angle, mode=self.rotation_mode)
             
             # Transform to tensor
             image_tensor = self.transform(rotated_image)
@@ -141,7 +149,7 @@ class RotationDataset(Dataset):
         
         # Apply proper rotation that preserves content (no artificial borders)
         # Positive angle to create an image at that orientation
-        rotated_image = rotate_preserve_content(image_path, angle)
+        rotated_image = rotate_preserve_content(image_path, angle, mode=self.rotation_mode)
         
         # Transform to tensor
         image_tensor = self.transform(rotated_image)

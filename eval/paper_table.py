@@ -7,8 +7,8 @@ Reads a comparison JSON (from compare.py) and outputs:
   - LaTeX rows matching the paper's table format (--latex flag)
 
 Usage:
-    python paper_table.py comparison/20260306_091317_comparison_results.json
-    python paper_table.py comparison/20260306_091317_comparison_results.json --latex
+    python eval/paper_table.py eval/results/drcd/base_grid_seeds.json eval/results/drcd/csl_sweep_seeds.json
+    python eval/paper_table.py eval/results/drcd/base_grid_seeds.json eval/results/drcd/csl_sweep_seeds.json --latex
 
 All 5-run means are computed from all_runs[i] entries.
 std uses ddof=0 (population std), matching compare.py's aggregate_runs().
@@ -24,10 +24,11 @@ import numpy as np
 # Mappings
 # ---------------------------------------------------------------------------
 
-APPROACH_ORDER = ["direct_angle", "classification", "unit_vector", "psc", "cgd"]
+APPROACH_ORDER = ["direct_angle", "unit_vector", "psc", "classification", "classification_csl", "cgd"]
 APPROACH_LABELS = {
     "direct_angle": "DA",
     "classification": "CLS",
+    "classification_csl": "CSL",
     "unit_vector": "UV",
     "psc": "PSC",
     "cgd": "CGD",
@@ -100,15 +101,19 @@ SECONDARY_KEYS = [
 # Data loading and aggregation
 # ---------------------------------------------------------------------------
 
-def load_results(path):
-    with open(path) as f:
-        data = json.load(f)
+def load_results(paths):
+    """Merge one or more comparison JSONs into a single lookup.
 
-    # Build lookup: (approach, model_short) -> entry
+    Later files win on key collisions, so pass the base sweep first and
+    supplemental sweeps (e.g. classification_csl) afterwards.
+    """
     lookup = {}
-    for entry in data:
-        key = (entry["approach"], entry["model_short"])
-        lookup[key] = entry
+    for path in paths:
+        with open(path) as f:
+            data = json.load(f)
+        for entry in data:
+            key = (entry["approach"], entry["model_short"])
+            lookup[key] = entry
     return lookup
 
 
@@ -373,11 +378,18 @@ def make_latex_rows(results):
 
 def main():
     parser = argparse.ArgumentParser(description="Reproduce Table 1 from the paper.")
-    parser.add_argument("json_path", help="Path to comparison results JSON")
+    parser.add_argument("json_paths", nargs="+",
+                        help="Comparison results JSON(s); later files win on collisions")
     parser.add_argument("--latex", action="store_true", help="Print LaTeX rows")
     args = parser.parse_args()
 
-    results = load_results(args.json_path)
+    results = load_results(args.json_paths)
+
+    # Drop approach columns entirely absent from the merged data (e.g. run
+    # without the CSL sweep files)
+    global APPROACH_ORDER
+    APPROACH_ORDER = [a for a in APPROACH_ORDER
+                      if any((a, m) in results for m in MODEL_ORDER)]
 
     missing = []
     for approach in APPROACH_ORDER:

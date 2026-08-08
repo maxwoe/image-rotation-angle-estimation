@@ -42,10 +42,11 @@ class ClassificationAngleEstimation(pl.LightningModule):
 
     def __init__(self, batch_size, train_dir, model_name="vit_tiny_patch16_224", learning_rate=0.001,
                  validation_split=0.1, random_seed=42, image_size=224,
-                 num_classes=360, loss_type="cross_entropy", label_smoothing=0.0, test_dir=None, test_rotation_range=360.0, test_random_seed=42):
+                 num_classes=360, loss_type="cross_entropy", label_smoothing=0.0,
+                 inference_method="argmax", test_dir=None, test_rotation_range=360.0, test_random_seed=42):
         super().__init__()
         self.save_hyperparameters()
-        
+
         # Store test parameters
         self.test_dir = test_dir
         self.test_rotation_range = test_rotation_range
@@ -55,6 +56,7 @@ class ClassificationAngleEstimation(pl.LightningModule):
         self.num_classes = num_classes  # Number of angle bins
         self.bin_size = 360.0 / num_classes  # Degrees per bin
         self.label_smoothing = label_smoothing
+        self.inference_method = inference_method
         
         # Model with classification head
         self.model = timm.create_model(model_name, pretrained=True, num_classes=self.num_classes)
@@ -128,6 +130,42 @@ class ClassificationAngleEstimation(pl.LightningModule):
     def class_to_angle(self, class_idx):
         """Convert class index to angle (center of bin)"""
         return (class_idx.float() + 0.5) * self.bin_size
+
+    def decode_angles(self, probs, method=None):
+        """Decode class probabilities to continuous angles.
+
+        argmax: bin center of the most probable class (1° resolution for 360 bins)
+        weighted_average: soft-argmax — circular mean over all bins (sub-bin resolution,
+            but sensitive to multi-modal probability mass)
+        local_weighted_average: circular mean restricted to ±15 bins around the peak
+            (sub-bin resolution, robust to secondary modes)
+        """
+        method = method or self.inference_method
+        if method == "argmax":
+            return self.class_to_angle(torch.argmax(probs, dim=1))
+
+        bin_centers_rad = (torch.arange(self.num_classes, device=probs.device).float() + 0.5) \
+            * self.bin_size * torch.pi / 180.0
+        cos_c, sin_c = torch.cos(bin_centers_rad), torch.sin(bin_centers_rad)
+
+        if method == "weighted_average":
+            w = probs / (probs.sum(dim=1, keepdim=True) + 1e-8)
+            angles = torch.atan2((w * sin_c).sum(dim=1), (w * cos_c).sum(dim=1)) * 180.0 / torch.pi
+        elif method == "local_weighted_average":
+            window = 15  # ±15 bins around peak
+            peaks = torch.argmax(probs, dim=1)
+            angles = torch.zeros(probs.shape[0], device=probs.device)
+            for i in range(probs.shape[0]):
+                idx = torch.arange(peaks[i].item() - window, peaks[i].item() + window + 1,
+                                   device=probs.device) % self.num_classes
+                w = probs[i, idx]
+                w = w / (w.sum() + 1e-8)
+                angles[i] = torch.atan2((w * sin_c[idx]).sum(), (w * cos_c[idx]).sum()) * 180.0 / torch.pi
+        else:
+            raise ValueError(f"Unknown inference method for classification: {method}. "
+                             f"Use 'argmax', 'weighted_average', or 'local_weighted_average'")
+
+        return angles % 360.0
 
 
     def csl_loss(self, y_true_class, y_pred_logits, window_type='gaussian', radius=6, sigma=2.0):
@@ -304,11 +342,9 @@ class ClassificationAngleEstimation(pl.LightningModule):
         """Calculate angular MAE from class predictions and true angles"""
         # Get predicted class probabilities
         y_pred_probs = F.softmax(y_pred_logits, dim=1)
-        
-        # Method 1: Use argmax (discrete prediction)
-        y_pred_classes = torch.argmax(y_pred_probs, dim=1)
-        pred_angles = self.class_to_angle(y_pred_classes)
-        
+
+        pred_angles = self.decode_angles(y_pred_probs)
+
         # Calculate angular distance (shorter path around circle)
         angular_errors = torch.abs(pred_angles - y_true_angles)
         angular_errors = torch.minimum(angular_errors, 360 - angular_errors)
@@ -358,8 +394,8 @@ class ClassificationAngleEstimation(pl.LightningModule):
         # Calculate predicted angles from class probabilities
         y_pred_probs = F.softmax(y_hat_logits, dim=1)
         y_pred_classes = torch.argmax(y_pred_probs, dim=1)
-        pred_angles = self.class_to_angle(y_pred_classes)
-        
+        pred_angles = self.decode_angles(y_pred_probs)
+
         # Calculate comprehensive metrics
         val_metrics = compute_validation_metrics(pred_angles, y)
         
@@ -386,20 +422,27 @@ class ClassificationAngleEstimation(pl.LightningModule):
         # Calculate predicted angles from class probabilities
         y_pred_probs = F.softmax(y_hat_logits, dim=1)
         y_pred_classes = torch.argmax(y_pred_probs, dim=1)
-        pred_angles = self.class_to_angle(y_pred_classes)
-        
+        pred_angles = self.decode_angles(y_pred_probs)
+
         # Calculate comprehensive test metrics
         test_metrics = compute_validation_metrics(pred_angles, y, prefix="test")
-        
+
+        # Additionally evaluate soft-argmax decoding for the quantization analysis
+        # (reported alongside the primary decode in every test run)
+        soft_angles = self.decode_angles(y_pred_probs, method="weighted_average")
+        soft_metrics = compute_validation_metrics(soft_angles, y, prefix="test_softargmax")
+
         # Calculate classification accuracy
         accuracy = torch.mean((y_pred_classes == y_class).float())
-        
+
         # Log all metrics
         self.log('test_loss', loss, on_step=False, on_epoch=True)
         self.log('test_accuracy', accuracy, on_step=False, on_epoch=True)
         for metric_name, metric_value in test_metrics.items():
             self.log(metric_name, metric_value, on_step=False, on_epoch=True)
-        
+        for metric_name, metric_value in soft_metrics.items():
+            self.log(metric_name, metric_value, on_step=False, on_epoch=True)
+
         return loss
 
     def configure_optimizers(self):
@@ -525,10 +568,8 @@ class ClassificationAngleEstimation(pl.LightningModule):
 
         with torch.no_grad():
             logits = self(image_tensor)
-            
-            # Use argmax for consistency with evaluation metrics
-            predicted_class = torch.argmax(logits, dim=1)
-            angle = self.class_to_angle(predicted_class).item()
+            probs = F.softmax(logits, dim=1)
+            angle = self.decode_angles(probs).item()
 
         return angle
 

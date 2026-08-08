@@ -56,31 +56,39 @@ For reproducing paper results on DRC-D and COCO, see [data/DATASETS.md](data/DAT
 
 ## Results
 
-Best results on the DRC-D test set (mean of 5 seeds):
+Best results on DRC-D (mean over five training runs):
 
 | Method | Architecture | MAE (°) |
 |---|---|---|
+| CLS + CSL labels | MambaOut Tiny | 0.81 |
 | CLS | EfficientViT-B3 | 1.23 |
 | CGD | MambaOut Base | 1.24 |
 
-Transfer to COCO, tested on 1,030 val images (CGD + MambaOut Base):
+Best results on COCO, tested on 1,030 val images (CGD):
 
-| Training Data | MAE (°) |
-|---|---|
-| COCO 2014 | 3.71 |
-| COCO 2017 | 2.84 |
+| Training Data | Architecture | MAE (°) |
+|---|---|---|
+| COCO 2014 | ConvNeXt V2 Base | 3.13 |
+| COCO 2017 | MambaOut Base | 2.84 |
 
 ## Methods
 
-Five circular-aware approaches are implemented and benchmarked. CGD performs best overall. See the [paper](https://arxiv.org/abs/2603.25351) for a full comparison.
+Five circular-aware approaches are implemented and benchmarked; the classification head can additionally be trained with Circular Smooth Labels (`--loss-type csl`), which removes its training instabilities on small datasets and yields the best DRC-D result. CGD never fails to converge and is best on every COCO backbone. See the [paper](https://arxiv.org/abs/2603.25351) for the full comparison.
 
 | Abbreviation | Approach | Description |
 |---|---|---|
 | DA | Direct Angle | Scalar regression with circular loss |
-| CLS | Classification | Angular binning (360 bins) |
+| CLS | Classification | Angular binning (360 bins), cross-entropy or CSL labels |
 | UV | Unit Vector | Regression on (cos θ, sin θ) |
 | PSC | Phase-Shifting Coder | Frequency-domain encoding |
 | CGD | Circular Gaussian Distribution | Probabilistic soft targets via KL divergence |
+
+## Reproducing the paper's evaluation
+
+- DRC-D grids: `compare.py` (per-method sweeps; `--extra-args` forwards options such as `--validation-split 0.2` or `--no-unit-regularization` to `train.py`).
+- COCO cells: train once with `train.py`, then evaluate a checkpoint across five test seeds with `eval/eval_coco_ours.sh` (set `MODELS_FILE=` to a list of `approach|label|checkpoint` lines and `OUTPUT_JSON=` for the output).
+- Per-seed result files used in the paper are published: DRC-D under `eval/results/drcd/` (`base_grid_seeds.json` for the five base methods, `csl_sweep_seeds.json` for the CSL variant, and `valsplit20_seeds.json`, `uv_noreg_seeds.json`, `padding_cls_seeds.json`, `padding_cgd_seeds.json` for the ablations), COCO under `eval/results/`. `eval/paper_table.py` and `eval/significance_tests.py` regenerate the DRC-D table rows and the statistical tests from them and run with no arguments.
+- Useful `train.py` options added for the revision: `--early-stopping-min-delta` (improvement threshold for early stopping), `--rotation-mode pad` (padding control experiment), `--inference-method` (argmax or soft-argmax decoding), `--no-unit-regularization` (naive two-output regression baseline).
 
 ## Citation
 

@@ -36,6 +36,25 @@ declare -a MODELS=(
 )
 # last entry is trained on coco 2017
 
+# Optional: read the model list from a file instead of the array above, so the
+# same evaluation path can be reused for other checkpoint sets (e.g. the COCO
+# method x backbone matrix). One "approach|model_name|checkpoint" per line;
+# blank lines and '#' comments ignored.
+#   MODELS_FILE=eval/matrix_models_all.txt OUTPUT_JSON=eval/results/coco_matrix_seeds.json \
+#     bash eval/eval_coco_ours.sh
+if [[ -n "${MODELS_FILE:-}" ]]; then
+  if [[ ! -f "$MODELS_FILE" ]]; then
+    echo "ERROR: MODELS_FILE not found: $MODELS_FILE"
+    exit 1
+  fi
+  MODELS=()
+  while IFS= read -r line; do
+    [[ -z "$line" || "$line" == \#* ]] && continue
+    MODELS+=("$line")
+  done < "$MODELS_FILE"
+  echo "Loaded ${#MODELS[@]} models from $MODELS_FILE"
+fi
+
 # ---------------------------------------------------------------------------
 # Validate
 # ---------------------------------------------------------------------------

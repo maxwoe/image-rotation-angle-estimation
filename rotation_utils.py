@@ -102,30 +102,39 @@ def rotate_image_crop_max_area(image, angle):
     return cropped
 
 
-def rotate_preserve_content(image_path, angle):
+def rotate_preserve_content(image_path, angle, mode="crop"):
     """
-    Rotate image preserving content, no artificial borders
+    Rotate image preserving content
     Returns the rotated image without resizing (let transforms handle that)
-    
+
     Args:
         image_path: Path to image file
         angle: Rotation angle in degrees
-    
+        mode: "crop" = center-crop to largest inscribed axis-aligned rectangle
+              (no artificial borders); "pad" = keep the full rotated image with
+              black corner padding (control experiment for crop-boundary cues)
+
     Returns:
-        PIL Image: Rotated and cropped image (original content preserved)
+        PIL Image: Rotated image (original content preserved)
     """
     # Load image with OpenCV
     image = cv2.imread(str(image_path))
     if image is None:
         raise ValueError(f"Could not load image: {image_path}")
-    
-    # Rotate and crop to preserve maximum content area
-    image_rotated_cropped = rotate_image_crop_max_area(image, angle)
-    
+
+    if mode == "pad":
+        # Rotate with expansion, keep black corners (no crop)
+        image_rotated, _ = rotate_image(image, angle, expand=True)
+    elif mode == "crop":
+        # Rotate and crop to maximum content area
+        image_rotated = rotate_image_crop_max_area(image, angle)
+    else:
+        raise ValueError(f"Unknown rotation mode: {mode}. Use 'crop' or 'pad'")
+
     # Convert BGR to RGB
-    image_rotated_cropped = cv2.cvtColor(image_rotated_cropped, cv2.COLOR_BGR2RGB)
-    
+    image_rotated = cv2.cvtColor(image_rotated, cv2.COLOR_BGR2RGB)
+
     # Convert to PIL (no resizing - let transforms handle it)
-    final_image = Image.fromarray(image_rotated_cropped)
-    
+    final_image = Image.fromarray(image_rotated)
+
     return final_image

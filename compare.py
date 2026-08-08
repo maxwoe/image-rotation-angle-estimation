@@ -48,13 +48,15 @@ def parse_approach_and_loss(approach_str: str) -> tuple[str, str | None]:
 
 def _run_single(approach: str, model_name: str, epochs: int, batch_size: int,
                 timestamp: str, run_idx: int, mixed_precision: bool = False,
-                keep_checkpoints: str = 'none') -> Dict:
+                keep_checkpoints: str = 'none', train_dir: str = "data/datasets/train_drcd",
+                test_dirs: Optional[List[str]] = None, extra_args: str = "") -> Dict:
     """Run one training+testing experiment for a given random seed (run_idx)."""
     base_approach, loss_type = parse_approach_and_loss(approach)
     learning_rate = get_scaled_learning_rate(model_name, batch_size)
     model_short = model_name.split('.')[0]
     exp_dir = f"{timestamp}_compare_{approach}_{model_short}_run{run_idx}"
     weights_dir = f"comparison/{exp_dir}"
+    test_dirs = test_dirs or ["data/datasets/test_drcd"]
 
     try:
         cmd = [
@@ -63,18 +65,20 @@ def _run_single(approach: str, model_name: str, epochs: int, batch_size: int,
             "--max-epochs", str(epochs),
             "--learning-rate", str(learning_rate),
             "--batch-size", str(batch_size),
-            "--train-dir", "data/datasets/train_drcd",
+            "--train-dir", train_dir,
             "--save-dir", weights_dir,
             "--model-name", model_name,
             "--random-seed", str(run_idx),  # Different seed per run → different train/val split
             "--run-test",
-            "--test-dirs", "data/datasets/test_drcd",
+            "--test-dirs", *test_dirs,
         ]
 
         if loss_type is not None:
             cmd.extend(["--loss-type", loss_type])
         if mixed_precision:
             cmd.append("--mixed-precision")
+        if extra_args:
+            cmd.extend(extra_args.split())
 
         # Always use compact checkpoints in comparison mode
         cmd.extend(["--save-weights-only", "--no-save-last"])
@@ -87,7 +91,8 @@ def _run_single(approach: str, model_name: str, epochs: int, batch_size: int,
             test_results = extract_test_results(result.stdout)
             test_mae = next(
                 (v for k, v in test_results.items()
-                 if 'mae_deg' in k.lower() and isinstance(v, (int, float))),
+                 if 'mae_deg' in k.lower() and 'softargmax' not in k.lower()
+                 and isinstance(v, (int, float))),
                 None
             )
             if test_mae is None or (isinstance(test_mae, float) and math.isnan(test_mae)):
@@ -177,7 +182,8 @@ def aggregate_runs(run_results: List[Dict]) -> Dict:
 
 def run_experiment(approach: str, model_name: str, epochs: int, batch_size: int,
                    timestamp: str, mixed_precision: bool = False, num_runs: int = 3,
-                   keep_checkpoints: str = 'none') -> Dict:
+                   keep_checkpoints: str = 'none', train_dir: str = "data/datasets/train_drcd",
+                   test_dirs: Optional[List[str]] = None, extra_args: str = "") -> Dict:
     """Run num_runs training+testing experiments and aggregate (mean ± std MAE)."""
     learning_rate = get_scaled_learning_rate(model_name, batch_size)
     model_short = model_name.split('.')[0]
@@ -191,7 +197,8 @@ def run_experiment(approach: str, model_name: str, epochs: int, batch_size: int,
         run_result = None
         for attempt in range(1 + MAX_RETRIES):
             run_result = _run_single(approach, model_name, epochs, batch_size,
-                                      timestamp, run_idx, mixed_precision, keep_checkpoints)
+                                      timestamp, run_idx, mixed_precision, keep_checkpoints,
+                                      train_dir=train_dir, test_dirs=test_dirs, extra_args=extra_args)
             if run_result['success']:
                 break
             if attempt < MAX_RETRIES:
@@ -474,6 +481,13 @@ def main():
                             "'none' (default): delete all after test, minimal disk use. "
                             "'best': keep only best-MAE run per cell. "
                             "'all': keep everything.")
+    parser.add_argument("--train-dir", type=str, default="data/datasets/train_drcd",
+                       help="Training data directory passed to train.py")
+    parser.add_argument("--test-dirs", type=str, nargs='+', default=["data/datasets/test_drcd"],
+                       help="Test data directory(ies) passed to train.py")
+    parser.add_argument("--extra-args", type=str, default="",
+                       help="Extra arguments appended verbatim to every train.py invocation, "
+                            "e.g. \"--validation-split 0.2\" or \"--no-unit-regularization\"")
 
     args = parser.parse_args()
 
@@ -488,6 +502,9 @@ def main():
     print("=" * 50)
     print(f"Approaches: {', '.join(approaches)}")
     print(f"Models: {len(models)} models")
+    print(f"Train dir: {args.train_dir}  |  Test dirs: {', '.join(args.test_dirs)}")
+    if args.extra_args:
+        print(f"Extra train.py args: {args.extra_args}")
     print(f"Cells: {total_cells}  |  Runs per cell: {args.num_runs}  |  Total runs: {total_runs}")
     print(f"Epochs per run: {args.epochs}")
     print(f"Batch Size: {args.batch_size}")
@@ -507,7 +524,9 @@ def main():
 
             result = run_experiment(approach, model, args.epochs, args.batch_size,
                                     timestamp, args.mixed_precision, args.num_runs,
-                                    keep_checkpoints=args.keep_checkpoints)
+                                    keep_checkpoints=args.keep_checkpoints,
+                                    train_dir=args.train_dir, test_dirs=args.test_dirs,
+                                    extra_args=args.extra_args)
             results.append(result)
 
             # Save after every cell so a crash doesn't lose accumulated results

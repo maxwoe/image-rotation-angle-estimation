@@ -427,13 +427,20 @@ class CGDAngleEstimation(pl.LightningModule):
         
         # Extract predicted angles from distributions
         pred_angles = self.cgd.distribution_to_angle(pred_distributions, method=self.inference_method)
-        
+
         # Calculate comprehensive test metrics
         test_metrics = compute_validation_metrics(pred_angles, y, prefix="test")
-        
+
+        # Additionally evaluate soft-argmax decoding for the quantization analysis
+        # (reported alongside the primary decode in every test run)
+        soft_angles = self.cgd.distribution_to_angle(pred_distributions, method='weighted_average')
+        soft_metrics = compute_validation_metrics(soft_angles, y, prefix="test_softargmax")
+
         # Log all metrics
         self.log('test_loss', loss, on_step=False, on_epoch=True)
         for metric_name, metric_value in test_metrics.items():
+            self.log(metric_name, metric_value, on_step=False, on_epoch=True)
+        for metric_name, metric_value in soft_metrics.items():
             self.log(metric_name, metric_value, on_step=False, on_epoch=True)
 
 
