@@ -78,13 +78,13 @@ In the second column it is passed to the model without ever being saved.
 | Metric | Saved as JPEG after rotation | Never saved after rotation |
 |---|---|---|
 | Mean absolute error | 3.77° | 4.45° |
-| Median error | 1.12° | 1.33° |
+| Median error | 1.18° | 1.40° |
 | Within 2° | 71.4% | 64.5% |
 | Within 5° | 93.7% | 89.7% |
 | Within 10° | 97.4% | 95.8% |
-| 90th percentile error | 5.45° | 6.74° |
-| 95th percentile error | 14.62° | 17.10° |
-| RMSE | 9.76° | 11.19° |
+| 90th percentile error | 3.78° | 5.06° |
+| 95th percentile error | 5.76° | 8.43° |
+| RMSE | 17.31° | 18.24° |
 
 The error is nearly the same across JPEG quality settings (3.87° at quality 95, 3.75° at quality 75).
 The checkpoint is one of three training runs of this configuration, which reach 3.70°, 3.77° and 3.81° (mean 3.76°).

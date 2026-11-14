@@ -114,6 +114,9 @@ See the [paper](https://arxiv.org/abs/2603.25351) for the full comparison.
   DRC-D: `eval/results/drcd/` (`base_grid_seeds.json` for the five base methods, `csl_sweep_seeds.json` for the CSL variant, and `valsplit20_seeds.json`, `uv_noreg_seeds.json`, `padding_cls_seeds.json`, `padding_cgd_seeds.json` for the ablations).
   COCO: `eval/results/trace_removal/` holds every model trained under the trace-free protocol in the four test forms (`*_seeds.json` without re-encoding, `*_q95_`, `*_q90_`, `*_q75_seeds.json` re-encoded) and the conventional-protocol models on re-encoded views (`published_coco2014_q90_seeds.json`, `published_coco2017_q90_seeds.json`); the `coco_*_seeds.json` files directly under `eval/results/` are the conventional-protocol models without re-encoding.
   Processing-trace checks: `eval/results/trace_audit/`.
+  In the COCO files every statistic is computed over the whole test set.
+  In the DRC-D files, `median`, `rmse`, `p90` and `p95` are averages over test batches of 16 images, as an earlier version of the test code computed them; they cannot be recomputed, because only the best run of each configuration was kept.
+  The mean error, the accuracies and the AUC values of the DRC-D files are exact.
   `eval/paper_table.py` and `eval/significance_tests.py` regenerate the DRC-D table rows and the statistical tests and run with no arguments.
 - Useful `train.py` options: `--early-stopping-min-delta` (improvement threshold for early stopping, 0.1 on COCO), `--rotation-mode pad` (padding control experiment), `--inference-method` (argmax or soft-argmax decoding), `--no-unit-regularization` (naive two-output regression baseline).
 

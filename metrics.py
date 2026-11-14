@@ -68,7 +68,7 @@ class CircularMetrics:
     
     def median(self) -> float:
         """Median error in degrees (more robust to outliers than MAE)"""
-        return float(torch.median(self.errors))
+        return float(torch.quantile(self.errors, 0.5))
     
     def rmse(self) -> float:
         """Root Mean Square Error in degrees (penalizes large errors more)"""
@@ -288,6 +288,39 @@ def compute_validation_metrics(pred_angles: torch.Tensor,
     
     # Add prefix to metric names
     return {f"{prefix}_{k}": v for k, v in quick_metrics.items()}
+
+
+class TestSetMetricsMixin:
+    """
+    Test metrics over the whole test set, for LightningModules.
+
+    The median, the RMSE and the percentile errors are not averages over samples. Logging
+    them per batch lets Lightning average the batch values, which gives a different number
+    than the statistic of the test set (with batches of 16: a lower RMSE and higher upper
+    percentiles). The predictions of all test batches are therefore collected and the
+    metrics computed once, at the end of the test epoch. The mean error, the accuracies
+    and the AUC are the same either way.
+
+    Use: list the mixin before pl.LightningModule and call
+    self.collect_test_predictions(true_angles, test=pred_angles) in test_step; every
+    keyword names the prefix of one set of predictions.
+    """
+
+    def on_test_epoch_start(self) -> None:
+        self._test_true = []
+        self._test_pred = {}
+
+    def collect_test_predictions(self, true_angles: torch.Tensor, **pred_angles: torch.Tensor) -> None:
+        self._test_true.append(true_angles.detach().float().cpu())
+        for prefix, angles in pred_angles.items():
+            self._test_pred.setdefault(prefix, []).append(angles.detach().float().cpu())
+
+    def on_test_epoch_end(self) -> None:
+        true_angles = torch.cat(self._test_true)
+        for prefix, parts in self._test_pred.items():
+            metrics = compute_validation_metrics(torch.cat(parts), true_angles, prefix=prefix)
+            for metric_name, metric_value in metrics.items():
+                self.log(metric_name, metric_value)
 
 
 def compute_test_metrics(pred_angles: torch.Tensor,

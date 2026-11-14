@@ -33,7 +33,7 @@ import os
 from loguru import logger
 # Removed config.py imports - parameters now explicitly required
 from data_loader import RotationDataset, list_test_images
-from metrics import compute_validation_metrics, compute_test_metrics
+from metrics import compute_validation_metrics, compute_test_metrics, TestSetMetricsMixin
 
 
 class CircularGaussianDistribution(nn.Module):
@@ -200,7 +200,7 @@ class CircularGaussianDistribution(nn.Module):
         return normalized_entropy
 
 
-class CGDAngleEstimation(pl.LightningModule):
+class CGDAngleEstimation(TestSetMetricsMixin, pl.LightningModule):
     """
     Circular Gaussian Distribution (CGD) model for 360° image orientation estimation
     
@@ -427,20 +427,13 @@ class CGDAngleEstimation(pl.LightningModule):
         # Extract predicted angles from distributions
         pred_angles = self.cgd.distribution_to_angle(pred_distributions, method=self.inference_method)
 
-        # Calculate comprehensive test metrics
-        test_metrics = compute_validation_metrics(pred_angles, y, prefix="test")
-
-        # Additionally evaluate soft-argmax decoding for the quantization analysis
-        # (reported alongside the primary decode in every test run)
+        # Soft-argmax decoding is evaluated alongside the primary decode in every test run
+        # (quantization analysis)
         soft_angles = self.cgd.distribution_to_angle(pred_distributions, method='weighted_average')
-        soft_metrics = compute_validation_metrics(soft_angles, y, prefix="test_softargmax")
 
-        # Log all metrics
+        # The metrics are computed over the whole test set at the end of the epoch
+        self.collect_test_predictions(y, test=pred_angles, test_softargmax=soft_angles)
         self.log('test_loss', loss, on_step=False, on_epoch=True)
-        for metric_name, metric_value in test_metrics.items():
-            self.log(metric_name, metric_value, on_step=False, on_epoch=True)
-        for metric_name, metric_value in soft_metrics.items():
-            self.log(metric_name, metric_value, on_step=False, on_epoch=True)
 
 
     def configure_optimizers(self) -> Dict[str, Any]:

@@ -28,10 +28,10 @@ import os
 from loguru import logger
 # Removed config.py imports - parameters now explicitly required
 from data_loader import RotationDataset, list_test_images
-from metrics import compute_validation_metrics, compute_test_metrics
+from metrics import compute_validation_metrics, compute_test_metrics, TestSetMetricsMixin
 
 
-class ClassificationAngleEstimation(pl.LightningModule):
+class ClassificationAngleEstimation(TestSetMetricsMixin, pl.LightningModule):
     """
     Classification-based angle estimation model.
     
@@ -423,13 +423,12 @@ class ClassificationAngleEstimation(pl.LightningModule):
         y_pred_classes = torch.argmax(y_pred_probs, dim=1)
         pred_angles = self.decode_angles(y_pred_probs)
 
-        # Calculate comprehensive test metrics
-        test_metrics = compute_validation_metrics(pred_angles, y, prefix="test")
-
-        # Additionally evaluate soft-argmax decoding for the quantization analysis
-        # (reported alongside the primary decode in every test run)
+        # Soft-argmax decoding is evaluated alongside the primary decode in every test run
+        # (quantization analysis)
         soft_angles = self.decode_angles(y_pred_probs, method="weighted_average")
-        soft_metrics = compute_validation_metrics(soft_angles, y, prefix="test_softargmax")
+
+        # The metrics are computed over the whole test set at the end of the epoch
+        self.collect_test_predictions(y, test=pred_angles, test_softargmax=soft_angles)
 
         # Calculate classification accuracy
         accuracy = torch.mean((y_pred_classes == y_class).float())
@@ -437,10 +436,6 @@ class ClassificationAngleEstimation(pl.LightningModule):
         # Log all metrics
         self.log('test_loss', loss, on_step=False, on_epoch=True)
         self.log('test_accuracy', accuracy, on_step=False, on_epoch=True)
-        for metric_name, metric_value in test_metrics.items():
-            self.log(metric_name, metric_value, on_step=False, on_epoch=True)
-        for metric_name, metric_value in soft_metrics.items():
-            self.log(metric_name, metric_value, on_step=False, on_epoch=True)
 
         return loss
 

@@ -26,10 +26,10 @@ import os
 from loguru import logger
 # Removed config.py imports - parameters now explicitly required
 from data_loader import RotationDataset, list_test_images
-from metrics import compute_validation_metrics, compute_test_metrics
+from metrics import compute_validation_metrics, compute_test_metrics, TestSetMetricsMixin
 
       
-class UnitVectorAngleEstimation(pl.LightningModule):
+class UnitVectorAngleEstimation(TestSetMetricsMixin, pl.LightningModule):
     """
     Unit vector angle estimation model.
     
@@ -375,13 +375,11 @@ class UnitVectorAngleEstimation(pl.LightningModule):
         pred_angles = torch.atan2(y_hat[:, 1], y_hat[:, 0]) * 180.0 / torch.pi
         pred_angles = torch.remainder(pred_angles, 360.0)
         
-        # Quick metrics for logging
-        test_metrics = compute_validation_metrics(pred_angles, y, prefix="test")
+        # The metrics are computed over the whole test set at the end of the epoch
+        self.collect_test_predictions(y, test=pred_angles)
         
         # Log all metrics
         self.log('test_loss', loss, on_step=False, on_epoch=True)
-        for metric_name, metric_value in test_metrics.items():
-            self.log(metric_name, metric_value, on_step=False, on_epoch=True)
         
         # Log regularization components if enabled
         if self.use_unit_regularization:

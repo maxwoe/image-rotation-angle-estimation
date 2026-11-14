@@ -11,8 +11,9 @@ already on the Hub, so the published configuration never points to a missing fil
 Run this script on a machine where `huggingface-cli login` has been completed.
 
 Usage:
-    python deploy_model.py            # upload
-    python deploy_model.py --dry-run  # list what would be uploaded
+    python deploy_model.py                      # upload
+    python deploy_model.py --dry-run            # list what would be uploaded
+    python deploy_model.py --message "..."      # upload with a commit message of your own
 """
 
 import argparse
@@ -39,6 +40,8 @@ REPO_FILES = {
 def main():
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--dry-run", action="store_true", help="list the files without uploading")
+    parser.add_argument("--message", default="Publish model card, configuration, inference code and checkpoints",
+                        help="commit message on the Hub")
     args = parser.parse_args()
 
     api = HfApi()
@@ -77,7 +80,7 @@ def main():
         repo_id=REPO_ID,
         repo_type="model",
         operations=operations,
-        commit_message="Publish model card, configuration, inference code and checkpoints",
+        commit_message=args.message,
     )
     print(f"Done. Model URL: https://huggingface.co/{REPO_ID}")
 
