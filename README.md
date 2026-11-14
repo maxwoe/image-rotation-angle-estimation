@@ -85,8 +85,9 @@ Best configuration on COCO, CGD with ConvNeXt V2 Base, trained under the trace-f
 
 The released checkpoint `cgd_convnextv2_base_coco2017.ckpt` is one of the three COCO 2017 runs (3.77° on re-encoded views, 4.45° on views that were never re-encoded).
 
-The arXiv version (v1) predates the trace-free protocol.
-Its COCO numbers (for example 2.84° for CGD with MambaOut Base) were obtained under the conventional protocol, in which the models can read the rotated JPEG block grid; an updated version of the paper is in preparation.
+The first arXiv version (v1) predates the trace-free protocol.
+Its COCO numbers (for example 2.84° for CGD with MambaOut Base) were obtained under the conventional protocol, in which the models can read the rotated JPEG block grid.
+Version 2 (17 November 2026) reports the results above.
 
 ## Methods
 
@@ -178,7 +179,7 @@ The released checkpoint passes these checks except for one of the seven probe co
 
 ```bibtex
 @misc{woehrer2026irae,
-  title={Image Rotation Angle Estimation: Comparing Circular-Aware Methods},
+  title={Image Rotation Angle Estimation: Five Circular-Aware Methods Across Sixteen Architectures},
   author={Woehrer, Maximilian},
   year={2026},
   eprint={2603.25351},

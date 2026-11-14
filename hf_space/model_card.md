@@ -134,13 +134,13 @@ They remain available so that earlier results stay reproducible, and can be load
 
 ## Paper and Citation
 
-The method comparison behind this model is described in [Image Rotation Angle Estimation: Comparing Circular-Aware Methods](https://arxiv.org/abs/2603.25351).
-The current arXiv version predates the trace-free protocol: its COCO results (for example 2.84°) are those of the legacy checkpoints.
-An updated version is in preparation.
+The method comparison behind this model is described in [Image Rotation Angle Estimation: Five Circular-Aware Methods Across Sixteen Architectures](https://arxiv.org/abs/2603.25351).
+The first arXiv version (v1) predates the trace-free protocol: its COCO results (for example 2.84°) are those of the legacy checkpoints.
+Version 2 (17 November 2026) describes the protocol and the model published here.
 
 ```bibtex
 @misc{woehrer2026irae,
-  title={Image Rotation Angle Estimation: Comparing Circular-Aware Methods},
+  title={Image Rotation Angle Estimation: Five Circular-Aware Methods Across Sixteen Architectures},
   author={Woehrer, Maximilian},
   year={2026},
   eprint={2603.25351},
