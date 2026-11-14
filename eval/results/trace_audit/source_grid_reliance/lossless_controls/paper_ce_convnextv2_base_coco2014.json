@@ -1,0 +1,42 @@
+{
+ "tag": "paper_ce_convnextv2_base_coco2014",
+ "approach": "classification",
+ "ckpt": "data/saved_models_matrix16/classification_convnextv2_base/classification-cross_entropy-convnextv2_base.fcmae_ft_in22k_in1k-32/version_0/checkpoints/classification-cross_entropy-convnextv2_base.fcmae_ft_in22k_in1k-32-version=0-epoch=0070-step=0330647-train_loss=0.5523-val_loss=0.7690-train_mae_deg_epoch=0.8429-val_mae_deg=6.2695.ckpt",
+ "n_images": 1030,
+ "seeds": [
+  0,
+  1,
+  2,
+  3,
+  4
+ ],
+ "quality": 0,
+ "sigma": 2.5,
+ "g_max": 0.05,
+ "forms": {
+  "standard": {
+   "acc2": 0.9446601941747573,
+   "acc10": 0.9735922330097088,
+   "mae": 3.6276128313946496,
+   "median": 0.33479275191591285
+  },
+  "suppressed": {
+   "acc2": 0.389126213592233,
+   "acc10": 0.8170873786407767,
+   "mae": 13.898056765394987,
+   "median": 2.7949326582298255
+  },
+  "restamped": {
+   "acc2": 0.6753398058252427,
+   "acc10": 0.9238834951456311,
+   "mae": 10.656430124641538,
+   "median": 1.1785732469751444
+  }
+ },
+ "G": 0.28621359223300974,
+ "G_ci95": [
+  0.26873786407767,
+  0.30388834951456306
+ ],
+ "pass": false
+}

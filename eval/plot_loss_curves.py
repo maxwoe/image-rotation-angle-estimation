@@ -20,12 +20,14 @@ import os
 from tensorboard.backend.event_processing.event_accumulator import EventAccumulator
 
 
-# (root, glob pattern, label, color, linestyle) — the CE/CSL pair on
+# (root, glob pattern, label, color, linestyle, label position) - the CE/CSL pair on
 # EfficientNetV2-RW-T uses the same backbone AND the same seed; only the loss differs.
+# Each curve is labelled directly, at a position (training step, MAE) in a free area next
+# to it: a legend box does not fit anywhere without crossing a curve.
 RUNS = [
-    ("data/saved_models_diag2", "classification-cross_entropy-efficientnetv2_rw_t*", "CE + EffNetV2-RW-T (failing run)", "#c0392b", "-"),
-    ("data/saved_models_diag2", "classification-csl-efficientnetv2_rw_t*", "CSL + EffNetV2-RW-T (same seed)", "#1e8449", "--"),
-    ("data/saved_models_diag", "classification-cross_entropy-efficientvit_b3*", "CE + EfficientViT-B3 (stable)", "#2c3e8c", "-"),
+    ("data/saved_models_diag2", "classification-cross_entropy-efficientnetv2_rw_t*", "CE + EffNetV2-RW-T\n(failing run)", "#c0392b", "-", (5750, 58)),
+    ("data/saved_models_diag2", "classification-csl-efficientnetv2_rw_t*", "CSL + EffNetV2-RW-T\n(same seed)", "#1e8449", "--", (6600, 13)),
+    ("data/saved_models_diag", "classification-cross_entropy-efficientvit_b3*", "CE + EfficientViT-B3\n(stable)", "#2c3e8c", "-", (300, 1.8)),
 ]
 
 
@@ -55,7 +57,7 @@ def main():
     import matplotlib.pyplot as plt
 
     fig, ax = plt.subplots(figsize=(3.5, 2.5))
-    for root, pattern, label, color, ls in RUNS:
+    for root, pattern, label, color, ls, label_xy in RUNS:
         run_dir = find_run_dir(root, pattern)
         if run_dir is None:
             print(f"WARNING: no run found for {pattern} under {args.root}")
@@ -65,15 +67,16 @@ def main():
             print(f"WARNING: tag {args.tag} not in {run_dir}")
             continue
         steps, values = data
-        print(f"{label}: {len(values)} points, final {values[-1]:.2f}, min {min(values):.2f}  ({run_dir})")
-        ax.plot(steps, values, label=label, color=color, linestyle=ls, linewidth=1.2)
+        name = label.replace("\n", " ")
+        print(f"{name}: {len(values)} points, final {values[-1]:.2f}, min {min(values):.2f}  ({run_dir})")
+        ax.plot(steps, values, color=color, linestyle=ls, linewidth=1.2)
+        ax.text(*label_xy, label, color=color, fontsize=7, ha="left", va="center", linespacing=1.15)
 
     ax.set_xlabel("Training step", fontsize=9)
     ax.set_ylabel("Validation MAE (degrees)", fontsize=9)
     ax.set_yscale("log")
     from matplotlib.ticker import FuncFormatter
     ax.yaxis.set_major_formatter(FuncFormatter(lambda y, _: f"{y:g}"))
-    ax.legend(fontsize=7, frameon=False)
     ax.tick_params(labelsize=8)
     fig.tight_layout(pad=0.5)
 

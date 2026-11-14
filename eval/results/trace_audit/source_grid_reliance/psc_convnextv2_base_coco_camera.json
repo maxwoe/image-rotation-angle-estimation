@@ -1,0 +1,42 @@
+{
+ "tag": "psc_convnextv2_base_coco_camera",
+ "approach": "psc",
+ "ckpt": "data/saved_models_trace_removal/psc_convnextv2_base_coco_camera/psc-mae-convnextv2_base.fcmae_ft_in22k_in1k-32/version_0/checkpoints/psc-mae-convnextv2_base.fcmae_ft_in22k_in1k-32-version=0-epoch=0081-step=0381874-train_loss=0.0673-val_loss=0.0778-train_mae_deg_epoch=5.8209-val_mae_deg=7.8962.ckpt",
+ "n_images": 1030,
+ "seeds": [
+  0,
+  1,
+  2,
+  3,
+  4
+ ],
+ "quality": 90,
+ "sigma": 2.5,
+ "g_max": 0.05,
+ "forms": {
+  "standard": {
+   "acc2": 0.5963106796116505,
+   "acc10": 0.949126213592233,
+   "mae": 4.744897362649339,
+   "median": 1.5332533103911317
+  },
+  "suppressed": {
+   "acc2": 0.512621359223301,
+   "acc10": 0.9172815533980583,
+   "mae": 8.009446997640865,
+   "median": 1.9456528546402154
+  },
+  "restamped": {
+   "acc2": 0.5085436893203884,
+   "acc10": 0.9166990291262136,
+   "mae": 7.960865994916186,
+   "median": 1.9585364093938153
+  }
+ },
+ "G": -0.0040776699029126205,
+ "G_ci95": [
+  -0.00912621359223301,
+  0.0007766990291262136
+ ],
+ "pass": true
+}

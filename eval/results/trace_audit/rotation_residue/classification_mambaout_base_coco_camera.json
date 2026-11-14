@@ -1,0 +1,50 @@
+{
+ "tag": "classification_mambaout_base_coco_camera",
+ "approach": "classification",
+ "ckpt": "data/saved_models_trace_removal/classification_mambaout_base_coco_camera/classification-cross_entropy-mambaout_base.in1k-32/version_0/checkpoints/classification-cross_entropy-mambaout_base.in1k-32-version=0-epoch=0070-step=0330647-train_loss=0.7878-val_loss=1.3855-train_mae_deg_epoch=1.4315-val_mae_deg=7.9187.ckpt",
+ "n_images": 1030,
+ "seeds": [
+  0,
+  1,
+  2,
+  3,
+  4
+ ],
+ "quality": 90,
+ "factor": 4,
+ "r_max": 0.05,
+ "photos": {
+  "normal": {
+   "acc2": 0.8460194174757282,
+   "acc10": 0.9493203883495146,
+   "mae": 4.790765267672152,
+   "median": 0.3287769920185468
+  },
+  "supersampled": {
+   "acc2": 0.8363106796116505,
+   "acc10": 0.9518446601941748,
+   "mae": 4.746010381295441,
+   "median": 0.339120537423625
+  }
+ },
+ "textures": {
+  "normal": {
+   "excess_within5": 0.0758888888888889,
+   "excess_within5_ci95_upper": 0.09988888888888889,
+   "rho4": 0.10976303109792525,
+   "rho4_ci95_upper": 0.15508997659222248
+  },
+  "supersampled": {
+   "excess_within5": 0.18088888888888888,
+   "excess_within5_ci95_upper": 0.2088888888888889,
+   "rho4": 0.35781030637287403,
+   "rho4_ci95_upper": 0.40048200677665086
+  }
+ },
+ "R": 0.009708737864077667,
+ "R_ci95": [
+  0.003300970873786408,
+  0.015922330097087378
+ ],
+ "pass": true
+}

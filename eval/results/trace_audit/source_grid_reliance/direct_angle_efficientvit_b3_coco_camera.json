@@ -1,0 +1,42 @@
+{
+ "tag": "direct_angle_efficientvit_b3_coco_camera",
+ "approach": "direct_angle",
+ "ckpt": "data/saved_models_trace_removal/direct_angle_efficientvit_b3_coco_camera/direct_angle-mae-efficientvit_b3.r224_in1k-32/version_0/checkpoints/direct_angle-mae-efficientvit_b3.r224_in1k-32-version=0-epoch=0062-step=0293391-train_loss=17.5156-val_loss=16.5845-train_mae_deg_epoch=17.5156-val_mae_deg=16.5845.ckpt",
+ "n_images": 1030,
+ "seeds": [
+  0,
+  1,
+  2,
+  3,
+  4
+ ],
+ "quality": 90,
+ "sigma": 2.5,
+ "g_max": 0.05,
+ "forms": {
+  "standard": {
+   "acc2": 0.3048543689320388,
+   "acc10": 0.8231067961165048,
+   "mae": 11.685177350983304,
+   "median": 3.6306353868824472
+  },
+  "suppressed": {
+   "acc2": 0.2611650485436893,
+   "acc10": 0.7233009708737864,
+   "mae": 18.66529093555281,
+   "median": 4.5666964123862215
+  },
+  "restamped": {
+   "acc2": 0.25980582524271845,
+   "acc10": 0.7225242718446602,
+   "mae": 18.72096570732377,
+   "median": 4.645176742514067
+  }
+ },
+ "G": -0.0013592233009708738,
+ "G_ci95": [
+  -0.007766990291262135,
+  0.004859223300970848
+ ],
+ "pass": true
+}

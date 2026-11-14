@@ -1,0 +1,42 @@
+{
+ "tag": "psc_efficientvit_b3_coco_camera",
+ "approach": "psc",
+ "ckpt": "data/saved_models_trace_removal/psc_efficientvit_b3_coco_camera/psc-mae-efficientvit_b3.r224_in1k-32/version_0/checkpoints/psc-mae-efficientvit_b3.r224_in1k-32-version=0-epoch=0051-step=0242164-train_loss=0.0772-val_loss=0.1034-train_mae_deg_epoch=6.9554-val_mae_deg=8.8852.ckpt",
+ "n_images": 1030,
+ "seeds": [
+  0,
+  1,
+  2,
+  3,
+  4
+ ],
+ "quality": 90,
+ "sigma": 2.5,
+ "g_max": 0.05,
+ "forms": {
+  "standard": {
+   "acc2": 0.5139805825242718,
+   "acc10": 0.9460194174757282,
+   "mae": 5.229775890276218,
+   "median": 1.9211072662936317
+  },
+  "suppressed": {
+   "acc2": 0.4918446601941748,
+   "acc10": 0.9013592233009708,
+   "mae": 9.274927125763613,
+   "median": 2.038781826639294
+  },
+  "restamped": {
+   "acc2": 0.4899029126213592,
+   "acc10": 0.9033009708737864,
+   "mae": 9.175492886333506,
+   "median": 2.0369158019765194
+  }
+ },
+ "G": -0.001941747572815534,
+ "G_ci95": [
+  -0.007572815533980583,
+  0.003495145631067961
+ ],
+ "pass": true
+}

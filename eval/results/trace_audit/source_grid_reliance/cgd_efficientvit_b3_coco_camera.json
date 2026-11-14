@@ -1,0 +1,42 @@
+{
+ "tag": "cgd_efficientvit_b3_coco_camera",
+ "approach": "cgd",
+ "ckpt": "data/saved_models_trace_removal/cgd_efficientvit_b3_coco_camera/cgd-kl_divergence-efficientvit_b3.r224_in1k-32/version_0/checkpoints/cgd-kl_divergence-efficientvit_b3.r224_in1k-32-version=0-epoch=0038-step=0181623-train_loss=0.2628-val_loss=0.3740-train_mae_deg_epoch=5.2651-val_mae_deg=8.1531.ckpt",
+ "n_images": 1030,
+ "seeds": [
+  0,
+  1,
+  2,
+  3,
+  4
+ ],
+ "quality": 90,
+ "sigma": 2.5,
+ "g_max": 0.05,
+ "forms": {
+  "standard": {
+   "acc2": 0.5681553398058252,
+   "acc10": 0.9520388349514564,
+   "mae": 5.050692513657493,
+   "median": 1.6603957023777252
+  },
+  "suppressed": {
+   "acc2": 0.5254368932038835,
+   "acc10": 0.9133980582524271,
+   "mae": 9.217375345516226,
+   "median": 1.8733635255315306
+  },
+  "restamped": {
+   "acc2": 0.5219417475728155,
+   "acc10": 0.9133980582524271,
+   "mae": 9.245923604677214,
+   "median": 1.891103035464809
+  }
+ },
+ "G": -0.003495145631067961,
+ "G_ci95": [
+  -0.009708737864077669,
+  0.0023300970873786414
+ ],
+ "pass": true
+}

@@ -1,0 +1,50 @@
+{
+ "tag": "direct_angle_mambaout_base_coco_camera",
+ "approach": "direct_angle",
+ "ckpt": "data/saved_models_trace_removal/direct_angle_mambaout_base_coco_camera/direct_angle-mae-mambaout_base.in1k-32/version_0/checkpoints/direct_angle-mae-mambaout_base.in1k-32-version=0-epoch=0074-step=0349275-train_loss=71.9752-val_loss=71.4337-train_mae_deg_epoch=71.9752-val_mae_deg=71.4337.ckpt",
+ "n_images": 1030,
+ "seeds": [
+  0,
+  1,
+  2,
+  3,
+  4
+ ],
+ "quality": 90,
+ "factor": 4,
+ "r_max": 0.05,
+ "photos": {
+  "normal": {
+   "acc2": 0.03922330097087379,
+   "acc10": 0.16970873786407767,
+   "mae": 68.84925745949744,
+   "median": 52.76850227173293
+  },
+  "supersampled": {
+   "acc2": 0.04,
+   "acc10": 0.16776699029126213,
+   "mae": 68.76514558715702,
+   "median": 52.64372681300648
+  }
+ },
+ "textures": {
+  "normal": {
+   "excess_within5": 0.010888888888888892,
+   "excess_within5_ci95_upper": 0.030888888888888882,
+   "rho4": 0.00039411274356712233,
+   "rho4_ci95_upper": 0.04360696288162445
+  },
+  "supersampled": {
+   "excess_within5": -0.006111111111111109,
+   "excess_within5_ci95_upper": 0.012888888888888894,
+   "rho4": -0.0382156297911568,
+   "rho4_ci95_upper": 0.005680741171417581
+  }
+ },
+ "R": -0.0007766990291262134,
+ "R_ci95": [
+  -0.004660194174757281,
+  0.002912621359223301
+ ],
+ "pass": true
+}

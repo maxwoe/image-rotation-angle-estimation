@@ -1,0 +1,50 @@
+{
+ "tag": "classification_convnextv2_base_coco_camera_scale",
+ "approach": "classification",
+ "ckpt": "data/saved_models_trace_removal/classification_convnextv2_base_coco_camera_scale/classification-cross_entropy-convnextv2_base.fcmae_ft_in22k_in1k-32/version_0/checkpoints/classification-cross_entropy-convnextv2_base.fcmae_ft_in22k_in1k-32-version=0-epoch=0040-step=0190937-train_loss=2.1816-val_loss=2.7599-train_mae_deg_epoch=2.8447-val_mae_deg=8.0381.ckpt",
+ "n_images": 1030,
+ "seeds": [
+  0,
+  1,
+  2,
+  3,
+  4
+ ],
+ "quality": 90,
+ "factor": 4,
+ "r_max": 0.05,
+ "photos": {
+  "normal": {
+   "acc2": 0.669126213592233,
+   "acc10": 0.9438834951456311,
+   "mae": 5.141607401079389,
+   "median": 1.2117427882244414
+  },
+  "supersampled": {
+   "acc2": 0.6850485436893204,
+   "acc10": 0.9537864077669903,
+   "mae": 4.8137352007014975,
+   "median": 1.1740435621369159
+  }
+ },
+ "textures": {
+  "normal": {
+   "excess_within5": -0.0121111111111111,
+   "excess_within5_ci95_upper": 0.006888888888888889,
+   "rho4": -0.04965024500926624,
+   "rho4_ci95_upper": -0.006649066023564613
+  },
+  "supersampled": {
+   "excess_within5": -0.003111111111111106,
+   "excess_within5_ci95_upper": 0.015888888888888897,
+   "rho4": -0.05145538169131504,
+   "rho4_ci95_upper": -0.009580786939742554
+  }
+ },
+ "R": -0.015922330097087378,
+ "R_ci95": [
+  -0.02330097087378641,
+  -0.00854368932038835
+ ],
+ "pass": true
+}

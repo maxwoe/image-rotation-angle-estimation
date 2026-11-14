@@ -34,6 +34,8 @@ def main():
                                 "cgd-kl_divergence-mambaout_base-32-version=0-epoch=0051-step=0242164-"
                                 "train_loss=0.0274-val_loss=0.2393-train_mae_deg_epoch=1.0981-val_mae_deg=6.1074.ckpt",
                         help="Path to CGD checkpoint")
+    parser.add_argument("--jpeg-quality", type=int, default=0,
+                        help="save each view once as JPEG at this quality after rotation (0 = no re-encode)")
     parser.add_argument("--seeds", type=int, nargs="+", default=[0, 1, 2, 3, 4],
                         help="Test seeds to aggregate over")
     parser.add_argument("--output", type=str, default="eval/results/error_histogram.pdf",
@@ -46,7 +48,7 @@ def main():
     all_errors = []
     for seed in args.seeds:
         print(f"\nRunning inference with seed={seed}...")
-        results = run_inference(model, args.test_dir, seed)
+        results = run_inference(model, args.test_dir, seed, jpeg_quality=args.jpeg_quality)
         errors = [r["error"] for r in results]
         print(f"  {len(errors)} images, MAE={np.mean(errors):.2f}°")
         all_errors.extend(errors)

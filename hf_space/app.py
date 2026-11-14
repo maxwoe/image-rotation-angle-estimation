@@ -110,10 +110,13 @@ def correct_orientation(image):
 # Build UI
 app = gr.Blocks(title="Image Rotation Angle Estimation")
 with app:
-    gr.HTML("<h1>Image Rotation Angle Estimation</h1>")
     gr.Markdown(
+        "# Image Rotation Angle Estimation\n\n"
         "Upload an image, apply a random rotation, and see the model predict and correct the angle.\n\n"
-        "Uses the **CGD** (Circular Gaussian Distribution) method with **MambaOut Base** architecture. "
+        "The default model uses the **CGD** (Circular Gaussian Distribution) head on a **ConvNeXt V2 Base** "
+        "backbone, trained on COCO 2017 under a trace-free protocol so that it reads the image content. "
+        "The legacy models are kept for reproducibility; they read the JPEG block grid of the source photo "
+        "and fail on images that were saved after being rotated (see the model card)."
     )
 
     original_image_state = gr.State(value=None)

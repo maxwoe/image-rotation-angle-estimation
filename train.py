@@ -548,9 +548,37 @@ def main():
     parser.add_argument("--no-unit-regularization", action="store_true",
                         help="Disable unit-norm regularization for the unit_vector head "
                              "(naive (cos,sin) regression baseline)")
-    parser.add_argument("--rotation-mode", type=str, default="crop", choices=["crop", "pad"],
+    parser.add_argument("--rotation-mode", type=str, default="crop", choices=["crop", "crop_fixed", "circle", "pad"],
                         help="Rotation preprocessing: 'crop' = largest inscribed rectangle (default), "
+                             "'crop_fixed' = angle-independent rectangle inside the inscribed circle, "
+                             "'circle' = inscribed circle on a constant fill (Follmann and Boettger), "
                              "'pad' = keep full rotated image with black corner padding")
+
+    # Trace-free protocol (see rotation_utils.TraceRemoval): keeps the rotated JPEG block
+    # grid of the source photo and the resampler residue from carrying the angle
+    parser.add_argument("--remove-traces", action="store_true",
+                        help="Train and validate under the trace-free protocol of the paper: every view is "
+                             "re-encoded once as JPEG after rotation and cropping, at a random quality, and the "
+                             "rotation resampler is drawn at random. The options below change the recipe")
+    parser.add_argument("--remove-traces-scale", type=str, default="1,1",
+                        help="Random area-downscale factor range 'lo,hi' applied to each view before blur and "
+                             "JPEG (resolution jitter); '1,1' disables (default)")
+    parser.add_argument("--remove-traces-blur", type=str, default="0,0",
+                        help="Optional Gaussian blur before the re-encode: sigma range 'lo,hi' in pixels of the "
+                             "rotated view; '0,0' disables (default)")
+    parser.add_argument("--remove-traces-jpeg", type=str, default="40,90",
+                        help="JPEG quality range 'lo,hi' for the re-encode after rotation (default 40,90)")
+    parser.add_argument("--remove-traces-jpeg-prob", type=float, default=1.0,
+                        help="Probability of re-encoding a view as JPEG (default 1.0: every view)")
+    parser.add_argument("--remove-traces-resamplers", type=str, default="linear,cubic,lanczos4",
+                        help="Comma list of rotation resamplers drawn per view: nearest, linear, cubic, lanczos4")
+    parser.add_argument("--test-blur-sigma", type=float, default=0.0,
+                        help="Blur every test view with this Gaussian sigma (px) after rotation, before any "
+                             "recompression: applies trace removal at test time for models trained with it "
+                             "(0 = off)")
+    parser.add_argument("--test-jpeg-quality", type=int, default=0,
+                        help="Re-encode every test view once as JPEG at this quality after rotation "
+                             "(recompression control; 0 = off)")
 
     # Model saving
     parser.add_argument("--save-dir", type=str, default="data/saved_models",
@@ -625,6 +653,14 @@ def main():
     # Rotation mode is consumed by RotationDataset (deep inside each model's setup),
     # communicated via environment to avoid threading it through every model class
     os.environ["ROTATION_MODE"] = args.rotation_mode
+    os.environ["REMOVE_TRACES"] = "1" if args.remove_traces else "0"
+    os.environ["REMOVE_TRACES_SCALE"] = args.remove_traces_scale
+    os.environ["REMOVE_TRACES_BLUR"] = args.remove_traces_blur
+    os.environ["REMOVE_TRACES_JPEG"] = args.remove_traces_jpeg
+    os.environ["REMOVE_TRACES_JPEG_PROB"] = str(args.remove_traces_jpeg_prob)
+    os.environ["REMOVE_TRACES_RESAMPLERS"] = args.remove_traces_resamplers
+    os.environ["TEST_JPEG_QUALITY"] = str(args.test_jpeg_quality)
+    os.environ["TEST_BLUR_SIGMA"] = str(args.test_blur_sigma)
 
     # Validate arguments
     if not (0.0 < args.validation_split < 1.0):
@@ -671,6 +707,12 @@ def main():
     logger.info(f"  Validation split: {args.validation_split}")
     logger.info(f"  Random seed: {args.random_seed} (train/val split)")
     logger.info(f"  Test random seed: {args.test_random_seed} (test rotations)")
+    logger.info(f"  Rotation mode: {args.rotation_mode}")
+    logger.info(f"  Trace removal: {args.remove_traces}")
+    if args.test_jpeg_quality:
+        logger.info(f"  Test recompression: JPEG q{args.test_jpeg_quality}")
+    if args.test_blur_sigma:
+        logger.info(f"  Test blur: sigma {args.test_blur_sigma} px")
     logger.info(f"  Batch size: {args.batch_size}")
     logger.info(f"  Learning rate: {args.learning_rate}")
     logger.info(f"  Loss function: {args.loss_type}")

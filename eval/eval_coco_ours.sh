@@ -9,13 +9,19 @@
 #   bash eval/eval_coco_ours.sh
 #
 # Optional overrides:
-#   COCO_TRAIN_DIR  (default: data/datasets/train_coco)
-#   OUTPUT_JSON     (default: eval/results/coco_ours_seeds.json)
+#   COCO_TRAIN_DIR     (default: data/datasets/train_coco)
+#   OUTPUT_JSON        (default: eval/results/coco_ours_seeds.json)
+#   TEST_JPEG_QUALITY  (default: 0 = off; e.g. 90 re-encodes every test view once as JPEG q90)
+#   TEST_BLUR_SIGMA    (default: 0 = off; e.g. 3 blurs every test view, trace removal at test time)
+#   ROTATION_MODE      (default: crop; crop_fixed, circle or pad for models trained with that crop)
 
 set -euo pipefail
 
 COCO_TRAIN_DIR="${COCO_TRAIN_DIR:-data/datasets/train_coco}"
 OUTPUT_JSON="${OUTPUT_JSON:-eval/results/coco_ours_seeds.json}"
+TEST_JPEG_QUALITY="${TEST_JPEG_QUALITY:-0}"
+TEST_BLUR_SIGMA="${TEST_BLUR_SIGMA:-0}"
+ROTATION_MODE="${ROTATION_MODE:-crop}"
 
 SEEDS=(0 1 2 3 4)
 
@@ -99,6 +105,9 @@ for subset_def in "${SUBSETS[@]}"; do
         --test-only \
         --test-ckpt "$ckpt" \
         --test-random-seed "$seed" \
+        --test-jpeg-quality "$TEST_JPEG_QUALITY" \
+        --test-blur-sigma "$TEST_BLUR_SIGMA" \
+        --rotation-mode "$ROTATION_MODE" \
         2>&1)"
 
       echo "$output"

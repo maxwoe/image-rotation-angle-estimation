@@ -1,0 +1,42 @@
+{
+ "tag": "cgd_convnextv2_base_coco_camera_seed1",
+ "approach": "cgd",
+ "ckpt": "data/saved_models_trace_removal/cgd_convnextv2_base_coco_camera_seed1/cgd-kl_divergence-convnextv2_base.fcmae_ft_in22k_in1k-32/version_0/checkpoints/cgd-kl_divergence-convnextv2_base.fcmae_ft_in22k_in1k-32-version=0-epoch=0037-step=0176966-train_loss=0.1058-val_loss=0.3479-train_mae_deg_epoch=2.3001-val_mae_deg=6.8731.ckpt",
+ "n_images": 1030,
+ "seeds": [
+  0,
+  1,
+  2,
+  3,
+  4
+ ],
+ "quality": 90,
+ "sigma": 2.5,
+ "g_max": 0.05,
+ "forms": {
+  "standard": {
+   "acc2": 0.6745631067961165,
+   "acc10": 0.9664077669902913,
+   "mae": 4.0700130299914274,
+   "median": 1.278725260070047
+  },
+  "suppressed": {
+   "acc2": 0.5409708737864077,
+   "acc10": 0.9209708737864077,
+   "mae": 8.003576770415542,
+   "median": 1.777487033682803
+  },
+  "restamped": {
+   "acc2": 0.5314563106796116,
+   "acc10": 0.9198058252427185,
+   "mae": 8.03289587062835,
+   "median": 1.8200428640392303
+  }
+ },
+ "G": -0.009514563106796117,
+ "G_ci95": [
+  -0.015145631067961162,
+  -0.003883495145631066
+ ],
+ "pass": true
+}

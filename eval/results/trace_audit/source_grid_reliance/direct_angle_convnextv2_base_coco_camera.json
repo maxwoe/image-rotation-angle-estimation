@@ -1,0 +1,42 @@
+{
+ "tag": "direct_angle_convnextv2_base_coco_camera",
+ "approach": "direct_angle",
+ "ckpt": "data/saved_models_trace_removal/direct_angle_convnextv2_base_coco_camera/direct_angle-mae-convnextv2_base.fcmae_ft_in22k_in1k-32/version_0/checkpoints/direct_angle-mae-convnextv2_base.fcmae_ft_in22k_in1k-32-version=0-epoch=0043-step=0204908-train_loss=69.3470-val_loss=68.5087-train_mae_deg_epoch=69.3470-val_mae_deg=68.5087.ckpt",
+ "n_images": 1030,
+ "seeds": [
+  0,
+  1,
+  2,
+  3,
+  4
+ ],
+ "quality": 90,
+ "sigma": 2.5,
+ "g_max": 0.05,
+ "forms": {
+  "standard": {
+   "acc2": 0.040194174757281556,
+   "acc10": 0.19067961165048544,
+   "mae": 64.14912920805752,
+   "median": 43.88299782321781
+  },
+  "suppressed": {
+   "acc2": 0.043300970873786405,
+   "acc10": 0.18796116504854368,
+   "mae": 65.6172768436528,
+   "median": 45.491006638495676
+  },
+  "restamped": {
+   "acc2": 0.04194174757281553,
+   "acc10": 0.18699029126213593,
+   "mae": 65.66495029236617,
+   "median": 45.49830414779754
+  }
+ },
+ "G": -0.001359223300970874,
+ "G_ci95": [
+  -0.0031067961165048546,
+  0.00019417475728155347
+ ],
+ "pass": true
+}

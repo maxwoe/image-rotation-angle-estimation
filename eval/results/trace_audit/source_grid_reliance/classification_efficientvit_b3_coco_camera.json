@@ -1,0 +1,42 @@
+{
+ "tag": "classification_efficientvit_b3_coco_camera",
+ "approach": "classification",
+ "ckpt": "data/saved_models_trace_removal/classification_efficientvit_b3_coco_camera/classification-cross_entropy-efficientvit_b3.r224_in1k-32/version_0/checkpoints/classification-cross_entropy-efficientvit_b3.r224_in1k-32-version=0-epoch=0040-step=0190937-train_loss=2.5232-val_loss=2.6082-train_mae_deg_epoch=6.6169-val_mae_deg=8.0220.ckpt",
+ "n_images": 1030,
+ "seeds": [
+  0,
+  1,
+  2,
+  3,
+  4
+ ],
+ "quality": 90,
+ "sigma": 2.5,
+ "g_max": 0.05,
+ "forms": {
+  "standard": {
+   "acc2": 0.6693203883495146,
+   "acc10": 0.9537864077669903,
+   "mae": 5.0878761351580035,
+   "median": 1.3194456179580172
+  },
+  "suppressed": {
+   "acc2": 0.5854368932038835,
+   "acc10": 0.9110679611650485,
+   "mae": 8.868648314891475,
+   "median": 1.590771651329618
+  },
+  "restamped": {
+   "acc2": 0.5916504854368932,
+   "acc10": 0.9118446601941748,
+   "mae": 8.886336726796204,
+   "median": 1.5678264853112722
+  }
+ },
+ "G": 0.006213592233009709,
+ "G_ci95": [
+  0.0005825242718446594,
+  0.011844660194174756
+ ],
+ "pass": true
+}

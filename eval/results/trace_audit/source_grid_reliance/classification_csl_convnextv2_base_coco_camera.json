@@ -1,0 +1,42 @@
+{
+ "tag": "classification_csl_convnextv2_base_coco_camera",
+ "approach": "classification",
+ "ckpt": "data/saved_models_trace_removal/classification_csl_convnextv2_base_coco_camera/classification-csl-convnextv2_base.fcmae_ft_in22k_in1k-32/version_0/checkpoints/classification-csl-convnextv2_base.fcmae_ft_in22k_in1k-32-version=0-epoch=0042-step=0200251-train_loss=2.3935-val_loss=2.7017-train_mae_deg_epoch=1.6501-val_mae_deg=6.3639.ckpt",
+ "n_images": 1030,
+ "seeds": [
+  0,
+  1,
+  2,
+  3,
+  4
+ ],
+ "quality": 90,
+ "sigma": 2.5,
+ "g_max": 0.05,
+ "forms": {
+  "standard": {
+   "acc2": 0.8225242718446601,
+   "acc10": 0.961747572815534,
+   "mae": 3.8096991175047257,
+   "median": 0.740622231914827
+  },
+  "suppressed": {
+   "acc2": 0.6207766990291262,
+   "acc10": 0.9196116504854369,
+   "mae": 7.704030034929145,
+   "median": 1.4345789869100827
+  },
+  "restamped": {
+   "acc2": 0.6081553398058253,
+   "acc10": 0.917864077669903,
+   "mae": 7.977796508059198,
+   "median": 1.4852073874349259
+  }
+ },
+ "G": -0.01262135922330097,
+ "G_ci95": [
+  -0.019999999999999997,
+  -0.006019417475728156
+ ],
+ "pass": true
+}

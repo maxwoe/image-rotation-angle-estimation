@@ -1,9 +1,10 @@
 """Deploy the Gradio demo to HuggingFace Spaces.
 
-Uploads inference-only code from hf_space/ to the Space.
-Deletes and recreates the Space to ensure clean git history.
+Uploads the inference-only code from hf_space/ to the Space in one commit. The Space is
+updated in place: its history, settings and URL are kept, and files that are no longer
+part of the demo are removed from it.
 
-Run this script on the machine where huggingface-cli login has been completed.
+Run this script on a machine where `huggingface-cli login` has been completed.
 
 Usage:
     python deploy_space.py
@@ -12,7 +13,8 @@ Usage:
 import os
 import shutil
 import tempfile
-from huggingface_hub import HfApi, upload_folder
+
+from huggingface_hub import HfApi
 
 REPO_ID = os.environ.get("HF_MODEL_REPO", "maxwoe/image-rotation-angle-estimation")
 
@@ -29,56 +31,26 @@ SPACE_FILES = [
 
 def main():
     api = HfApi()
+    api.create_repo(repo_id=REPO_ID, repo_type="space", space_sdk="gradio", exist_ok=True)
 
-    # Step 1: Delete existing Space to clear git history
-    print(f"Deleting existing Space: {REPO_ID}")
-    try:
-        api.delete_repo(repo_id=REPO_ID, repo_type="space")
-        print("Existing Space deleted.")
-    except Exception as e:
-        print(f"Note (delete): {e}")
-
-    # Step 2: Create fresh Space
-    print(f"Creating fresh Space: {REPO_ID}")
-    api.create_repo(
-        repo_id=REPO_ID,
-        repo_type="space",
-        space_sdk="gradio",
-    )
-    print("Space created.")
-
-    # Step 3: Stage files in a temp directory
     staging_dir = tempfile.mkdtemp(prefix="hf_space_")
     print(f"Staging files in: {staging_dir}")
-
     try:
-        # Copy space_readme.md as README.md (Space config)
+        # space_readme.md becomes the README.md of the Space (its configuration)
         shutil.copy2("space_readme.md", os.path.join(staging_dir, "README.md"))
-
-        # Copy inference-only files from hf_space/
         for filename in SPACE_FILES:
-            src = os.path.join(HF_SPACE_DIR, filename)
-            if os.path.exists(src):
-                shutil.copy2(src, os.path.join(staging_dir, filename))
-            else:
-                print(f"Warning: {src} not found, skipping")
+            shutil.copy2(os.path.join(HF_SPACE_DIR, filename), os.path.join(staging_dir, filename))
+        shutil.copytree(os.path.join(HF_SPACE_DIR, "examples"), os.path.join(staging_dir, "examples"))
 
-        # Copy example images
-        examples_src = os.path.join(HF_SPACE_DIR, "examples")
-        if os.path.isdir(examples_src):
-            shutil.copytree(examples_src, os.path.join(staging_dir, "examples"))
-            print(f"Copied {len(os.listdir(examples_src))} example images")
-
-        # Step 4: Upload everything
-        print(f"Uploading to {REPO_ID}...")
-        upload_folder(
+        print(f"Uploading to the Space {REPO_ID}...")
+        api.upload_folder(
             repo_id=REPO_ID,
             repo_type="space",
             folder_path=staging_dir,
             commit_message="Deploy inference-only Gradio demo",
+            delete_patterns="*",  # remove remote files that are not part of this upload
         )
-        print(f"Done! Space URL: https://huggingface.co/spaces/{REPO_ID}")
-
+        print(f"Done. Space URL: https://huggingface.co/spaces/{REPO_ID}")
     finally:
         shutil.rmtree(staging_dir, ignore_errors=True)
 

@@ -1,0 +1,42 @@
+{
+ "tag": "psc_mambaout_base_coco_camera",
+ "approach": "psc",
+ "ckpt": "data/saved_models_trace_removal/psc_mambaout_base_coco_camera/psc-mae-mambaout_base.in1k-32/version_0/checkpoints/psc-mae-mambaout_base.in1k-32-version=0-epoch=0107-step=0502956-train_loss=0.0624-val_loss=0.0797-train_mae_deg_epoch=5.5820-val_mae_deg=8.1779.ckpt",
+ "n_images": 1030,
+ "seeds": [
+  0,
+  1,
+  2,
+  3,
+  4
+ ],
+ "quality": 90,
+ "sigma": 2.5,
+ "g_max": 0.05,
+ "forms": {
+  "standard": {
+   "acc2": 0.6151456310679612,
+   "acc10": 0.9504854368932039,
+   "mae": 5.064181133045381,
+   "median": 1.4618529538994665
+  },
+  "suppressed": {
+   "acc2": 0.5489320388349515,
+   "acc10": 0.9079611650485437,
+   "mae": 8.882202639623175,
+   "median": 1.7735716532482257
+  },
+  "restamped": {
+   "acc2": 0.5444660194174757,
+   "acc10": 0.905242718446602,
+   "mae": 8.94397069722812,
+   "median": 1.755526643935596
+  }
+ },
+ "G": -0.0044660194174757275,
+ "G_ci95": [
+  -0.00932038834951456,
+  0.0005825242718446605
+ ],
+ "pass": true
+}

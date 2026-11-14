@@ -1,0 +1,50 @@
+{
+ "tag": "cgd_convnextv2_base_coco_2017_camera_seed2",
+ "approach": "cgd",
+ "ckpt": "data/saved_models_trace_removal/cgd_convnextv2_base_coco_2017_camera_seed2/cgd-kl_divergence-convnextv2_base.fcmae_ft_in22k_in1k-32/version_0/checkpoints/cgd-kl_divergence-convnextv2_base.fcmae_ft_in22k_in1k-32-version=0-epoch=0046-step=0310341-train_loss=0.0901-val_loss=0.3405-train_mae_deg_epoch=2.0499-val_mae_deg=6.5549.ckpt",
+ "n_images": 1030,
+ "seeds": [
+  0,
+  1,
+  2,
+  3,
+  4
+ ],
+ "quality": 90,
+ "factor": 4,
+ "r_max": 0.05,
+ "photos": {
+  "normal": {
+   "acc2": 0.723495145631068,
+   "acc10": 0.9745631067961165,
+   "mae": 3.5785935366039268,
+   "median": 1.1815476846261532
+  },
+  "supersampled": {
+   "acc2": 0.7089320388349515,
+   "acc10": 0.9766990291262136,
+   "mae": 3.556336931928696,
+   "median": 1.2320920070438888
+  }
+ },
+ "textures": {
+  "normal": {
+   "excess_within5": 0.006888888888888889,
+   "excess_within5_ci95_upper": 0.026888888888888907,
+   "rho4": 0.03488876620895523,
+   "rho4_ci95_upper": 0.0785412146365705
+  },
+  "supersampled": {
+   "excess_within5": 0.07088888888888889,
+   "excess_within5_ci95_upper": 0.09588888888888888,
+   "rho4": 0.2019293357793655,
+   "rho4_ci95_upper": 0.24514596473421363
+  }
+ },
+ "R": 0.014563106796116505,
+ "R_ci95": [
+  0.0052427184466019424,
+  0.023495145631067964
+ ],
+ "pass": true
+}

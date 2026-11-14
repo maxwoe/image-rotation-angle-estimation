@@ -23,10 +23,9 @@ import timm.data
 from PIL import Image
 import numpy as np
 import os
-import glob
 from loguru import logger
 # Removed config.py imports - parameters now explicitly required
-from data_loader import RotationDataset
+from data_loader import RotationDataset, list_test_images
 from metrics import compute_validation_metrics, compute_test_metrics
 
       
@@ -433,12 +432,8 @@ class UnitVectorAngleEstimation(pl.LightningModule):
         elif stage == "test":
             # Setup test dataset (assuming images are correctly oriented, i.e., 0 degrees)
             if self.test_dir and os.path.exists(self.test_dir):
-                # Get all image files in test directory
-                image_extensions = ['.jpg', '.jpeg', '.png', '.bmp', '.tiff']
-                test_image_paths = []
-                for ext in image_extensions:
-                    test_image_paths.extend(glob.glob(os.path.join(self.test_dir, f"*{ext}")))
-                    test_image_paths.extend(glob.glob(os.path.join(self.test_dir, f"*{ext.upper()}")))
+                # All image files of the test directory, in the pinned or alphabetical order
+                test_image_paths = list_test_images(self.test_dir)
                 
                 if test_image_paths:
                     self.test_dataset = RotationDataset(
@@ -518,7 +513,7 @@ class UnitVectorAngleEstimation(pl.LightningModule):
                 transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
             ])
 
-        image_tensor = transform(image).unsqueeze(0)
+        image_tensor = transform(image).unsqueeze(0).to(self.device)
 
         with torch.no_grad():
             raw_output = self(image_tensor)  # Raw outputs (not necessarily unit vectors)
@@ -534,7 +529,7 @@ class UnitVectorAngleEstimation(pl.LightningModule):
             cos_val, sin_val = normalized_output[0, 0].item(), normalized_output[0, 1].item()
             # Convert to angle using atan2
             angle = torch.atan2(torch.tensor(sin_val), torch.tensor(cos_val)).item() * 180.0 / torch.pi
-            angle = torch.remainder(angle, 360.0) % 360  # Normalize to [0, 360)
+            angle = angle % 360.0  # Normalize to [0, 360); plain float, torch.remainder needs tensors
 
         return angle
 

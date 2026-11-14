@@ -46,6 +46,8 @@ def main():
     ap.add_argument("--test-dir", type=str, default="data/datasets/test_coco")
     ap.add_argument("--seeds", type=int, nargs="+", default=[0, 1, 2, 3, 4])
     ap.add_argument("--output-json", type=str, default="eval/results/error_breakdown.json")
+    ap.add_argument("--jpeg-quality", type=int, default=0,
+                    help="save each view once as JPEG at this quality after rotation (0 = no re-encode)")
     args = ap.parse_args()
 
     print(f"Loading model from {args.checkpoint}...")
@@ -54,7 +56,7 @@ def main():
     records = []
     for seed in args.seeds:
         print(f"Running inference with seed={seed}...")
-        results = run_inference(model, args.test_dir, seed)
+        results = run_inference(model, args.test_dir, seed, jpeg_quality=args.jpeg_quality)
         for r in results:
             records.append({"seed": seed, "gt": r["angle_applied"],
                             "pred": r["angle_predicted"], "error": r["error"]})

@@ -339,12 +339,12 @@ if __name__ == "__main__":
                 )
                 architecture_dropdown = gr.Dropdown(
                     choices=ARCHITECTURES,
-                    value="convnextv2_base.fcmae_ft_in1k",
+                    value="convnextv2_base.fcmae_ft_in22k_in1k",
                     label="Architecture", 
                     info="Select the model architecture"
                 )
                 image_size_input = gr.Number(
-                    value=get_default_input_size("convnextv2_base.fcmae_ft_in1k"),
+                    value=get_default_input_size("convnextv2_base.fcmae_ft_in22k_in1k"),
                     label="Image Size",
                     info="Auto-filled based on architecture",
                     precision=0,

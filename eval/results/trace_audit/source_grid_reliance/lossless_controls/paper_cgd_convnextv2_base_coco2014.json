@@ -1,0 +1,42 @@
+{
+ "tag": "paper_cgd_convnextv2_base_coco2014",
+ "approach": "cgd",
+ "ckpt": "data/saved_models_matrix16/cgd_convnextv2_base/cgd-kl_divergence-convnextv2_base.fcmae_ft_in22k_in1k-32/version_0/checkpoints/cgd-kl_divergence-convnextv2_base.fcmae_ft_in22k_in1k-32-version=0-epoch=0039-step=0186280-train_loss=0.0298-val_loss=0.1912-train_mae_deg_epoch=1.2748-val_mae_deg=4.9539.ckpt",
+ "n_images": 1030,
+ "seeds": [
+  0,
+  1,
+  2,
+  3,
+  4
+ ],
+ "quality": 0,
+ "sigma": 2.5,
+ "g_max": 0.05,
+ "forms": {
+  "standard": {
+   "acc2": 0.8489320388349515,
+   "acc10": 0.9801941747572815,
+   "mae": 3.396875922216355,
+   "median": 0.8338948146394927
+  },
+  "suppressed": {
+   "acc2": 0.3825242718446602,
+   "acc10": 0.8462135922330097,
+   "mae": 9.541740914670823,
+   "median": 2.8190491215988374
+  },
+  "restamped": {
+   "acc2": 0.6149514563106796,
+   "acc10": 0.9555339805825243,
+   "mae": 6.699792452777456,
+   "median": 1.5025199346373057
+  }
+ },
+ "G": 0.23242718446601943,
+ "G_ci95": [
+  0.21669902912621364,
+  0.2483495145631068
+ ],
+ "pass": false
+}

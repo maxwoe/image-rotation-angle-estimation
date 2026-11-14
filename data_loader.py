@@ -8,7 +8,8 @@ import random
 from pathlib import Path
 from loguru import logger
 from sklearn.model_selection import train_test_split
-from rotation_utils import rotate_preserve_content
+from rotation_utils import rotate_preserve_content, TraceRemoval
+from image_files import list_image_files, list_test_images  # noqa: F401  (re-exported for the model files)
 # Removed config.py import - using inline default
 
 class RotationDataset(Dataset):
@@ -41,6 +42,20 @@ class RotationDataset(Dataset):
         if self.rotation_mode != "crop":
             logger.warning(f"Rotation mode '{self.rotation_mode}' active for {mode} dataset "
                            f"(control experiment — paper default is 'crop')")
+
+        # Trace removal (train/val views) and test-time recompression,
+        # set by train.py --remove-traces / --test-jpeg-quality via environment
+        self.trace_removal = TraceRemoval.from_env() if os.environ.get("REMOVE_TRACES", "0") == "1" else None
+        if self.trace_removal is not None and mode in ("train", "val"):
+            logger.info(f"Trace removal active for {mode} dataset: {self.trace_removal.describe()}")
+        self.test_jpeg_quality = int(os.environ.get("TEST_JPEG_QUALITY", "0") or 0)
+        self.test_blur_sigma = float(os.environ.get("TEST_BLUR_SIGMA", "0") or 0)
+        if self.test_blur_sigma and mode == "test":
+            logger.info(f"Test views are blurred with sigma {self.test_blur_sigma} px after rotation "
+                        f"(trace removal applied at test time)")
+        if self.test_jpeg_quality and mode == "test":
+            logger.warning(f"Test views are re-encoded once as JPEG q{self.test_jpeg_quality} after rotation "
+                           f"(recompression control)")
 
         # Generate repeatable test angles if in test mode
         if mode == "test":
@@ -124,8 +139,11 @@ class RotationDataset(Dataset):
             # Test mode: use predefined repeatable angles
             angle = self.test_angles[idx]
             
-            # Apply rotation with the predefined angle
-            rotated_image = rotate_preserve_content(image_path, angle, mode=self.rotation_mode)
+            # Apply rotation with the predefined angle (optionally followed by one
+            # JPEG save, the recompression control)
+            rotated_image = rotate_preserve_content(image_path, angle, mode=self.rotation_mode,
+                                                    blur_sigma=self.test_blur_sigma,
+                                                    jpeg_quality=self.test_jpeg_quality)
             
             # Transform to tensor
             image_tensor = self.transform(rotated_image)
@@ -148,8 +166,14 @@ class RotationDataset(Dataset):
                 angle = random.uniform(0, 360)
         
         # Apply proper rotation that preserves content (no artificial borders)
-        # Positive angle to create an image at that orientation
-        rotated_image = rotate_preserve_content(image_path, angle, mode=self.rotation_mode)
+        # Positive angle to create an image at that orientation.
+        # Validation views have their traces removed with a per-index RNG so that the
+        # early-stopping signal does not change from epoch to epoch.
+        rng = None
+        if self.trace_removal is not None and self.mode == "val":
+            rng = random.Random(1_000_003 * self.test_random_seed + idx)
+        rotated_image = rotate_preserve_content(image_path, angle, mode=self.rotation_mode,
+                                                trace_removal=self.trace_removal, rng=rng)
         
         # Transform to tensor
         image_tensor = self.transform(rotated_image)
@@ -175,11 +199,8 @@ class RotationDataset(Dataset):
         """
         # Get all image paths
         image_dir = Path(image_dir)
-        extensions = ["*.jpg", "*.jpeg", "*.png", "*.bmp", "*.tiff",
-                      "*.JPG", "*.JPEG", "*.PNG", "*.BMP", "*.TIFF"]
-        image_paths = []
-        for ext in extensions:
-            image_paths.extend(image_dir.glob(ext))
+        # sorted by name: a seed then selects the same train/validation split on every machine
+        image_paths = list_image_files(image_dir)
 
         if len(image_paths) == 0:
             raise ValueError(f"No images found in {image_dir} (searched: jpg, jpeg, png, bmp, tiff)")

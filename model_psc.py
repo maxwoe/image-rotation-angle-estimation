@@ -27,10 +27,9 @@ import timm.data
 from PIL import Image
 import numpy as np
 import os
-import glob
 from loguru import logger
 # Removed config.py imports - parameters now explicitly required
-from data_loader import RotationDataset
+from data_loader import RotationDataset, list_test_images
 from metrics import compute_validation_metrics, compute_test_metrics
 
 
@@ -330,12 +329,8 @@ class PSCAngleEstimation(pl.LightningModule):
         elif stage == "test":
             # Setup test dataset
             if self.test_dir and os.path.exists(self.test_dir):
-                # Get all image files in test directory
-                image_extensions = ['.jpg', '.jpeg', '.png', '.bmp', '.tiff']
-                test_image_paths = []
-                for ext in image_extensions:
-                    test_image_paths.extend(glob.glob(os.path.join(self.test_dir, f"*{ext}")))
-                    test_image_paths.extend(glob.glob(os.path.join(self.test_dir, f"*{ext.upper()}")))
+                # All image files of the test directory, in the pinned or alphabetical order
+                test_image_paths = list_test_images(self.test_dir)
                 
                 if test_image_paths:
                     self.test_dataset = RotationDataset(
@@ -415,7 +410,7 @@ class PSCAngleEstimation(pl.LightningModule):
                 transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
             ])
 
-        image_tensor = transform(image).unsqueeze(0)
+        image_tensor = transform(image).unsqueeze(0).to(self.device)
 
         with torch.no_grad():
             psc_codes = self(image_tensor)  # PSC representation

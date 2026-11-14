@@ -74,18 +74,23 @@ python train.py --approach cgd --model-name mambaout_base --batch-size 16 --mixe
 # CLS + EfficientViT-B3 on DRC-D
 python train.py --approach classification --model-name efficientvit_b3 --batch-size 16 --mixed-precision --run-test
 
-# CGD + MambaOut Base on COCO 2014
-python train.py --approach cgd --model-name mambaout_base \
+# CGD + ConvNeXt V2 Base on COCO 2014, trace-free protocol (--remove-traces),
+# tested on views re-encoded once as JPEG at quality 90
+python train.py --approach cgd --model-name convnextv2_base.fcmae_ft_in22k_in1k \
   --train-dir data/datasets/train_coco --validation-split 0.1 \
-  --batch-size 16 --mixed-precision \
-  --test-dirs data/datasets/test_coco --run-test
+  --batch-size 16 --early-stopping-min-delta 0.1 --remove-traces \
+  --test-dirs data/datasets/test_coco --run-test --test-jpeg-quality 90
 
-# CGD + MambaOut Base on COCO 2017
-python train.py --approach cgd --model-name mambaout_base \
+# The same on COCO 2017 (the released model is the run with --random-seed 2)
+python train.py --approach cgd --model-name convnextv2_base.fcmae_ft_in22k_in1k \
   --train-dir data/datasets/train_coco_2017 --validation-split 0.1 \
-  --batch-size 16 --mixed-precision \
-  --test-dirs data/datasets/test_coco --run-test
+  --batch-size 16 --early-stopping-min-delta 0.1 --remove-traces --random-seed 2 \
+  --test-dirs data/datasets/test_coco --run-test --test-jpeg-quality 90
 ```
+
+The DRC-D models of the paper are trained under the conventional protocol (no `--remove-traces`), the COCO models under the trace-free protocol.
+A seed fixes the train/validation split and the test angles; it does not make a training run repeatable, because weight initialization and batch order are not seeded.
+`eval/trace_coco_cell.sh` runs one COCO cell with its complete evaluation (five test seeds, four test forms, processing-trace checks).
 
 ### Full benchmark (reproduces paper Table 1)
 

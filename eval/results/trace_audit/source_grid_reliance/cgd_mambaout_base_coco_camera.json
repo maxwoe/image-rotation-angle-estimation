@@ -1,0 +1,42 @@
+{
+ "tag": "cgd_mambaout_base_coco_camera",
+ "approach": "cgd",
+ "ckpt": "data/saved_models_trace_removal/cgd_mambaout_base_coco_camera/cgd-kl_divergence-mambaout_base.in1k-32/version_0/checkpoints/cgd-kl_divergence-mambaout_base.in1k-32-version=0-epoch=0041-step=0195594-train_loss=0.1251-val_loss=0.3840-train_mae_deg_epoch=2.6400-val_mae_deg=7.7410.ckpt",
+ "n_images": 1030,
+ "seeds": [
+  0,
+  1,
+  2,
+  3,
+  4
+ ],
+ "quality": 90,
+ "sigma": 2.5,
+ "g_max": 0.05,
+ "forms": {
+  "standard": {
+   "acc2": 0.6596116504854369,
+   "acc10": 0.9557281553398058,
+   "mae": 5.035174328306116,
+   "median": 1.3391394840041455
+  },
+  "suppressed": {
+   "acc2": 0.5553398058252427,
+   "acc10": 0.903883495145631,
+   "mae": 9.64974690481405,
+   "median": 1.712280754979787
+  },
+  "restamped": {
+   "acc2": 0.553009708737864,
+   "acc10": 0.9044660194174757,
+   "mae": 9.483089514716205,
+   "median": 1.7157283231086193
+  }
+ },
+ "G": -0.00233009708737864,
+ "G_ci95": [
+  -0.007184466019417473,
+  0.002912621359223301
+ ],
+ "pass": true
+}

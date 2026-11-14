@@ -1,0 +1,42 @@
+{
+ "tag": "unit_vector_mambaout_base_coco_camera",
+ "approach": "unit_vector",
+ "ckpt": "data/saved_models_trace_removal/unit_vector_mambaout_base_coco_camera/unit_vector-mae-mambaout_base.in1k-32/version_0/checkpoints/unit_vector-mae-mambaout_base.in1k-32-version=0-epoch=0081-step=0381874-train_loss=0.0696-val_loss=0.0850-train_mae_deg_epoch=6.4029-val_mae_deg=8.8457.ckpt",
+ "n_images": 1030,
+ "seeds": [
+  0,
+  1,
+  2,
+  3,
+  4
+ ],
+ "quality": 90,
+ "sigma": 2.5,
+ "g_max": 0.05,
+ "forms": {
+  "standard": {
+   "acc2": 0.6013592233009709,
+   "acc10": 0.945631067961165,
+   "mae": 5.240801236997217,
+   "median": 1.519151049644293
+  },
+  "suppressed": {
+   "acc2": 0.5221359223300971,
+   "acc10": 0.8928155339805826,
+   "mae": 10.915135366215543,
+   "median": 1.8805741466762953
+  },
+  "restamped": {
+   "acc2": 0.5147572815533981,
+   "acc10": 0.892621359223301,
+   "mae": 10.871718008846381,
+   "median": 1.9247696347682464
+  }
+ },
+ "G": -0.007378640776699029,
+ "G_ci95": [
+  -0.012038834951456311,
+  -0.002524271844660194
+ ],
+ "pass": true
+}

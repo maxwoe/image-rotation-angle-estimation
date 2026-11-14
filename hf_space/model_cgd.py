@@ -126,7 +126,9 @@ class CGDAngleEstimation(pl.LightningModule):
         self.inference_method = inference_method
         self.loss_type = loss_type
 
-        self.model = timm.create_model(model_name, pretrained=True, num_classes=num_bins)
+        # inference only: every weight comes from the checkpoint, so the ImageNet weights
+        # of the backbone are not downloaded
+        self.model = timm.create_model(model_name, pretrained=False, num_classes=num_bins)
         self.cgd = CircularGaussianDistribution(num_bins=num_bins, sigma=sigma)
 
     @classmethod
@@ -216,7 +218,7 @@ class CGDAngleEstimation(pl.LightningModule):
                 transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
             ])
 
-        image_tensor = transform(image).unsqueeze(0)
+        image_tensor = transform(image).unsqueeze(0).to(self.device)
 
         with torch.no_grad():
             pred_distributions = self(image_tensor)

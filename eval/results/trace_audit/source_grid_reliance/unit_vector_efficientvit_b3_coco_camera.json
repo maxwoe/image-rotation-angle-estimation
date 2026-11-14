@@ -1,0 +1,42 @@
+{
+ "tag": "unit_vector_efficientvit_b3_coco_camera",
+ "approach": "unit_vector",
+ "ckpt": "data/saved_models_trace_removal/unit_vector_efficientvit_b3_coco_camera/unit_vector-mae-efficientvit_b3.r224_in1k-32/version_0/checkpoints/unit_vector-mae-efficientvit_b3.r224_in1k-32-version=0-epoch=0058-step=0274763-train_loss=0.0780-val_loss=0.1007-train_mae_deg_epoch=7.1530-val_mae_deg=8.8724.ckpt",
+ "n_images": 1030,
+ "seeds": [
+  0,
+  1,
+  2,
+  3,
+  4
+ ],
+ "quality": 90,
+ "sigma": 2.5,
+ "g_max": 0.05,
+ "forms": {
+  "standard": {
+   "acc2": 0.5250485436893204,
+   "acc10": 0.938252427184466,
+   "mae": 5.75805505463407,
+   "median": 1.8824631643285556
+  },
+  "suppressed": {
+   "acc2": 0.4666019417475728,
+   "acc10": 0.9009708737864077,
+   "mae": 9.380874359537279,
+   "median": 2.1578021805256924
+  },
+  "restamped": {
+   "acc2": 0.46893203883495144,
+   "acc10": 0.9003883495145631,
+   "mae": 9.238815507859671,
+   "median": 2.1540292813850925
+  }
+ },
+ "G": 0.0023300970873786396,
+ "G_ci95": [
+  -0.0038834951456310687,
+  0.008548543689320362
+ ],
+ "pass": true
+}

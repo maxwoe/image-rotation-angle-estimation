@@ -1,0 +1,42 @@
+{
+ "tag": "classification_mambaout_base_coco_camera",
+ "approach": "classification",
+ "ckpt": "data/saved_models_trace_removal/classification_mambaout_base_coco_camera/classification-cross_entropy-mambaout_base.in1k-32/version_0/checkpoints/classification-cross_entropy-mambaout_base.in1k-32-version=0-epoch=0070-step=0330647-train_loss=0.7878-val_loss=1.3855-train_mae_deg_epoch=1.4315-val_mae_deg=7.9187.ckpt",
+ "n_images": 1030,
+ "seeds": [
+  0,
+  1,
+  2,
+  3,
+  4
+ ],
+ "quality": 90,
+ "sigma": 2.5,
+ "g_max": 0.05,
+ "forms": {
+  "standard": {
+   "acc2": 0.8460194174757282,
+   "acc10": 0.9493203883495146,
+   "mae": 4.790765267672152,
+   "median": 0.3287769920185468
+  },
+  "suppressed": {
+   "acc2": 0.736116504854369,
+   "acc10": 0.8683495145631068,
+   "mae": 12.420109243677528,
+   "median": 0.3885456301177328
+  },
+  "restamped": {
+   "acc2": 0.7345631067961165,
+   "acc10": 0.869126213592233,
+   "mae": 12.416471349834852,
+   "median": 0.3871916395771393
+  }
+ },
+ "G": -0.001553398058252427,
+ "G_ci95": [
+  -0.006407766990291262,
+  0.0031067961165048555
+ ],
+ "pass": true
+}

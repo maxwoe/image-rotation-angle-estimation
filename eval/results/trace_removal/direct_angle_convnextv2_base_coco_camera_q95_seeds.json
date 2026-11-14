@@ -1,0 +1,107 @@
+[
+  {
+    "subset": "all",
+    "approach": "direct_angle",
+    "model_name": "direct_angle_convnextv2_base_coco_camera",
+    "seed": 0,
+    "metrics": {
+      "test_coco_loss": 64.388,
+      "test_coco_mae_deg": 64.388,
+      "test_coco_median_deg": 44.208,
+      "test_coco_rmse_deg": 84.421,
+      "test_coco_p90_deg": 142.115,
+      "test_coco_p95_deg": 154.442,
+      "test_coco_auc_2deg": 0.025,
+      "test_coco_auc_5deg": 0.058,
+      "test_coco_auc_10deg": 0.100,
+      "test_coco_acc_2deg": 0.044,
+      "test_coco_acc_5deg": 0.107,
+      "test_coco_acc_10deg": 0.177,
+      "actual_epochs": 1
+    }
+  },
+  {
+    "subset": "all",
+    "approach": "direct_angle",
+    "model_name": "direct_angle_convnextv2_base_coco_camera",
+    "seed": 1,
+    "metrics": {
+      "test_coco_loss": 63.997,
+      "test_coco_mae_deg": 63.997,
+      "test_coco_median_deg": 42.249,
+      "test_coco_rmse_deg": 84.512,
+      "test_coco_p90_deg": 141.656,
+      "test_coco_p95_deg": 155.464,
+      "test_coco_auc_2deg": 0.015,
+      "test_coco_auc_5deg": 0.046,
+      "test_coco_auc_10deg": 0.095,
+      "test_coco_acc_2deg": 0.028,
+      "test_coco_acc_5deg": 0.103,
+      "test_coco_acc_10deg": 0.193,
+      "actual_epochs": 1
+    }
+  },
+  {
+    "subset": "all",
+    "approach": "direct_angle",
+    "model_name": "direct_angle_convnextv2_base_coco_camera",
+    "seed": 2,
+    "metrics": {
+      "test_coco_loss": 64.995,
+      "test_coco_mae_deg": 64.995,
+      "test_coco_median_deg": 43.610,
+      "test_coco_rmse_deg": 85.147,
+      "test_coco_p90_deg": 144.046,
+      "test_coco_p95_deg": 156.422,
+      "test_coco_auc_2deg": 0.020,
+      "test_coco_auc_5deg": 0.049,
+      "test_coco_auc_10deg": 0.093,
+      "test_coco_acc_2deg": 0.041,
+      "test_coco_acc_5deg": 0.091,
+      "test_coco_acc_10deg": 0.175,
+      "actual_epochs": 1
+    }
+  },
+  {
+    "subset": "all",
+    "approach": "direct_angle",
+    "model_name": "direct_angle_convnextv2_base_coco_camera",
+    "seed": 3,
+    "metrics": {
+      "test_coco_loss": 64.796,
+      "test_coco_mae_deg": 64.796,
+      "test_coco_median_deg": 42.390,
+      "test_coco_rmse_deg": 85.267,
+      "test_coco_p90_deg": 142.510,
+      "test_coco_p95_deg": 155.581,
+      "test_coco_auc_2deg": 0.024,
+      "test_coco_auc_5deg": 0.056,
+      "test_coco_auc_10deg": 0.105,
+      "test_coco_acc_2deg": 0.050,
+      "test_coco_acc_5deg": 0.110,
+      "test_coco_acc_10deg": 0.195,
+      "actual_epochs": 1
+    }
+  },
+  {
+    "subset": "all",
+    "approach": "direct_angle",
+    "model_name": "direct_angle_convnextv2_base_coco_camera",
+    "seed": 4,
+    "metrics": {
+      "test_coco_loss": 65.444,
+      "test_coco_mae_deg": 65.444,
+      "test_coco_median_deg": 45.832,
+      "test_coco_rmse_deg": 85.445,
+      "test_coco_p90_deg": 142.646,
+      "test_coco_p95_deg": 155.267,
+      "test_coco_auc_2deg": 0.026,
+      "test_coco_auc_5deg": 0.054,
+      "test_coco_auc_10deg": 0.098,
+      "test_coco_acc_2deg": 0.047,
+      "test_coco_acc_5deg": 0.101,
+      "test_coco_acc_10deg": 0.180,
+      "actual_epochs": 1
+    }
+  }
+]

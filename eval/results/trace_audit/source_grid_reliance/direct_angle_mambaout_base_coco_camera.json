@@ -1,0 +1,42 @@
+{
+ "tag": "direct_angle_mambaout_base_coco_camera",
+ "approach": "direct_angle",
+ "ckpt": "data/saved_models_trace_removal/direct_angle_mambaout_base_coco_camera/direct_angle-mae-mambaout_base.in1k-32/version_0/checkpoints/direct_angle-mae-mambaout_base.in1k-32-version=0-epoch=0074-step=0349275-train_loss=71.9752-val_loss=71.4337-train_mae_deg_epoch=71.9752-val_mae_deg=71.4337.ckpt",
+ "n_images": 1030,
+ "seeds": [
+  0,
+  1,
+  2,
+  3,
+  4
+ ],
+ "quality": 90,
+ "sigma": 2.5,
+ "g_max": 0.05,
+ "forms": {
+  "standard": {
+   "acc2": 0.03922330097087379,
+   "acc10": 0.16970873786407767,
+   "mae": 68.84925745949744,
+   "median": 52.76850227173293
+  },
+  "suppressed": {
+   "acc2": 0.040388349514563104,
+   "acc10": 0.17631067961165048,
+   "mae": 69.24217573144392,
+   "median": 52.71968662370976
+  },
+  "restamped": {
+   "acc2": 0.04116504854368932,
+   "acc10": 0.1766990291262136,
+   "mae": 69.30028631741612,
+   "median": 52.57031695412506
+  }
+ },
+ "G": 0.0007766990291262136,
+ "G_ci95": [
+  -0.00116504854368932,
+  0.002718446601941748
+ ],
+ "pass": true
+}

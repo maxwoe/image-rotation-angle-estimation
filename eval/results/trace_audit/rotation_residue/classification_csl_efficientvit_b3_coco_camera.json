@@ -1,0 +1,50 @@
+{
+ "tag": "classification_csl_efficientvit_b3_coco_camera",
+ "approach": "classification",
+ "ckpt": "data/saved_models_trace_removal/classification_csl_efficientvit_b3_coco_camera/classification-csl-efficientvit_b3.r224_in1k-32/version_0/checkpoints/classification-csl-efficientvit_b3.r224_in1k-32-version=0-epoch=0038-step=0181623-train_loss=2.8049-val_loss=2.8954-train_mae_deg_epoch=5.8051-val_mae_deg=8.1217.ckpt",
+ "n_images": 1030,
+ "seeds": [
+  0,
+  1,
+  2,
+  3,
+  4
+ ],
+ "quality": 90,
+ "factor": 4,
+ "r_max": 0.05,
+ "photos": {
+  "normal": {
+   "acc2": 0.6621359223300971,
+   "acc10": 0.9566990291262136,
+   "mae": 4.797197718542729,
+   "median": 1.323912360673969
+  },
+  "supersampled": {
+   "acc2": 0.6669902912621359,
+   "acc10": 0.9588349514563107,
+   "mae": 4.671123325041893,
+   "median": 1.3222568021583285
+  }
+ },
+ "textures": {
+  "normal": {
+   "excess_within5": 0.012888888888888894,
+   "excess_within5_ci95_upper": 0.033888888888888885,
+   "rho4": 0.03129762991291964,
+   "rho4_ci95_upper": 0.07264001214812567
+  },
+  "supersampled": {
+   "excess_within5": 0.0198888888888889,
+   "excess_within5_ci95_upper": 0.04188888888888889,
+   "rho4": 0.0947556710714098,
+   "rho4_ci95_upper": 0.13555000684471874
+  }
+ },
+ "R": -0.0048543689320388345,
+ "R_ci95": [
+  -0.012427184466019417,
+  0.003300970873786409
+ ],
+ "pass": true
+}

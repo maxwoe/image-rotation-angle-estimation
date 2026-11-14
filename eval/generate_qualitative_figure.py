@@ -61,7 +61,7 @@ def load_model(checkpoint_path):
     return model
 
 
-def run_inference(model, test_dir, seed, rotation_range=360.0):
+def run_inference(model, test_dir, seed, rotation_range=360.0, jpeg_quality=0):
     """Run inference on all test images with deterministic rotations."""
     test_dir = str(test_dir)
 
@@ -110,7 +110,8 @@ def run_inference(model, test_dir, seed, rotation_range=360.0):
     results = []
     for i, (img_path, angle_applied) in enumerate(zip(image_paths, angles)):
         # Create rotated image (this is what the model sees)
-        rotated_pil = rotate_preserve_content(str(img_path), angle_applied)
+        # jpeg_quality > 0 saves the view once as JPEG after rotation and crop (the re-encoded test condition)
+        rotated_pil = rotate_preserve_content(str(img_path), angle_applied, jpeg_quality=jpeg_quality)
 
         # Run inference directly (avoid predict_angle's device bug)
         image_tensor = transform(rotated_pil).unsqueeze(0).to(device)
@@ -274,6 +275,8 @@ def main():
     parser.add_argument("--n-good", type=int, default=6, help="Number of good examples")
     parser.add_argument("--n-bad", type=int, default=6, help="Number of bad examples")
     parser.add_argument("--seed", type=int, default=0, help="Random seed for test rotations")
+    parser.add_argument("--jpeg-quality", type=int, default=0,
+                        help="save each view once as JPEG at this quality after rotation (0 = no re-encode, the published protocol)")
     parser.add_argument("--output-dir", type=str, default="eval/results/qualitative",
                         help="Output directory for images")
     args = parser.parse_args()
@@ -282,7 +285,7 @@ def main():
     model = load_model(args.checkpoint)
 
     print(f"Running inference on {args.test_dir} (seed={args.seed})...")
-    results = run_inference(model, args.test_dir, args.seed)
+    results = run_inference(model, args.test_dir, args.seed, jpeg_quality=args.jpeg_quality)
 
     # Sort by error
     results.sort(key=lambda x: x["error"])

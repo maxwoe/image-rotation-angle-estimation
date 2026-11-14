@@ -1,7 +1,7 @@
 from typing import Type
 import torch
 import torch.nn as nn
-from timm.models.layers import Mlp
+from timm.layers import Mlp
 
 
 class SimpleRegressionHead(nn.Module):
