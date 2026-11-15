@@ -3,7 +3,12 @@
     "CGD + ConvNeXt V2 Base (COCO 2017, trace-free protocol)": {
       "filename": "cgd_convnextv2_base_coco2017.ckpt",
       "architecture": "convnextv2_base.fcmae_ft_in22k_in1k",
-      "input_size": 224
+      "input_size": 224,
+      "confidence": {
+        "window_degrees": 10,
+        "slope": 3.0100,
+        "intercept": -1.3845
+      }
     },
     "Legacy: CGD + MambaOut Base (COCO 2017, conventional protocol)": {
       "filename": "cgd_mambaout_base_coco2017.ckpt",

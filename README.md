@@ -175,6 +175,22 @@ python eval/rotation_residue.py --models models.txt --out-dir eval/results/trace
 `models.txt` holds one `approach|tag|checkpoint` line per model.
 The released checkpoint passes these checks except for one of the seven probe conditions, which it misses by 0.1 point (see the model card).
 
+## Confidence of the released model
+
+The released model can return a confidence between 0 and 1 with the angle (`predict_angle(image, return_confidence=True)` in the inference code on the Hub, see the model card).
+It is the probability mass that the CGD head puts within 10° of the predicted angle, mapped by a logistic curve to an estimate of the probability that the prediction is within 10° of the true angle.
+The two parameters of the curve are fitted on the validation split of the training run and stored in `hf_space/config.json`.
+The test views are used only to check it.
+
+```bash
+python eval/confidence_calibration.py --ckpt weights/cgd_convnextv2_base_coco2017.ckpt \
+  --out eval/results/confidence/cgd_convnextv2_base_coco2017.json
+```
+
+The script needs the training images, since it rebuilds the validation split.
+Its result file holds the fitted parameters, the effect of confidence thresholds on the test views and the confidence on content-free noise textures.
+On the test views saved as JPEG, accepting only predictions with a confidence of at least 0.98 answers 92.4% of the views, and 99.3% of those are within 10°.
+
 ## Citation
 
 ```bibtex

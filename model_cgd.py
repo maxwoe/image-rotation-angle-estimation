@@ -196,8 +196,28 @@ class CircularGaussianDistribution(nn.Module):
         # Normalize by max possible entropy
         max_entropy = math.log(self.num_bins)
         normalized_entropy = entropy / max_entropy
-        
+
         return normalized_entropy
+
+    def peak_mass(self, distributions: torch.Tensor, window_degrees: float = 10.0) -> torch.Tensor:
+        """
+        Probability mass around the most probable angle
+
+        The raw score behind the confidence value: the share of the probability that
+        lies within +-window_degrees of the argmax bin, with wrap-around at 0°/360°.
+        A second peak elsewhere, or a flat distribution, lowers it.
+
+        Args:
+            distributions: Probability distributions [B, num_bins]
+            window_degrees: Half-width of the window in degrees
+
+        Returns:
+            mass: Probability mass in the window [B]
+        """
+        half_width = int(round(window_degrees / self.bin_size))
+        peak_indices = torch.argmax(distributions, dim=1, keepdim=True)
+        offsets = torch.arange(-half_width, half_width + 1, device=distributions.device)
+        return distributions.gather(1, (peak_indices + offsets) % self.num_bins).sum(dim=1)
 
 
 class CGDAngleEstimation(TestSetMetricsMixin, pl.LightningModule):

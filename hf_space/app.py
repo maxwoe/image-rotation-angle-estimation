@@ -57,6 +57,7 @@ def load_model(name):
 
     logger.info(f"Loading model from {local_path}...")
     new_model = CGDAngleEstimation.try_load(checkpoint_path=local_path, image_size=image_size)
+    new_model.confidence_calibration = info.get("confidence")
     new_model.eval()
 
     device = get_device()
@@ -100,11 +101,17 @@ def correct_orientation(image):
     if isinstance(image, np.ndarray):
         image = Image.fromarray(image)
 
-    predicted_angle = model.predict_angle(image)
+    # the legacy checkpoints have no calibrated confidence
+    if model.confidence_calibration is not None:
+        predicted_angle, confidence = model.predict_angle(image, return_confidence=True)
+        result = f"Predicted rotation: {predicted_angle:.2f}° (confidence {confidence:.3f})"
+    else:
+        predicted_angle = model.predict_angle(image)
+        result = f"Predicted rotation: {predicted_angle:.2f}°"
 
     corrected = image.rotate(-predicted_angle, expand=True, fillcolor=(255, 255, 255))
 
-    return corrected, f"Predicted rotation: {predicted_angle:.2f}°"
+    return corrected, result
 
 
 # Build UI

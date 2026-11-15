@@ -7,9 +7,11 @@ part of the demo are removed from it.
 Run this script on a machine where `huggingface-cli login` has been completed.
 
 Usage:
-    python deploy_space.py
+    python deploy_space.py                      # upload
+    python deploy_space.py --message "..."      # upload with a commit message of your own
 """
 
+import argparse
 import os
 import shutil
 import tempfile
@@ -30,8 +32,15 @@ SPACE_FILES = [
 
 
 def main():
+    parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    parser.add_argument("--message", default="Deploy inference-only Gradio demo", help="commit message on the Hub")
+    args = parser.parse_args()
+
     api = HfApi()
-    api.create_repo(repo_id=REPO_ID, repo_type="space", space_sdk="gradio", exist_ok=True)
+    # The Hub treats the creation of a Gradio Space as a separate step that depends on the
+    # plan of the account, so it is only requested when the Space does not exist yet.
+    if not api.repo_exists(repo_id=REPO_ID, repo_type="space"):
+        api.create_repo(repo_id=REPO_ID, repo_type="space", space_sdk="gradio")
 
     staging_dir = tempfile.mkdtemp(prefix="hf_space_")
     print(f"Staging files in: {staging_dir}")
@@ -47,7 +56,7 @@ def main():
             repo_id=REPO_ID,
             repo_type="space",
             folder_path=staging_dir,
-            commit_message="Deploy inference-only Gradio demo",
+            commit_message=args.message,
             delete_patterns="*",  # remove remote files that are not part of this upload
         )
         print(f"Done. Space URL: https://huggingface.co/spaces/{REPO_ID}")

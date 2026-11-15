@@ -63,6 +63,9 @@ angle = model.predict_angle(image)  # degrees in [0, 360), counter-clockwise
 print(f"Predicted rotation: {angle:.1f}°")
 
 upright = image.rotate(-angle, expand=True)  # turn the image back
+
+# optionally with a confidence between 0 and 1, see "Confidence" below
+angle, confidence = model.predict_angle(image, return_confidence=True)
 ```
 
 - `predict_angle` accepts a PIL Image, a numpy array or a file path.
@@ -90,13 +93,42 @@ The error is nearly the same across JPEG quality settings (3.87° at quality 95,
 The checkpoint is one of three training runs of this configuration, which reach 3.70°, 3.77° and 3.81° (mean 3.76°).
 The strongest earlier model, OAD-360, reaches 6.09° on the same images.
 
+## Confidence
+
+`predict_angle(image, return_confidence=True)` returns the angle together with a confidence between 0 and 1.
+The confidence estimates the probability that the predicted angle is within 10° of the true angle.
+It is computed from the output of the model: the probability mass within 10° of the predicted angle, mapped to the range from 0 to 1 by a logistic curve with two parameters that were fitted on the validation split.
+A second peak in the distribution, for example at the upside-down angle, lowers it.
+
+The model is right on most photos, so most values are close to 1: 84% of the test views get 0.99 or more.
+The confidence is therefore best used with a threshold, below which a prediction is not trusted.
+The table shows the effect on the test views that were saved as JPEG after rotation.
+
+| Confidence at least | Views answered | Within 10° among those | Mean absolute error among those |
+|---|---|---|---|
+| 0.50 | 99.0% | 97.9% | 3.30° |
+| 0.90 | 97.3% | 98.5% | 2.91° |
+| 0.95 | 95.9% | 98.7% | 2.63° |
+| 0.98 | 92.4% | 99.3% | 2.13° |
+| 0.99 | 84.1% | 99.6% | 1.76° |
+
+On views that were never saved after rotation, the same thresholds answer fewer views: 0.98 answers 86.2% of them, with 98.9% within 10°.
+On noise images that have no orientation at all, the median confidence is 0.09 and at most 3% of them reach 0.9.
+
+What the confidence cannot do:
+
+- **It is not an exact percentage.** It is reliable at the top and too optimistic in the middle: of the predictions with a confidence between 0.95 and 0.98, 84% are within 10°.
+- **Confident mistakes remain.** Of the 87 test views with an error above 45°, which are mostly confusions by 90° or 180°, 49% have a confidence of at least 0.95 and 30% of at least 0.98.
+- **Fitted on photos.** The curve was fitted and tested on COCO photos, and the values were not evaluated on other kinds of images.
+- **Default checkpoint only.** The legacy checkpoints have no confidence value.
+
 ## Limitations
 
 - **Photos only.** The model was trained and tested on everyday photos (COCO). Documents, scans, screenshots, drawings, aerial and medical images were not evaluated.
 - **Ambiguous images.** Close-ups, textures and symmetric scenes have no clear "up". More than half of the large errors are confusions by 90° or 180° on such images.
 - **Central square.** The image is resized so that its shorter side is 224 pixels and the central 224 x 224 square is used. In a very elongated image the model does not see the ends.
 - **Images never saved after rotation.** Rotations that are applied in memory or kept in a lossless format are slightly outside the training distribution, which is why the error is a little higher in the second column above.
-- **No confidence value.** `predict_angle` returns an angle only, and the probabilities of the model were not evaluated as a measure of confidence.
+- **Confidence is not a guarantee.** The confidence value flags most wrong predictions, but not all of them (see Confidence).
 
 ## Checks for Processing Traces
 
@@ -131,6 +163,7 @@ They remain available so that earlier results stay reproducible, and can be load
 - **Training data:** COCO 2017 train split without the test images (117,372 images), 10% held out for validation
 - **Training images:** rotated by a random angle in [0°, 360°), cropped to the largest rectangle without border, saved as JPEG at a random quality between 40 and 90; the interpolation method of the rotation is drawn at random
 - **Optimizer:** AdamW, learning rate reduced on plateau, early stopping
+- **Confidence:** probability mass within 10° of the predicted angle, mapped by a logistic curve on its logit (slope 3.010, intercept -1.385) that was fitted on the validation split
 
 ## Paper and Citation
 

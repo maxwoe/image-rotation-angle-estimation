@@ -90,6 +90,17 @@ class CircularGaussianDistribution(nn.Module):
         max_entropy = math.log(self.num_bins)
         return entropy / max_entropy
 
+    def peak_mass(self, distributions: torch.Tensor, window_degrees: float = 10.0) -> torch.Tensor:
+        """Probability mass within +-window_degrees of the most probable angle (circular).
+
+        The raw score behind the confidence value. A second peak elsewhere, or a flat
+        distribution, lowers it.
+        """
+        half_width = int(round(window_degrees / self.bin_size))
+        peak_indices = torch.argmax(distributions, dim=1, keepdim=True)
+        offsets = torch.arange(-half_width, half_width + 1, device=distributions.device)
+        return distributions.gather(1, (peak_indices + offsets) % self.num_bins).sum(dim=1)
+
 
 class CGDAngleEstimation(pl.LightningModule):
     """CGD model for 360 degree image orientation estimation (inference only)."""
@@ -130,6 +141,10 @@ class CGDAngleEstimation(pl.LightningModule):
         # of the backbone are not downloaded
         self.model = timm.create_model(model_name, pretrained=False, num_classes=num_bins)
         self.cgd = CircularGaussianDistribution(num_bins=num_bins, sigma=sigma)
+
+        # {"window_degrees", "slope", "intercept"} of the checkpoint, set by from_pretrained
+        # from config.json; None for a checkpoint whose confidence was not calibrated
+        self.confidence_calibration = None
 
     @classmethod
     def try_load(cls, checkpoint_path=None, **kwargs):
@@ -175,6 +190,7 @@ class CGDAngleEstimation(pl.LightningModule):
 
         ckpt_path = hf_hub_download(repo_id=repo_id, filename=model_info["filename"])
         model = cls.try_load(checkpoint_path=ckpt_path, image_size=model_info["input_size"])
+        model.confidence_calibration = model_info.get("confidence")
         model.eval()
         return model
 
@@ -185,15 +201,33 @@ class CGDAngleEstimation(pl.LightningModule):
             return logits
         return F.softmax(logits, dim=1)
 
-    def predict_angle(self, image) -> float:
+    def confidence_from_distribution(self, distributions: torch.Tensor) -> torch.Tensor:
+        """Confidence between 0 and 1 for each distribution of a batch.
+
+        The probability mass within +-10 degrees of the predicted angle cannot exceed
+        about 0.92, because the model is trained on Gaussian targets with sigma = 6 degrees.
+        A logistic curve fitted on the validation split maps it to an estimate of the
+        probability that the predicted angle is within 10 degrees of the true angle.
+        """
+        calibration = self.confidence_calibration
+        if calibration is None:
+            raise ValueError("The confidence of this checkpoint was not calibrated. "
+                             "It is available for checkpoints with a 'confidence' entry in config.json.")
+        mass = self.cgd.peak_mass(distributions, window_degrees=calibration["window_degrees"])
+        mass = mass.double().clamp(1e-6, 1 - 1e-6)
+        return torch.sigmoid(calibration["slope"] * torch.logit(mass) + calibration["intercept"])
+
+    def predict_angle(self, image, return_confidence: bool = False):
         """Detect the current orientation angle of an image.
 
         Args:
             image: PIL Image, numpy array, or file path string.
                    For best results, pass PIL Image or numpy array directly.
+            return_confidence: Also return the confidence of the prediction.
 
         Returns:
-            Predicted rotation angle in degrees [0, 360).
+            Predicted rotation angle in degrees [0, 360), or the tuple (angle, confidence)
+            with a confidence between 0 and 1 if return_confidence is set.
         """
         self.eval()
 
@@ -223,5 +257,7 @@ class CGDAngleEstimation(pl.LightningModule):
         with torch.no_grad():
             pred_distributions = self(image_tensor)
             angle = self.cgd.distribution_to_angle(pred_distributions, method=self.inference_method).item()
+            if return_confidence:
+                return angle, self.confidence_from_distribution(pred_distributions).item()
 
         return angle
