@@ -23,6 +23,9 @@ from loguru import logger
 class CircularGaussianDistribution(nn.Module):
     """Circular Gaussian Distribution module for 360 degree image orientation."""
 
+    # half-width of the window of the 'local_weighted_average' decoding, in degrees
+    LOCAL_WINDOW_DEGREES = 10.0
+
     def __init__(self, num_bins: int = 360, sigma: float = 6.0):
         super().__init__()
         self.num_bins = num_bins
@@ -39,7 +42,8 @@ class CircularGaussianDistribution(nn.Module):
 
         Args:
             distributions: Probability distributions [B, num_bins]
-            method: 'argmax', 'weighted_average', or 'peak_fitting'
+            method: 'argmax' (most probable bin), 'local_weighted_average' (circular mean of the
+                bins within 10 degrees of it), 'weighted_average' or 'peak_fitting'
 
         Returns:
             angles: Extracted angles in degrees [B] in [0, 360)
@@ -77,6 +81,19 @@ class CircularGaussianDistribution(nn.Module):
                     angles[i] = self.bin_centers[peak_idx] + offset * self.bin_size
                 else:
                     angles[i] = self.bin_centers[peak_idx]
+        elif method == 'local_weighted_average':
+            # Circular mean of the bins within LOCAL_WINDOW_DEGREES of the most probable bin:
+            # sub-bin precision without the pull of a second peak elsewhere on the circle
+            half_width = int(round(self.LOCAL_WINDOW_DEGREES / self.bin_size))
+            peak_indices = torch.argmax(distributions, dim=1, keepdim=True)
+            offsets = torch.arange(-half_width, half_width + 1, device=distributions.device)
+            index = (peak_indices + offsets) % self.num_bins
+            weights = distributions.gather(1, index)
+            bin_angles_rad = self.bin_centers[index] * torch.pi / 180.0
+            avg_cos = torch.sum(weights * torch.cos(bin_angles_rad), dim=1)
+            avg_sin = torch.sum(weights * torch.sin(bin_angles_rad), dim=1)
+            angles = torch.atan2(avg_sin, avg_cos) * 180.0 / torch.pi
+
         else:
             raise ValueError(f"Unknown extraction method: {method}")
 
@@ -190,9 +207,19 @@ class CGDAngleEstimation(pl.LightningModule):
 
         ckpt_path = hf_hub_download(repo_id=repo_id, filename=model_info["filename"])
         model = cls.try_load(checkpoint_path=ckpt_path, image_size=model_info["input_size"])
-        model.confidence_calibration = model_info.get("confidence")
+        model.apply_config(model_info)
         model.eval()
         return model
+
+    def apply_config(self, model_info):
+        """Take the settings of a checkpoint from its entry in config.json.
+
+        "decoding" names the method that turns the output distribution into an angle
+        (default: argmax, as in the paper), "confidence" holds the calibration of the
+        confidence value (default: none).
+        """
+        self.inference_method = model_info.get("decoding", "argmax")
+        self.confidence_calibration = model_info.get("confidence")
 
     def forward(self, x: torch.Tensor, return_logits: bool = False) -> torch.Tensor:
         """Forward pass returning probability distribution over angles."""

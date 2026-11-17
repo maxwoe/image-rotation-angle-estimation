@@ -1,6 +1,7 @@
 import gradio as gr
 import torch
 from PIL import Image
+import json
 import os
 from pathlib import Path
 from loguru import logger
@@ -131,6 +132,21 @@ def find_all_checkpoints():
     
     return all_files
 
+def published_decoding(checkpoint_path):
+    """
+    The decoding that hf_space/config.json names for a published checkpoint, or None.
+
+    The released model is decoded with a local average around the most probable bin,
+    while the checkpoint itself stores argmax, the decoding of the paper.
+    """
+    config_file = Path(__file__).resolve().parent / "hf_space" / "config.json"
+    if not config_file.exists():
+        return None
+    models = json.loads(config_file.read_text(encoding="utf-8"))["models"]
+    name = Path(checkpoint_path).name
+    return next((info.get("decoding") for info in models.values() if info["filename"] == name), None)
+
+
 def load_selected_model(approach, architecture, checkpoint_path, image_size=None):
     """Load model with selected parameters"""
     global state
@@ -203,7 +219,11 @@ def load_selected_model(approach, architecture, checkpoint_path, image_size=None
             new_model = model_class.load_from_checkpoint(checkpoint_path, **load_kwargs)
         
         new_model.eval()
-        
+
+        decoding = published_decoding(checkpoint_path)
+        if decoding and hasattr(new_model, "inference_method"):
+            new_model.inference_method = decoding
+
         # Move to device if CUDA is available
         if torch.cuda.is_available() and device.startswith("cuda"):
             new_model = new_model.to(device)

@@ -25,6 +25,7 @@ textures and, per test view, the error and the raw mass.
 
 Example:
   python eval/confidence_calibration.py --ckpt weights/cgd_convnextv2_base_coco2017.ckpt \
+      --inference-method local_weighted_average \
       --out eval/results/confidence/cgd_convnextv2_base_coco2017.json
 """
 import argparse
@@ -183,11 +184,16 @@ def main():
     ap.add_argument("--quality", type=int, default=90, help="JPEG quality of the re-encoded views")
     ap.add_argument("--workers", type=int, default=16)
     ap.add_argument("--probe-n", type=int, default=400, help="number of content-free textures")
+    ap.add_argument("--inference-method", default=None,
+                    help="decoding of the angle (default: the one stored in the checkpoint); the released model "
+                         "uses local_weighted_average, see hf_space/config.json")
     ap.add_argument("--out", required=True)
     args = ap.parse_args()
 
     device = "cuda" if torch.cuda.is_available() else "cpu"
     model = load_model("cgd", args.ckpt, device)
+    if args.inference_method:
+        model.inference_method = args.inference_method
     hp = model.hparams
     cfg = timm.data.resolve_model_data_config(hp.model_name)
     cfg["crop_pct"] = 1.0
@@ -220,6 +226,7 @@ def main():
 
     result = {
         "checkpoint": Path(args.ckpt).name,
+        "decoding": model.inference_method,
         "definition": "confidence = sigmoid(slope * logit(mass) + intercept); mass = probability within +-10 degrees of the predicted angle",
         "window_degrees": TOLERANCE,
         "slope": slope,

@@ -83,7 +83,20 @@ Best configuration on COCO, CGD with ConvNeXt V2 Base, trained under the trace-f
 | COCO 2014 | 3.88 | 6.09 |
 | COCO 2017 | 3.76 | 6.09 |
 
-The released checkpoint `cgd_convnextv2_base_coco2017.ckpt` is one of the three COCO 2017 runs (3.77° on re-encoded views, 4.45° on views that were never re-encoded).
+The released checkpoint `cgd_convnextv2_base_coco2017.ckpt` is one of the three COCO 2017 runs.
+The paper takes the most probable bin as the angle (argmax), which limits the answer to whole degrees.
+The released model takes the circular mean of the bins within 10° of that bin, so the numbers on the model card are slightly lower than the ones in the paper.
+The network and its weights are the same in both cases:
+
+| Decoding of the released checkpoint | Re-encoded views | Views never re-encoded |
+|---|---|---|
+| Most probable bin, as in the paper | 3.77° | 4.45° |
+| Mean of the bins within 10°, as in the released model | 3.71° | 4.38° |
+
+The demo of this repository, the demo Space and the inference code on the Hub use the second decoding for this checkpoint (`decoding` in `hf_space/config.json`).
+The training and evaluation scripts use argmax unless `--inference-method` says otherwise.
+
+The COCO test is defined as a benchmark that any model can be scored on, with a check for processing traces: see [BENCHMARK.md](BENCHMARK.md).
 
 The first arXiv version (v1) predates the trace-free protocol.
 Its COCO numbers (for example 2.84° for CGD with MambaOut Base) were obtained under the conventional protocol, in which the models can read the rotated JPEG block grid.
@@ -173,7 +186,8 @@ python eval/rotation_residue.py --models models.txt --out-dir eval/results/trace
 ```
 
 `models.txt` holds one `approach|tag|checkpoint` line per model.
-The released checkpoint passes these checks except for one of the seven probe conditions, which it misses by 0.1 point (see the model card).
+The released checkpoint passes these checks with the decoding of the released code.
+With argmax decoding it misses one of the seven probe conditions by 0.1 point (see the model card).
 
 ## Confidence of the released model
 
@@ -184,7 +198,7 @@ The test views are used only to check it.
 
 ```bash
 python eval/confidence_calibration.py --ckpt weights/cgd_convnextv2_base_coco2017.ckpt \
-  --out eval/results/confidence/cgd_convnextv2_base_coco2017.json
+  --inference-method local_weighted_average --out eval/results/confidence/cgd_convnextv2_base_coco2017.json
 ```
 
 The script needs the training images, since it rebuilds the validation split.

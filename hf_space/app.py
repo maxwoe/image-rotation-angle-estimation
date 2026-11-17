@@ -57,7 +57,7 @@ def load_model(name):
 
     logger.info(f"Loading model from {local_path}...")
     new_model = CGDAngleEstimation.try_load(checkpoint_path=local_path, image_size=image_size)
-    new_model.confidence_calibration = info.get("confidence")
+    new_model.apply_config(info)
     new_model.eval()
 
     device = get_device()

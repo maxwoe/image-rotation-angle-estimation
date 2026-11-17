@@ -37,7 +37,6 @@ from pathlib import Path
 
 import cv2
 import numpy as np
-import torch
 from PIL import Image
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -99,7 +98,34 @@ def folded_mod90(err):
     return np.minimum(m, 90.0 - m)
 
 
+def probe_statistics(preds, angles, seed=0, n_bootstrap=2000):
+    """
+    Scores of one probe condition: the share of predictions within 5 degrees of the
+    truth modulo 90 and the lattice statistic rho4, each with the 95% bootstrap upper
+    bound that the gate is applied to.
+    """
+    preds, angles = np.asarray(preds, dtype=float), np.asarray(angles, dtype=float)
+    err = np.abs(preds - angles) % 360.0
+    err = np.minimum(err, 360.0 - err)
+    m = folded_mod90(err)
+    # lattice statistic of ORTUS AI's audit: mean cos(4 (pred - truth)), 0 = ignores the
+    # lattice, 1 = locked onto it modulo 90 deg; their shipping gate is <= 0.20
+    cos4 = np.cos(np.deg2rad(4.0 * (preds - angles)))
+    hit5 = (m <= 5).astype(float)
+    # equivalence-style gate: 95% bootstrap upper bounds must lie below the tolerances,
+    # so a noisy probe cannot pass through lack of power
+    brng = np.random.default_rng(seed + 1)
+    idx = brng.integers(0, len(preds), size=(n_bootstrap, len(preds)))
+    return {"mod90_within5": float(hit5.mean()), "mod90_mean": float(m.mean()),
+            "within10": float((err <= 10).mean()), "rho4": float(cos4.mean()),
+            "rho4_ci95_upper": float(np.percentile(cos4[idx].mean(axis=1), 97.5)),
+            "excess_within5": float(hit5.mean() - CHANCE_MOD90_WITHIN5),
+            "excess_within5_ci95_upper": float(np.percentile(hit5[idx].mean(axis=1), 97.5) - CHANCE_MOD90_WITHIN5)}
+
+
 def main():
+    import torch
+
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--approach", required=True)
     ap.add_argument("--ckpt", required=True)
@@ -145,25 +171,10 @@ def main():
             pil = Image.fromarray(cv2.cvtColor(view, cv2.COLOR_BGR2RGB))
             preds.append(float(model.predict_angle(pil)))
         preds = np.asarray(preds)
-        err = np.abs(preds - angles) % 360.0
-        err = np.minimum(err, 360.0 - err)
-        m = folded_mod90(err)
-        # lattice statistic of ORTUS AI's audit: mean cos(4 (pred - truth)), 0 = ignores the
-        # lattice, 1 = locked onto it modulo 90 deg; their shipping gate is <= 0.20
-        cos4 = np.cos(np.deg2rad(4.0 * (preds - angles)))
-        hit5 = (m <= 5).astype(float)
-        rho4 = float(cos4.mean())
-        # equivalence-style gate: 95% bootstrap upper bounds must lie below the tolerances,
-        # so a noisy probe cannot pass through lack of power
-        brng = np.random.default_rng(args.seed + 1)
-        idx = brng.integers(0, len(preds), size=(args.bootstrap, len(preds)))
-        rho4_hi = float(np.percentile(cos4[idx].mean(axis=1), 97.5))
-        excess = float(hit5.mean() - CHANCE_MOD90_WITHIN5)
-        excess_hi = float(np.percentile(hit5[idx].mean(axis=1), 97.5) - CHANCE_MOD90_WITHIN5)
-        stats = {"mod90_within5": float(hit5.mean()), "mod90_mean": float(m.mean()),
-                 "within10": float((err <= 10).mean()), "rho4": rho4, "rho4_ci95_upper": rho4_hi,
-                 "excess_within5": excess, "excess_within5_ci95_upper": excess_hi,
-                 "predictions": preds.tolist()}
+        stats = probe_statistics(preds, angles, seed=args.seed, n_bootstrap=args.bootstrap)
+        rho4, rho4_hi = stats["rho4"], stats["rho4_ci95_upper"]
+        excess, excess_hi = stats["excess_within5"], stats["excess_within5_ci95_upper"]
+        stats["predictions"] = preds.tolist()
         report["conditions"][cond] = stats
         bad = rho4_hi > args.rho4_max or excess_hi > args.excess_max
         if bad:

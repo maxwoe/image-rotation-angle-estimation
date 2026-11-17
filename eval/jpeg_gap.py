@@ -137,6 +137,8 @@ def main():
     ap.add_argument("--order", default="sorted", choices=["sorted", "pinned"],
                     help="image order that pairs images with the seeded angles: alphabetical, or as train.py --test-only")
     ap.add_argument("--limit", type=int, default=0, help="first N images only (smoke test)")
+    ap.add_argument("--inference-method", default=None,
+                    help="CGD and classification only: decoding of the angle (default: the one stored in the checkpoint)")
     ap.add_argument("--device", default="auto")
     ap.add_argument("--out", type=Path, default=None, help="JSON with per-view predictions")
     args = ap.parse_args()
@@ -162,8 +164,11 @@ def main():
     print(f"model: {args.approach} from {args.ckpt} on {device}")
     print(f"test set: {len(paths)} images from {args.test_dir}, rotation mode {args.rotation_mode}")
     model = load_model(args.approach, args.ckpt, device)
+    if args.inference_method:
+        model.inference_method = args.inference_method
 
     results = {"approach": args.approach, "ckpt": str(args.ckpt), "test_dir": str(args.test_dir),
+               "inference_method": getattr(model, "inference_method", None),
                "rotation_mode": args.rotation_mode, "conditions": conditions, "seeds": seeds,
                "images": [p.name for p in paths], "per_seed": {}, "per_view": {}}
     per_cond_summaries = {c: [] for c in conditions}

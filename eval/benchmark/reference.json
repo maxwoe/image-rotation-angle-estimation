@@ -1,0 +1,29 @@
+{
+ "protocol": "coco-rotation-benchmark v1",
+ "environment": {
+  "python": "3.12.11",
+  "numpy": "2.2.6",
+  "opencv": "4.12.0",
+  "pillow": "11.3.0",
+  "libjpeg_turbo": "3.1.1"
+ },
+ "digests": {
+  "seed0/jpeg90": "8f35068892b4885df3c4d4166ec64ce364cfd67ec2247dbc8908670f5a5bbe0e",
+  "seed0/lossless": "95134bab796210551e17a3fb12f25e824a5e3883ca77342f64572137ece8cca9",
+  "seed1/jpeg90": "c5c6aad0364ded9a0ecbfe07ac6ebcf87100d328a9e7befb7bc3d9e984c0f5cc",
+  "seed1/lossless": "fdb483217de20895bc003223253ca3cb94d4cb28dea779e5b6e5cc9a5066e2fe",
+  "seed2/jpeg90": "4e5249273b599c2887ae540f506a11b46505ab2d72519f40431ac77144a6f645",
+  "seed2/lossless": "62a05d23caa2a4686437e60f9d75c94756844684e7f1fc3644d6aec52853c969",
+  "seed3/jpeg90": "e05e33e3e6aa8aecb010b12a3a8374845b6c693c9a0e280671fb0e046670aa81",
+  "seed3/lossless": "042e171aa710d68387ef7b92eb37d3b4440caf2ffdbc250a4bd25f1dd3feca5c",
+  "seed4/jpeg90": "8190a0208559a757c31416e9d65d190abe31bebe37c498232392606621e407ad",
+  "seed4/lossless": "e6247e1902a82e1d72938769aa5f00b14088ab2bc8045b8d90c17ef392420ff1",
+  "probe/lossless": "b2ef6b2decdbe4370ffef47077bcfc02b6f1b3c1b1fc591776a996dac091cc5d",
+  "probe/jpeg90": "4be3b2a40fb3af17a9b2de6be68ed892e4af309b0b3051494b44298d4bb20e96",
+  "probe/jpeg75": "f1b20e865def6f14b96290ea881e8d51b7c0ed440041fa86a10293a0b26f6b35",
+  "probe/jpeg50": "2321f614041a89d4678ce28f883b1ca3415dfd395059b948489091e6f384dca5",
+  "probe/lossless/jpeg90": "5b2bf6b219f39b9ccf94a51abf733a640c01f4d7997855f989640acfbf56d6ff",
+  "probe/jpeg95/jpeg90": "930ad2396c011b2e625c376fb8ae6776dfe39f6cfbe050b57838d9a69fc11db0",
+  "probe/jpeg75/jpeg90": "7e8f754a13ca095cdfcdf1a4ad737e6730b40c171800e03081f2006e9dcbe95b"
+ }
+}

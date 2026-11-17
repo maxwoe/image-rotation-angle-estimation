@@ -30,6 +30,7 @@ info = config["models"][config["default_model"]]
 print(f"Loading {info['filename']}...")
 ckpt = hf_hub_download(repo_id=HF_REPO_ID, filename=info["filename"])
 model = CGDAngleEstimation.try_load(checkpoint_path=ckpt, image_size=info["input_size"])
+model.inference_method = info.get("decoding", "argmax")  # the checkpoint itself stores argmax, the decoding of the paper
 model.eval()
 print("Model loaded\n")
 

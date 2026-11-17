@@ -40,7 +40,10 @@ class CircularGaussianDistribution(nn.Module):
     """
     Circular Gaussian Distribution module for 360° image orientation
     """
-    
+
+    # half-width of the window of the 'local_weighted_average' decoding, in degrees
+    LOCAL_WINDOW_DEGREES = 10.0
+
     def __init__(self, num_bins: int = 360, sigma: float = 6.0):
         """
         Args:
@@ -151,26 +154,17 @@ class CircularGaussianDistribution(nn.Module):
                 else:
                     angles[i] = self.bin_centers[peak_idx]
         elif method == 'local_weighted_average':
-            # Weighted average within a local window around the peak
-            # Combines sub-bin precision of weighted_average with robustness of argmax
-            window = 15  # ±15 bins (±15°) around peak
-            peak_indices = torch.argmax(distributions, dim=1)
-            bin_angles_rad = self.bin_centers * torch.pi / 180.0
-            cos_components = torch.cos(bin_angles_rad)
-            sin_components = torch.sin(bin_angles_rad)
-
-            angles = torch.zeros(distributions.shape[0], device=distributions.device)
-            for i in range(distributions.shape[0]):
-                peak = peak_indices[i].item()
-                # Gather indices within window, wrapping circularly
-                idx = torch.arange(peak - window, peak + window + 1, device=distributions.device) % self.num_bins
-                local_weights = distributions[i, idx]
-                local_weights = local_weights / (local_weights.sum() + 1e-8)
-                avg_cos = torch.sum(local_weights * cos_components[idx])
-                avg_sin = torch.sum(local_weights * sin_components[idx])
-                angles[i] = torch.atan2(avg_sin, avg_cos) * 180.0 / torch.pi
-
-            angles = angles % 360.0
+            # Circular mean of the bins within LOCAL_WINDOW_DEGREES of the most probable bin:
+            # sub-bin precision without the pull of a second peak elsewhere on the circle
+            half_width = int(round(self.LOCAL_WINDOW_DEGREES / self.bin_size))
+            peak_indices = torch.argmax(distributions, dim=1, keepdim=True)
+            offsets = torch.arange(-half_width, half_width + 1, device=distributions.device)
+            index = (peak_indices + offsets) % self.num_bins
+            weights = distributions.gather(1, index)
+            bin_angles_rad = self.bin_centers[index] * torch.pi / 180.0
+            avg_cos = torch.sum(weights * torch.cos(bin_angles_rad), dim=1)
+            avg_sin = torch.sum(weights * torch.sin(bin_angles_rad), dim=1)
+            angles = torch.atan2(avg_sin, avg_cos) * 180.0 / torch.pi
 
         else:
             raise ValueError(f"Unknown extraction method: {method}")
